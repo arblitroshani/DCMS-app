@@ -15,4 +15,10 @@
     <color name="transparent">#00000000</color>
     <color name="main_background">#EEEEEE</color>
     <color name="google_assistant_background">#F5F5F5</color>
+
+    <color name="black_alpha_60">#99000000</color>
+    <color name="black_alpha_40">#66000000</color>
+
+    <!-- Text -->
+    <color name="text_white_primary">@color/white</color>
 </resources>

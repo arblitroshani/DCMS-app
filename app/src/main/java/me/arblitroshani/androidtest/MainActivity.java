@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity
     private static final int RC_SIGN_IN = 123;
 
     private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
     private TextView tvEmail;
 
     private FirebaseAuth auth;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         View headerView = navigationView.getHeaderView(0);
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity
 
         auth = FirebaseAuth.getInstance();
         if (isUserSignedIn()) {
-            tvEmail.setText(auth.getCurrentUser().getEmail());
+            tvEmail.setText(auth.getCurrentUser().getDisplayName());
         }
 
         tvEmail.setOnClickListener(new View.OnClickListener() {
@@ -153,9 +154,12 @@ public class MainActivity extends AppCompatActivity
                 } else {
                     // This is an existing user
                     showSnackbar("Welcome back");
-                    drawerLayout.closeDrawer(GravityCompat.START);
+                    navigationView.getMenu().getItem(0).setChecked(true);
+                    onNavigationItemSelected(navigationView.getMenu().getItem(0));
                 }
-                tvEmail.setText(auth.getCurrentUser().getEmail());
+                auth = FirebaseAuth.getInstance();
+                tvEmail.setText(auth.getCurrentUser().getDisplayName());
+                drawerLayout.closeDrawer(GravityCompat.START);
             } else {
                 if (response == null) {
                     // User pressed back button
