@@ -1,4 +1,4 @@
-package me.arblitroshani.androidtest;
+package me.arblitroshani.androidtest.adapter;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+import me.arblitroshani.androidtest.R;
+
+public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHolder> {
 
     private ArrayList<String> mDataset;
 
@@ -20,12 +22,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         }
     }
 
-    public MyAdapter(ArrayList<String> myDataset) {
+    public ServicesAdapter(ArrayList<String> myDataset) {
         mDataset = myDataset;
     }
 
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ServicesAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         CardView v = (CardView) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.card_service, parent, false);
         ViewHolder vh = new ViewHolder(v);

@@ -1,4 +1,4 @@
-package me.arblitroshani.androidtest;
+package me.arblitroshani.androidtest.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.firebase.auth.FirebaseAuth;
+import me.arblitroshani.androidtest.R;
 
 public class ShareFragment extends Fragment {
 

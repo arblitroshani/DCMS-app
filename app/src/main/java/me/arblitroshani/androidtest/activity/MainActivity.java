@@ -1,4 +1,4 @@
-package me.arblitroshani.androidtest;
+package me.arblitroshani.androidtest.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +26,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUserMetadata;
 
 import java.util.Arrays;
+
+import me.arblitroshani.androidtest.R;
+import me.arblitroshani.androidtest.fragment.ServicesFragment;
+import me.arblitroshani.androidtest.fragment.ShareFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

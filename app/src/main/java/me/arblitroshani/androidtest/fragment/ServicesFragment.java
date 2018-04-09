@@ -1,4 +1,4 @@
-package me.arblitroshani.androidtest;
+package me.arblitroshani.androidtest.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,6 +17,9 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+
+import me.arblitroshani.androidtest.adapter.ServicesAdapter;
+import me.arblitroshani.androidtest.R;
 
 public class ServicesFragment extends Fragment {
 
@@ -63,13 +66,13 @@ public class ServicesFragment extends Fragment {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     myDataset.add(document.getData().get("title").toString());
                                 }
-                                mAdapter = new MyAdapter(myDataset);
+                                mAdapter = new ServicesAdapter(myDataset);
                                 mRecyclerView.setAdapter(mAdapter);
                             }
                         }
                     });
         } else {
-            mAdapter = new MyAdapter(myDataset);
+            mAdapter = new ServicesAdapter(myDataset);
             mRecyclerView.setAdapter(mAdapter);
         }
 

@@ -1,4 +1,4 @@
-package me.arblitroshani.androidtest;
+package me.arblitroshani.androidtest.activity;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -22,6 +22,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.model.User;
 
 public class CreateUserProfileActivity extends AppCompatActivity {
