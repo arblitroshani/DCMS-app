@@ -165,8 +165,7 @@ public class MainActivity extends AppCompatActivity
                 tvEmail.setText(auth.getCurrentUser().getDisplayName());
                 drawerLayout.closeDrawer(GravityCompat.START);
             } else {
-                if (response == null) {
-                    // User pressed back button
+                if (response == null) {  // User pressed back button
                     showSnackbar("Sign in cancelled");
                     return;
                 }
