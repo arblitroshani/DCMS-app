@@ -1,7 +1,6 @@
 package me.arblitroshani.androidtest.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,9 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -23,14 +22,14 @@ import me.arblitroshani.androidtest.R;
 
 public class ServicesFragment extends Fragment {
 
-    private static ArrayList<String> myDataset = null;
+    private ArrayList<String> myDataset;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     public ServicesFragment() {
-        // Required empty public constructor
+        myDataset = new ArrayList<>();
     }
 
     public static ServicesFragment newInstance() {
@@ -54,28 +53,23 @@ public class ServicesFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        if (myDataset == null) {
-            myDataset = new ArrayList<>();
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
-            db.collection("services")
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                            if (task.isSuccessful()) {
-                                for (QueryDocumentSnapshot document : task.getResult()) {
-                                    myDataset.add(document.getData().get("title").toString());
-                                }
-                                mAdapter = new ServicesAdapter(myDataset);
-                                mRecyclerView.setAdapter(mAdapter);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("services")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(QuerySnapshot value, FirebaseFirestoreException e) {
+                        if (e != null) return; // listen failed
+
+                        myDataset.clear();
+                        for (QueryDocumentSnapshot document : value) {
+                            if (document.get("title") != null) {
+                                myDataset.add(document.getString("title"));
                             }
                         }
-                    });
-        } else {
-            mAdapter = new ServicesAdapter(myDataset);
-            mRecyclerView.setAdapter(mAdapter);
-        }
-
+                        mAdapter = new ServicesAdapter(myDataset);
+                        mRecyclerView.setAdapter(mAdapter);
+                    }
+                });
     }
 
 }
