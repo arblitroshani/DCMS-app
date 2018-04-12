@@ -8,6 +8,9 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvServices"
         android:scrollbars="vertical"
+        android:background="#EEEEEE"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

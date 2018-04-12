@@ -19,10 +19,11 @@ import java.util.ArrayList;
 
 import me.arblitroshani.androidtest.adapter.ServicesAdapter;
 import me.arblitroshani.androidtest.R;
+import me.arblitroshani.androidtest.model.Service;
 
 public class ServicesFragment extends Fragment {
 
-    private ArrayList<String> myDataset;
+    private ArrayList<Service> myDataset;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -62,9 +63,8 @@ public class ServicesFragment extends Fragment {
 
                         myDataset.clear();
                         for (QueryDocumentSnapshot document : value) {
-                            if (document.get("title") != null) {
-                                myDataset.add(document.getString("title"));
-                            }
+                            Service service = document.toObject(Service.class);
+                            myDataset.add(service);
                         }
                         mAdapter = new ServicesAdapter(myDataset);
                         mRecyclerView.setAdapter(mAdapter);
