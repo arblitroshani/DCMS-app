@@ -16,6 +16,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import me.arblitroshani.androidtest.adapter.ServicesAdapter;
 import me.arblitroshani.androidtest.R;
@@ -23,15 +24,13 @@ import me.arblitroshani.androidtest.model.Service;
 
 public class ServicesFragment extends Fragment {
 
-    private ArrayList<Service> myDataset;
+    private List<Service> myDataset;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    public ServicesFragment() {
-        myDataset = new ArrayList<>();
-    }
+    public ServicesFragment() {}
 
     public static ServicesFragment newInstance() {
         ServicesFragment fragment = new ServicesFragment();
@@ -58,14 +57,10 @@ public class ServicesFragment extends Fragment {
         db.collection("services")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
-                    public void onEvent(QuerySnapshot value, FirebaseFirestoreException e) {
+                    public void onEvent(QuerySnapshot snapshot, FirebaseFirestoreException e) {
                         if (e != null) return; // listen failed
 
-                        myDataset.clear();
-                        for (QueryDocumentSnapshot document : value) {
-                            Service service = document.toObject(Service.class);
-                            myDataset.add(service);
-                        }
+                        myDataset = snapshot.toObjects(Service.class);
                         mAdapter = new ServicesAdapter(myDataset);
                         mRecyclerView.setAdapter(mAdapter);
                     }
