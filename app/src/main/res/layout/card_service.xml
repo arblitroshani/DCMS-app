@@ -5,7 +5,7 @@
     android:id="@+id/card_main_1_1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="2dp"
+    android:layout_marginBottom="1dp"
     android:layout_marginEnd="@dimen/main_card_margin_horizontal"
     android:layout_marginStart="@dimen/main_card_margin_horizontal"
     android:layout_marginTop="@dimen/main_card_margin_vertical"

@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -25,9 +27,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUserMetadata;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import me.arblitroshani.androidtest.R;
+import me.arblitroshani.androidtest.adapter.FragmentAdapter;
 import me.arblitroshani.androidtest.fragment.ServicesFragment;
 import me.arblitroshani.androidtest.fragment.ShareFragment;
 
@@ -38,6 +43,9 @@ public class MainActivity extends AppCompatActivity
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
     private TextView tvEmail;
 
     private FirebaseAuth auth;
@@ -54,6 +62,9 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        tabLayout = findViewById(R.id.tabs);
+        viewPager = findViewById(R.id.view_pager_main);
 
         View headerView = navigationView.getHeaderView(0);
         tvEmail = headerView.findViewById(R.id.tvEmail);
@@ -86,9 +97,42 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        navigationView.getMenu().getItem(0).setChecked(true);
-        onNavigationItemSelected(navigationView.getMenu().getItem(0));
+        List<String> titles = new ArrayList<>();
+        titles.add(getString(R.string.tab_text_1));
+        titles.add(getString(R.string.tab_text_2));
+        titles.add(getString(R.string.tab_text_3));
+
+        List<Fragment> fragments = new ArrayList<>();
+        fragments.add(ServicesFragment.newInstance());
+        fragments.add(ShareFragment.newInstance());
+        fragments.add(ServicesFragment.newInstance());
+
+        viewPager.setOffscreenPageLimit(2);
+
+        FragmentAdapter mFragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
+        viewPager.setAdapter(mFragmentAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+        // tabLayout.setTabsFromPagerAdapter(mFragmentAdapter);
+
+        viewPager.addOnPageChangeListener(pageChangeListener);
     }
+
+    private ViewPager.OnPageChangeListener pageChangeListener = new ViewPager.OnPageChangeListener() {
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+        @Override
+        public void onPageSelected(int position) {
+//            if (position == 2) {
+//                fab.show();
+//            } else {
+//                fab.hide();
+//            }
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {}
+    };
 
     @Override
     public void onBackPressed() {
@@ -117,11 +161,11 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        Fragment fragment = null;
+
         if (id == R.id.nav_services) {
-            fragment = ServicesFragment.newInstance();
+            return true;
         } else if (id == R.id.nav_share) {
-            fragment = ShareFragment.newInstance();
+            return true;
         } else if (id == R.id.nav_signout) {
             if (isUserSignedIn()) {
                 AuthUI.getInstance()
@@ -133,14 +177,8 @@ public class MainActivity extends AppCompatActivity
                             }
                         });
             }
-            fragment = ServicesFragment.newInstance();
         }
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.frameContent, fragment).commit();
-        setTitle(item.getTitle());
-
-        drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 

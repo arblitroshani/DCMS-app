@@ -1,7 +1,6 @@
 package me.arblitroshani.androidtest.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import me.arblitroshani.androidtest.R;
@@ -21,7 +19,7 @@ import me.arblitroshani.androidtest.model.Service;
 
 public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHolder> {
 
-    private List<Service> mDataset;
+    private List<Service> myDataset;
 
     private FirebaseStorage storage;
     private StorageReference storageRefServices;
@@ -39,7 +37,7 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
     }
 
     public ServicesAdapter(List<Service> myDataset) {
-        mDataset = myDataset;
+        this.myDataset = myDataset;
         storage = FirebaseStorage.getInstance();
         storageRefServices = storage.getReference().child("services");
     }
@@ -55,14 +53,14 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.tvTitle.setText(mDataset.get(position).getTitle());
+        holder.tvTitle.setText(myDataset.get(position).getTitle());
         GlideApp.with(context)
-                .load(storageRefServices.child(mDataset.get(position).getPhotoUrl()))
+                .load(storageRefServices.child(myDataset.get(position).getPhotoUrl()))
                 .into(holder.ivPicture);
     }
 
     @Override
     public int getItemCount() {
-        return mDataset.size();
+        return myDataset.size();
     }
 }
