@@ -8,6 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -47,6 +50,11 @@ public class ServicesFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        // set animation here
+        Animation animation = AnimationUtils.loadAnimation(this.getContext(), R.anim.anim_about_card_show);
+        FrameLayout flServices = view.findViewById(R.id.frameLayout);
+        flServices.startAnimation(animation);
+
         mRecyclerView = view.findViewById(R.id.rvServices);
         mRecyclerView.setHasFixedSize(true);
 
