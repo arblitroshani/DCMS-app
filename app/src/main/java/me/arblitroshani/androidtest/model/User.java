@@ -1,5 +1,7 @@
 package me.arblitroshani.androidtest.model;
 
+import android.net.Uri;
+
 public class User {
 
     private String name;
@@ -60,5 +62,17 @@ public class User {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public static String getHighResGmailPhotoUrl(Uri url) {
+        final String originalPieceOfUrl = "s96-c/photo.jpg";
+        final String newPieceOfUrlToAdd = "s400-c/photo.jpg";
+
+        if (url != null) {
+            String photoPath = url.toString();
+            return photoPath.replace(originalPieceOfUrl, newPieceOfUrlToAdd);
+        }
+
+        return url.toString();
     }
 }

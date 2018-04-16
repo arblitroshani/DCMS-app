@@ -39,6 +39,7 @@ import me.arblitroshani.androidtest.adapter.FragmentAdapter;
 import me.arblitroshani.androidtest.extras.GlideApp;
 import me.arblitroshani.androidtest.fragment.ServicesFragment;
 import me.arblitroshani.androidtest.fragment.ShareFragment;
+import me.arblitroshani.androidtest.model.User;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -241,18 +242,10 @@ public class MainActivity extends AppCompatActivity
         FirebaseUser currentUser = auth.getCurrentUser();
         tvEmail.setText(currentUser.getDisplayName());
 
-        String originalPieceOfUrl = "s96-c/photo.jpg";
-        String newPieceOfUrlToAdd = "s400-c/photo.jpg";
-
-        Uri photoUrl = currentUser.getPhotoUrl();
-
-        if (photoUrl != null ) {
-            String photoPath = photoUrl.toString();
-            String newString = photoPath.replace(originalPieceOfUrl, newPieceOfUrlToAdd);
-            GlideApp.with(this)
-                    .load(newString)
-                    .apply(RequestOptions.circleCropTransform())
-                    .into(ivProfilePicture);
-        }
+        String photoUrl = User.getHighResGmailPhotoUrl(currentUser.getPhotoUrl());
+        GlideApp.with(this)
+                .load(photoUrl)
+                .apply(RequestOptions.circleCropTransform())
+                .into(ivProfilePicture);
     }
 }

@@ -87,6 +87,7 @@ public class ServiceDetailsActivity extends AppCompatActivity {
         rvPhotos.setHasFixedSize(true);
         layoutManagerPhotos = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         rvPhotos.setLayoutManager(layoutManagerPhotos);
+        //rvPhotos.setNestedScrollingEnabled(false);
 
         Intent i = getIntent();
         final Service currentService = i.getParcelableExtra("service_to_display");
