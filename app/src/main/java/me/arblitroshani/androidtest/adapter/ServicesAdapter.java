@@ -23,6 +23,7 @@ import me.arblitroshani.androidtest.model.Service;
 public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHolder> {
 
     private List<Service> myDataset;
+    private List<String> serviceIds;
 
     private FirebaseStorage storage;
     private StorageReference storageRefServices;
@@ -43,8 +44,9 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
         }
     }
 
-    public ServicesAdapter(List<Service> myDataset) {
+    public ServicesAdapter(List<Service> myDataset, List<String> serviceIds) {
         this.myDataset = myDataset;
+        this.serviceIds = serviceIds;
         storage = FirebaseStorage.getInstance();
         storageRefServices = storage.getReference().child("services");
     }
@@ -52,13 +54,13 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
     @Override
     public ServicesAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card_service, parent, false);
+        View v = LayoutInflater.from(context)
+                .inflate(R.layout.item_card_service, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         final Service currentService = myDataset.get(position);
         holder.tvTitle.setText(currentService.getTitle());
         holder.tvSubtitle.setText(currentService.getSubtitle());
@@ -70,6 +72,7 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
             public void onClick(View view) {
                 Intent i = new Intent(context, ServiceDetailsActivity.class);
                 i.putExtra("service_to_display", currentService);
+                i.putExtra("service_id", serviceIds.get(position));
                 context.startActivity(i);
             }
         });

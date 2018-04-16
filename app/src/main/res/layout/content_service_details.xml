@@ -24,11 +24,98 @@
             android:background="?android:attr/selectableItemBackgroundBorderless"
             card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
             card_view:cardElevation="@dimen/card_recycler_elevation">
-            <TextView
-                android:id="@+id/tvSubtitle"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/text_margin" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin"
+                    android:text="Info"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="20sp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#eeeeee" />
+                <TextView
+                    android:id="@+id/tvSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/card_main_description"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+            card_view:cardElevation="@dimen/card_recycler_elevation">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-light"
+                    android:layout_margin="@dimen/text_margin"
+                    android:text="Description"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#eeeeee" />
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/card_main_doctors"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+            card_view:cardElevation="@dimen/card_recycler_elevation">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-light"
+                    android:layout_margin="@dimen/text_margin"
+                    android:text="Doctors"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#eeeeee" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvDoctors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingBottom="8dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    android:scrollbars="vertical" />
+            </LinearLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
@@ -38,15 +125,33 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:id="@+id/card_main_description"
+            android:id="@+id/card_main_photos"
             android:background="?android:attr/selectableItemBackgroundBorderless"
             card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
             card_view:cardElevation="@dimen/card_recycler_elevation">
-            <TextView
-                android:id="@+id/tvDescription"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/text_margin" />
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-light"
+                    android:layout_margin="@dimen/text_margin"
+                    android:text="Photos"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#eeeeee" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvPhotos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    android:scrollbars="horizontal" />
+            </LinearLayout>
         </android.support.v7.widget.CardView>
 
     </LinearLayout>

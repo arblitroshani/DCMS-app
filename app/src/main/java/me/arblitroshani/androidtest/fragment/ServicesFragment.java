@@ -28,6 +28,7 @@ import me.arblitroshani.androidtest.model.Service;
 public class ServicesFragment extends Fragment {
 
     private List<Service> myDataset;
+    private List<String> serviceIds;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -67,10 +68,19 @@ public class ServicesFragment extends Fragment {
                     @Override
                     public void onEvent(QuerySnapshot snapshot, FirebaseFirestoreException e) {
                         if (e != null) return; // listen failed
-
-                        myDataset = snapshot.toObjects(Service.class);
-                        mAdapter = new ServicesAdapter(myDataset);
-                        mRecyclerView.setAdapter(mAdapter);
+                        if (snapshot != null) {
+//                            myDataset = snapshot.toObjects(Service.class);
+//                            mAdapter = new ServicesAdapter(myDataset);
+//
+                            myDataset = new ArrayList<>();
+                            serviceIds = new ArrayList<>();
+                            for (QueryDocumentSnapshot doc : snapshot) {
+                                myDataset.add(doc.toObject(Service.class));
+                                serviceIds.add(doc.getId());
+                            }
+                            mAdapter = new ServicesAdapter(myDataset, serviceIds);
+                            mRecyclerView.setAdapter(mAdapter);
+                        }
                     }
                 });
     }
