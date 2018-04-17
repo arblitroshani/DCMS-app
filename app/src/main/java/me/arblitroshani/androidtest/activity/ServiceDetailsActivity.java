@@ -33,7 +33,7 @@ import java.util.List;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.adapter.ServiceDoctorsAdapter;
 import me.arblitroshani.androidtest.adapter.ServicePhotosAdapter;
-import me.arblitroshani.androidtest.extras.GlideApp;
+import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.model.DoctorBasic;
 import me.arblitroshani.androidtest.model.Service;
 

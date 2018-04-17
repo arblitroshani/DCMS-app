@@ -36,7 +36,7 @@ import java.util.List;
 
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.adapter.FragmentAdapter;
-import me.arblitroshani.androidtest.extras.GlideApp;
+import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.fragment.ServicesFragment;
 import me.arblitroshani.androidtest.fragment.ShareFragment;
 import me.arblitroshani.androidtest.model.User;

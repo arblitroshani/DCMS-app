@@ -1,4 +1,4 @@
-package me.arblitroshani.androidtest.extras;
+package me.arblitroshani.androidtest;
 
 import android.content.Context;
 

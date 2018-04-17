@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,8 +19,11 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import me.arblitroshani.androidtest.R;
-import me.arblitroshani.androidtest.extras.GlideApp;
+import me.arblitroshani.androidtest.GlideApp;
+import me.arblitroshani.androidtest.adapter.PhotoFullPopupWindow;
 import me.arblitroshani.androidtest.model.User;
+
+import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
 
 public class ProfileInfoFragment extends Fragment {
 
@@ -59,11 +61,18 @@ public class ProfileInfoFragment extends Fragment {
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        String photoPath = User.getHighResGmailPhotoUrl(currentUser.getPhotoUrl());
+        final String photoPath = User.getHighResGmailPhotoUrl(currentUser.getPhotoUrl());
         GlideApp.with(this)
                 .load(photoPath)
                 .apply(RequestOptions.circleCropTransform())
                 .into(ivProfilePicture);
+
+        ivProfilePicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new PhotoFullPopupWindow(getContext(), R.layout.popup_photo_full, view, photoPath, null);
+            }
+        });
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db.collection("users").document(currentUser.getUid());

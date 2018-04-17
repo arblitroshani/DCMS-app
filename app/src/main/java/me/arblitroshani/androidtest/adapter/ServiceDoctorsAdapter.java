@@ -15,7 +15,7 @@ import com.google.firebase.storage.StorageReference;
 import java.util.List;
 
 import me.arblitroshani.androidtest.R;
-import me.arblitroshani.androidtest.extras.GlideApp;
+import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.model.DoctorBasic;
 
 public class ServiceDoctorsAdapter extends RecyclerView.Adapter<ServiceDoctorsAdapter.ViewHolder> {

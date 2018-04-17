@@ -17,7 +17,7 @@ import java.util.List;
 
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.activity.ServiceDetailsActivity;
-import me.arblitroshani.androidtest.extras.GlideApp;
+import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.model.Service;
 
 public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHolder> {
