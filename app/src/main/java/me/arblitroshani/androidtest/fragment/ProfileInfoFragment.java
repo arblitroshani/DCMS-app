@@ -1,16 +1,16 @@
 package me.arblitroshani.androidtest.fragment;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,7 +25,7 @@ import me.arblitroshani.androidtest.model.User;
 
 public class ProfileInfoFragment extends Fragment {
 
-    private ImageView ivProfilePicture;
+    private ImageView ivProfilePicture, ivBackground;
     private TextView tvName, tvEmail, tvBday, tvPhone;
 
     public ProfileInfoFragment() {}
@@ -47,10 +47,15 @@ public class ProfileInfoFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
         ivProfilePicture = view.findViewById(R.id.ivProfilePicture);
+        ivBackground = view.findViewById(R.id.background);
         tvName = view.findViewById(R.id.tvName);
         tvEmail = view.findViewById(R.id.tvEmail);
         tvBday = view.findViewById(R.id.tvBday);
         tvPhone = view.findViewById(R.id.tvPhone);
+
+        Glide.with(this)
+                .load(R.drawable.material_design_4)
+                .into(ivBackground);
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -66,12 +71,11 @@ public class ProfileInfoFragment extends Fragment {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 User user = documentSnapshot.toObject(User.class);
-                tvName.setText(user.getName().replaceAll(" ", "\n"));
+                tvName.setText(user.getName());
                 tvEmail.setText(user.getEmail());
                 tvBday.setText(user.getBirthday());
                 tvPhone.setText(user.getPhone());
             }
         });
     }
-
 }

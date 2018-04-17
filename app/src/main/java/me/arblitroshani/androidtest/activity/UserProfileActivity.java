@@ -1,24 +1,22 @@
 package me.arblitroshani.androidtest.activity;
 
+import android.content.DialogInterface;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 
-import android.widget.TextView;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +24,6 @@ import java.util.List;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.adapter.FragmentAdapter;
 import me.arblitroshani.androidtest.fragment.ProfileInfoFragment;
-import me.arblitroshani.androidtest.fragment.ServicesFragment;
 import me.arblitroshani.androidtest.fragment.ShareFragment;
 
 public class UserProfileActivity extends AppCompatActivity {
@@ -34,6 +31,9 @@ public class UserProfileActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private FloatingActionButton fab;
+
+    private FragmentAdapter mFragmentAdapter;
+    private ProfileInfoFragment profileInfoFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +46,6 @@ public class UserProfileActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("My profile");
 
         fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Snackbar.make(findViewById(R.id.main_content), "My action", Snackbar.LENGTH_SHORT).show();
-            }
-        });
 
         tabLayout = findViewById(R.id.tabs);
         viewPager = findViewById(R.id.container);
@@ -58,25 +53,51 @@ public class UserProfileActivity extends AppCompatActivity {
         List<String> titles = new ArrayList<>();
         titles.add(getString(R.string.tab_text_3));
         titles.add(getString(R.string.tab_text_4));
-        titles.add(getString(R.string.tab_text_5));
 
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(ProfileInfoFragment.newInstance());
-        fragments.add(ShareFragment.newInstance());
+        profileInfoFragment = ProfileInfoFragment.newInstance();
+        fragments.add(profileInfoFragment);
         fragments.add(ShareFragment.newInstance());
 
         viewPager.setOffscreenPageLimit(2);
         viewPager.addOnPageChangeListener(pageChangeListener);
 
-        FragmentAdapter mFragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
+        mFragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
         viewPager.setAdapter(mFragmentAdapter);
         tabLayout.setupWithViewPager(viewPager);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // get current values
+                openDialog();
+            }
+        });
+    }
+
+    private void openDialog() {
+        LayoutInflater inflater = LayoutInflater.from(UserProfileActivity.this);
+        View subView = inflater.inflate(R.layout.dialog_editprofileinfo, null);
+
+        final EditText etDialogBday = subView.findViewById(R.id.etBday);
+        final EditText etDialogPhone = subView.findViewById(R.id.etPhone);
+
+        new AlertDialog.Builder(UserProfileActivity.this)
+                .setTitle("Edit profile info")
+                .setView(subView)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
     }
 
     private ViewPager.OnPageChangeListener pageChangeListener = new ViewPager.OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
-
         @Override
         public void onPageSelected(int position) {
             if (position == 0) {
@@ -85,7 +106,6 @@ public class UserProfileActivity extends AppCompatActivity {
                 fab.hide();
             }
         }
-
         @Override
         public void onPageScrollStateChanged(int state) {}
     };
