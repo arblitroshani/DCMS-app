@@ -38,6 +38,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
 
     implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+    implementation 'com.ryanjeffreybrooks:indefinitepagerindicator:1.0.8'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'

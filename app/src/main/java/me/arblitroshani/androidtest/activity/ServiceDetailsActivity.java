@@ -7,27 +7,22 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import me.arblitroshani.androidtest.R;
@@ -49,6 +44,7 @@ public class ServiceDetailsActivity extends AppCompatActivity {
     private RecyclerView rvPhotos;
     private RecyclerView.Adapter adapterDoctors, adapterPhotos;
     private RecyclerView.LayoutManager layoutManagerDoctors, layoutManagerPhotos;
+    private IndefinitePagerIndicator ipi;
 
     private FirebaseStorage storage;
     private StorageReference storageRefServices;
@@ -83,11 +79,16 @@ public class ServiceDetailsActivity extends AppCompatActivity {
         layoutManagerDoctors = new LinearLayoutManager(this);
         rvDoctors.setLayoutManager(layoutManagerDoctors);
 
+        ipi = findViewById(R.id.pager_indicator);
+
         rvPhotos = findViewById(R.id.rvPhotos);
         rvPhotos.setHasFixedSize(true);
         layoutManagerPhotos = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         rvPhotos.setLayoutManager(layoutManagerPhotos);
-        //rvPhotos.setNestedScrollingEnabled(false);
+        rvPhotos.setNestedScrollingEnabled(false);
+        SnapHelper snapHelper = new PagerSnapHelper();
+        snapHelper.attachToRecyclerView(rvPhotos);
+        ipi.attachToRecyclerView(rvPhotos);
 
         Intent i = getIntent();
         final Service currentService = i.getParcelableExtra("service_to_display");
