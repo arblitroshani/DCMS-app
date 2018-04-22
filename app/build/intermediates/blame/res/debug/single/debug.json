@@ -796,6 +796,10 @@
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\d3dfa062f2d4f234440abdb7f2b9ee82\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
+        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\anim_layout_animation_from_bottom.xml.flat",
+        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\anim\\layout_animation_from_bottom.xml"
+    },
+    {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_full_open_on_phone.png.flat",
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-12.0.1.aar\\d6bbb00e4adaae89023ffc3e293dba64\\res\\drawable-hdpi-v4\\common_full_open_on_phone.png"
     },
@@ -1014,6 +1018,10 @@
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\d3dfa062f2d4f234440abdb7f2b9ee82\\res\\drawable-xhdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\anim_layout_animation_fall_down.xml.flat",
+        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\anim\\layout_animation_fall_down.xml"
     },
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable_fui_ic_googleg_color_24dp.xml.flat",
@@ -1336,6 +1344,10 @@
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\d3dfa062f2d4f234440abdb7f2b9ee82\\res\\drawable-xxhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\anim_item_animation_from_bottom.xml.flat",
+        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\anim\\item_animation_from_bottom.xml"
+    },
+    {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\d3dfa062f2d4f234440abdb7f2b9ee82\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_16dp.png"
     },
@@ -1426,6 +1438,10 @@
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_item_material.xml.flat",
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\d3dfa062f2d4f234440abdb7f2b9ee82\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\anim_item_animation_from_right.xml.flat",
+        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\anim\\item_animation_from_right.xml"
     },
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fui_provider_button_email.xml.flat",
@@ -1778,6 +1794,10 @@
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg_low.xml.flat",
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.0.aar\\8e0dbf473b6f9169bbaaaaae05a2961b\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\anim_layout_animation_from_right.xml.flat",
+        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\anim\\layout_animation_from_right.xml"
     },
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-watch-v20_common_google_signin_btn_text_disabled.xml.flat",
@@ -2194,6 +2214,10 @@
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_disable_only_material_light.xml.flat",
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\d3dfa062f2d4f234440abdb7f2b9ee82\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\anim_item_animation_fall_down.xml.flat",
+        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\anim\\item_animation_fall_down.xml"
     },
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark_focused.xml.flat",

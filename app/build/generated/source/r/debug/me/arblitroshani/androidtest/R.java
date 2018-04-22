@@ -29,6 +29,12 @@ public final class R {
     public static final int design_snackbar_out=0x7f010011;
     public static final int fui_slide_in_right=0x7f010012;
     public static final int fui_slide_out_left=0x7f010013;
+    public static final int item_animation_fall_down=0x7f010014;
+    public static final int item_animation_from_bottom=0x7f010015;
+    public static final int item_animation_from_right=0x7f010016;
+    public static final int layout_animation_fall_down=0x7f010017;
+    public static final int layout_animation_from_bottom=0x7f010018;
+    public static final int layout_animation_from_right=0x7f010019;
   }
   public static final class animator {
     public static final int design_appbar_state_list_animator=0x7f020000;

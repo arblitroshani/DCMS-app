@@ -19,6 +19,12 @@ int anim design_snackbar_in 0x7f010010
 int anim design_snackbar_out 0x7f010011
 int anim fui_slide_in_right 0x7f010012
 int anim fui_slide_out_left 0x7f010013
+int anim item_animation_fall_down 0x7f010014
+int anim item_animation_from_bottom 0x7f010015
+int anim item_animation_from_right 0x7f010016
+int anim layout_animation_fall_down 0x7f010017
+int anim layout_animation_from_bottom 0x7f010018
+int anim layout_animation_from_right 0x7f010019
 int animator design_appbar_state_list_animator 0x7f020000
 int attr actionBarDivider 0x7f030000
 int attr actionBarItemBackground 0x7f030001
