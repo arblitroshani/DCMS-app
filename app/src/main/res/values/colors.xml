@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4285F4</color>
-    <color name="colorPrimaryDark">#3367D6</color>
-    <color name="colorAccent">#FFC400</color>
+    <!--<color name="colorPrimary">#4285F4</color>-->
+    <!--<color name="colorPrimaryDark">#3367D6</color>-->
+    <!--<color name="colorAccent">#FFC400</color>-->
+
+    <color name="colorPrimary">@color/dark_slate_gray</color>
+    <color name="colorAccent">@color/saffron</color>
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>

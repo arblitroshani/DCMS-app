@@ -11,38 +11,13 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activity.MainActivity"
+            android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".activity.CreateUserProfileActivity"
-            android:label="@string/title_activity_create_user_profile"
-            android:parentActivityName=".activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="me.arblitroshani.androidtest.activity.MainActivity" />
-        </activity>
-        <activity
-            android:name=".activity.ServiceDetailsActivity"
-            android:label="@string/title_activity_service_details"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="me.arblitroshani.androidtest.activity.MainActivity" />
-        </activity>
-        <activity
-            android:name=".activity.UserProfileActivity"
-            android:label="@string/title_activity_user_profile"
-            android:parentActivityName=".activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="me.arblitroshani.androidtest.activity.MainActivity" />
         </activity>
     </application>
 
