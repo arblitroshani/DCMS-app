@@ -30,4 +30,10 @@
     <dimen name="appbar_padding_top">8dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+
+
+    <!-- MY DIMENSIONS -->
+    <dimen name="card_main_title">35sp</dimen>
+    <dimen name="card_main_title_margin_left">75dp</dimen>
+    <dimen name="card_main_icon_margin_top">5dp</dimen>
 </resources>

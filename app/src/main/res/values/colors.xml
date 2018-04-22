@@ -21,4 +21,19 @@
 
     <!-- Text -->
     <color name="text_white_primary">@color/white</color>
+
+
+    <!-- MY PALETTES -->
+    <color name="anti_flash_white">#edf2f4</color>
+    <color name="gunmetal">#2b2d42</color>
+    <color name="gray_blue">#8d99ae</color>
+    <color name="red_pantone">#ef233c</color>
+
+    <color name="turqoise">#55dde0</color>
+    <color name="teal_blue">#33658a</color>
+    <color name="dark_slate_gray">#2f4858</color>
+    <color name="saffron">#f6ae2d</color>
+    <color name="giants_orange">#f26419</color>
+    <color name="giants_orange_light">#f67e2d</color>
+
 </resources>

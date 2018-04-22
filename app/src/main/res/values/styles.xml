@@ -46,4 +46,45 @@
         <item name="android:textColor">@color/text_white_primary</item>
     </style>
 
+    <!-- My Themes -->
+    <style name="MainCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/main_card_margin_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/main_card_margin_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/main_card_margin_vertical</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="cardCornerRadius">@dimen/card_recycler_corner_radius</item>
+        <item name="cardElevation">@dimen/card_recycler_elevation</item>
+    </style>
+
+    <style name="MainCardTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_marginStart">@dimen/card_main_title_margin_left</item>
+        <item name="android:layout_marginTop">@dimen/card_title_margin_top</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="android:textColor">@color/anti_flash_white</item>
+        <item name="android:textSize">@dimen/card_main_title</item>
+    </style>
+
+    <style name="MainCardSubtitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/card_subtitle_margin</item>
+        <item name="android:layout_marginBottom">@dimen/card_subtitle_margin</item>
+        <item name="android:layout_marginStart">@dimen/card_subtitle_margin</item>
+        <item name="android:layout_marginTop">@dimen/card_button_margin</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/anti_flash_white</item>
+    </style>
+
+    <style name="MainCardImage">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/card_main_icon_margin_top</item>
+    </style>
+
 </resources>

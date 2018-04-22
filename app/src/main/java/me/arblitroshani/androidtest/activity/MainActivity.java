@@ -49,8 +49,6 @@ public class MainActivity extends AppCompatActivity
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
 
     private TextView tvEmail;
     private ImageView ivProfilePicture;
@@ -65,16 +63,13 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        AppBarLayout appBarLayout = findViewById(R.id.app_bar);
+        //AppBarLayout appBarLayout = findViewById(R.id.app_bar);
         //appBarLayout.setExpanded(false,  true);
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        tabLayout = findViewById(R.id.tabs);
-        viewPager = findViewById(R.id.view_pager_main);
 
         View headerView = navigationView.getHeaderView(0);
         tvEmail = headerView.findViewById(R.id.tvEmail);
@@ -108,41 +103,8 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        List<String> titles = new ArrayList<>();
-        titles.add(getString(R.string.tab_text_1));
-        titles.add(getString(R.string.tab_text_2));
-
-        List<Fragment> fragments = new ArrayList<>();
-        fragments.add(ServicesFragment.newInstance());
-        fragments.add(ShareFragment.newInstance());
-
-        viewPager.setOffscreenPageLimit(2);
-
-        FragmentAdapter mFragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
-        viewPager.setAdapter(mFragmentAdapter);
-        tabLayout.setupWithViewPager(viewPager);
-
-        // viewPager.addOnPageChangeListener(pageChangeListener);
-
         navigationView.getMenu().getItem(0).setChecked(true);
     }
-
-    private ViewPager.OnPageChangeListener pageChangeListener = new ViewPager.OnPageChangeListener() {
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
-
-        @Override
-        public void onPageSelected(int position) {
-//            if (position == 2) {
-//                fab.show();
-//            } else {
-//                fab.hide();
-//            }
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int state) {}
-    };
 
     @Override
     public void onBackPressed() {
