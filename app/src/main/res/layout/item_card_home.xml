@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MainCard"
+    android:id="@+id/card_main">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/MainCardTitle"
+            android:id="@+id/tv_card_main_title"/>
+
+        <TextView
+            style="@style/MainCardSubtitle"
+            android:id="@+id/tv_card_main_subtitle"
+            android:layout_below="@id/tv_card_main_title"/>
+
+        <ImageView
+            style="@style/MainCardImage"
+            android:id="@+id/imageView"
+            android:layout_alignBottom="@+id/tv_card_main_title"
+            android:layout_alignTop="@+id/tv_card_main_title" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

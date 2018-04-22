@@ -34,6 +34,9 @@
 
     <!-- MY DIMENSIONS -->
     <dimen name="card_main_title">35sp</dimen>
-    <dimen name="card_main_title_margin_left">75dp</dimen>
+    <dimen name="card_main_title_margin_start">75dp</dimen>
     <dimen name="card_main_icon_margin_top">5dp</dimen>
+    <dimen name="card_main_icon_margin_start">16dp</dimen>
+    <dimen name="card_main_subtitle_margin_start">22dp</dimen>
+
 </resources>
