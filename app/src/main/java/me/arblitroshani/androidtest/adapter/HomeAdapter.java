@@ -1,6 +1,8 @@
 package me.arblitroshani.androidtest.adapter;
 
 import android.content.Context;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import me.arblitroshani.androidtest.R;
+import me.arblitroshani.androidtest.activity.MainActivity;
 import me.arblitroshani.androidtest.model.HomeSection;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
@@ -41,9 +44,19 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     @Override
     public HomeAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
+        final MainActivity mainActivity = (MainActivity) context;
         View v = LayoutInflater.from(context)
                 .inflate(R.layout.item_card_home, parent, false);
-        return new ViewHolder(v);
+        final ViewHolder holder = new ViewHolder(v);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int position = myDataset.get(holder.getAdapterPosition()).getFragmentOpen();
+                mainActivity.selectTab(position);
+            }
+        });
+        return holder;
     }
 
     @Override

@@ -49,14 +49,49 @@ public class HomeFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        myDataset.add(new HomeSection("Profile", "this is a subtitle", getResources().getColor(R.color.teal_blue), R.drawable.ic_account_circle_white_48dp));
-        myDataset.add(new HomeSection("Appointments", "this is a subtitle", getResources().getColor(R.color.dark_slate_gray), R.drawable.ic_today_white_48dp));
-        myDataset.add(new HomeSection("Treatments", "this is a subtitle", getResources().getColor(R.color.gunmetal), R.drawable.ic_receipt_white_48dp));
-        myDataset.add(new HomeSection("Our services", "this is a subtitle", getResources().getColor(R.color.saffron), R.drawable.ic_dashboard_white_48dp));
-        myDataset.add(new HomeSection("Clinic info", "this is a subtitle", getResources().getColor(R.color.giants_orange_light), R.drawable.ic_info_outline_white_48dp));
+        myDataset.clear();
+        addData();
 
         mAdapter = new HomeAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
+    }
+
+    private void addData() {
+        myDataset.add(new HomeSection(
+                "Profile",
+                "this is a subtitle",
+                0,
+                getResources().getColor(R.color.teal_blue),
+                R.drawable.ic_account_circle_white_48dp)
+        );
+        myDataset.add(new HomeSection(
+                "Appointments",
+                "this is a subtitle",
+                0,
+                getResources().getColor(R.color.dark_slate_gray),
+                R.drawable.ic_today_white_48dp)
+        );
+        myDataset.add(new HomeSection(
+                "Treatments",
+                "this is a subtitle",
+                0,
+                getResources().getColor(R.color.gunmetal),
+                R.drawable.ic_receipt_white_48dp)
+        );
+        myDataset.add(new HomeSection(
+                "Our services",
+                "this is a subtitle",
+                4,
+                getResources().getColor(R.color.saffron),
+                R.drawable.ic_dashboard_white_48dp)
+        );
+        myDataset.add(new HomeSection(
+                "Clinic info",
+                "this is a subtitle",
+                0,
+                getResources().getColor(R.color.giants_orange_light),
+                R.drawable.ic_info_outline_white_48dp)
+        );
     }
 
 }

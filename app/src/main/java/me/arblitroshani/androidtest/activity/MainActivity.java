@@ -1,9 +1,11 @@
 package me.arblitroshani.androidtest.activity;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,6 +16,8 @@ import android.view.MenuItem;
 
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.fragment.HomeFragment;
+import me.arblitroshani.androidtest.fragment.ServicesFragment;
+import me.arblitroshani.androidtest.model.Service;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -37,8 +41,7 @@ public class MainActivity extends AppCompatActivity
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        navigationView.getMenu().getItem(0).setChecked(true);
-        onNavigationItemSelected(navigationView.getMenu().getItem(0));
+        selectTab(0);
     }
 
     @Override
@@ -47,7 +50,16 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            int count = getFragmentManager().getBackStackEntryCount();
+            if (count == 0) {
+                finish();
+            } else {
+                if (getFragmentManager().getBackStackEntryCount() > 1) {
+                    getFragmentManager().popBackStack();
+                } else {
+                    super.onBackPressed();
+                }
+            }
         }
     }
 
@@ -75,7 +87,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
-        Fragment fragment = null;
+        Fragment fragment;
         Class fragmentClass;
         int id = item.getItemId();
 
@@ -88,7 +100,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_treatments) {
             fragmentClass = HomeFragment.class;
         } else if (id == R.id.nav_services) {
-            fragmentClass = HomeFragment.class;
+            fragmentClass = ServicesFragment.class;
         } else if (id == R.id.nav_clinic) {
             fragmentClass = HomeFragment.class;
         } else if (id == R.id.nav_settings) {
@@ -99,20 +111,38 @@ public class MainActivity extends AppCompatActivity
             fragmentClass = HomeFragment.class;
         }
 
-        try {
-            fragment = (Fragment) fragmentClass.newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
+        String tag = String.valueOf(item.getTitle());
+        FragmentManager fm = getSupportFragmentManager();
+        fragment = fm.findFragmentByTag(tag);
+
+        if (fragment != null) {
+            fm.popBackStackImmediate(tag, 0);
+        } else {
+            try {
+                fragment = (Fragment) fragmentClass.newInstance();
+
+                FragmentTransaction transaction = fm.beginTransaction()
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .replace(R.id.flContent, fragment, tag);
+
+                if (fm.getFragments() != null)
+                    transaction.addToBackStack(tag);
+
+                transaction.commit();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
-
         item.setChecked(true);
-        setTitle(item.getTitle());
-        // drawer.closeDrawers();
+        setTitle(tag);
         drawer.closeDrawer(GravityCompat.START);
 
         return true;
+    }
+
+    public void selectTab(int position) {
+        navigationView.getMenu().getItem(position).setChecked(true);
+        onNavigationItemSelected(navigationView.getMenu().getItem(position));
     }
 }

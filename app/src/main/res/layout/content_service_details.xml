@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<me.arblitroshani.androidtest.extra.MyNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.ServiceDetailsActivity"
+    tools:showIn="@layout/activity_service_details">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/card_main_subtitle"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+            card_view:cardElevation="@dimen/card_recycler_elevation">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/text_margin"
+                    android:layout_marginVertical="10dp"
+                    android:text="Info"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="20sp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#eeeeee" />
+                <TextView
+                    android:id="@+id/tvSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/card_main_description"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+            card_view:cardElevation="@dimen/card_recycler_elevation">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-light"
+                    android:layout_marginStart="@dimen/text_margin"
+                    android:layout_marginVertical="10dp"
+                    android:text="Description"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#eeeeee" />
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/text_margin" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/card_main_doctors"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+            card_view:cardElevation="@dimen/card_recycler_elevation">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-light"
+                    android:layout_marginStart="@dimen/text_margin"
+                    android:layout_marginVertical="10dp"
+                    android:text="Doctors"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#eeeeee" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvDoctors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingBottom="8dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    android:scrollbars="vertical" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/card_main_photos"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+            card_view:cardElevation="@dimen/card_recycler_elevation">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-light"
+                    android:layout_marginStart="@dimen/text_margin"
+                    android:layout_marginTop="10dp"
+                    android:text="Photos"/>
+                <com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator
+                    android:id="@+id/pager_indicator"
+                    app:dotRadius="2.5dp"
+                    app:selectedDotRadius="3dp"
+                    app:dotColor="#B2B2B2"
+                    app:selectedDotColor="#3897F0"
+                    app:dotSeparation="4dp"
+                    app:dotCount="7"
+                    android:layout_marginBottom="8dp"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvPhotos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</me.arblitroshani.androidtest.extra.MyNestedScrollView>

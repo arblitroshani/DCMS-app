@@ -39,6 +39,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="me.arblitroshani.androidtest.activity.ServiceDetailsActivity"
+            android:label="@string/title_activity_service_details"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+        </activity>
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"

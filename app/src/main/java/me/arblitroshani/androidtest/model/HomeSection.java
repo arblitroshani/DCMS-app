@@ -1,17 +1,17 @@
 package me.arblitroshani.androidtest.model;
 
-import android.graphics.Color;
-
 public class HomeSection {
 
     private String title;
     private String subtitle;
+    private int fragmentOpen;
     private int backgroundColor;
     private int icon;
 
-    public HomeSection(String title, String subtitle, int backgroundColor, int icon) {
+    public HomeSection(String title, String subtitle, int fragmentOpen, int backgroundColor, int icon) {
         this.title = title;
         this.subtitle = subtitle;
+        this.fragmentOpen = fragmentOpen;
         this.backgroundColor = backgroundColor;
         this.icon = icon;
     }
@@ -30,6 +30,14 @@ public class HomeSection {
 
     public void setSubtitle(String subtitle) {
         this.subtitle = subtitle;
+    }
+
+    public int getFragmentOpen() {
+        return fragmentOpen;
+    }
+
+    public void setFragmentOpen(int fragmentOpen) {
+        this.fragmentOpen = fragmentOpen;
     }
 
     public int getBackgroundColor() {

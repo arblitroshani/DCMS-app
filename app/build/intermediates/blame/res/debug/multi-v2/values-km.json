@@ -4,24 +4,7 @@
             "outputFile": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-km\\values-km.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\d3dfa062f2d4f234440abdb7f2b9ee82\\res\\values-km\\values-km.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,208,308,420,507,611,729,806,883,966,1070,1175,1275,1385,1492,1600,1762,1860",
-                        "endColumns": "102,99,111,86,103,117,76,76,82,103,104,99,109,106,107,161,97,82",
-                        "endOffsets": "203,303,415,502,606,724,801,878,961,1065,1170,1270,1380,1487,1595,1757,1855,1938"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,208,308,420,507,611,729,806,883,966,1070,1175,1275,1385,1492,1600,1762,4559",
-                        "endColumns": "102,99,111,86,103,117,76,76,82,103,104,99,109,106,107,161,97,82",
-                        "endOffsets": "203,303,415,502,606,724,801,878,961,1065,1170,1270,1380,1487,1595,1757,1855,4637"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-12.0.1.aar\\bf729da6efce2f55bab216e0d0b3b8fd\\res\\values-km\\values.xml",
+                    "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-12.0.1.aar\\461e44c279e602241eda26e4db75a037\\res\\values-km\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.0.aar\\8e0dbf473b6f9169bbaaaaae05a2961b\\res\\values-km\\values-km.xml",
+                    "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\5c07533b7e1d1c9a6602e791415ba904\\res\\values-km\\values-km.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,208,308,420,507,611,729,806,883,966,1070,1175,1275,1385,1492,1600,1762,1860",
+                        "endColumns": "102,99,111,86,103,117,76,76,82,103,104,99,109,106,107,161,97,82",
+                        "endOffsets": "203,303,415,502,606,724,801,878,961,1065,1170,1270,1380,1487,1595,1757,1855,1938"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,208,308,420,507,611,729,806,883,966,1070,1175,1275,1385,1492,1600,1762,4559",
+                        "endColumns": "102,99,111,86,103,117,76,76,82,103,104,99,109,106,107,161,97,82",
+                        "endOffsets": "203,303,415,502,606,724,801,878,961,1065,1170,1270,1380,1487,1595,1757,1855,4637"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.0.aar\\65a958c67fbbabc3a26fc56d07d3b610\\res\\values-km\\values-km.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-12.0.1.aar\\d6bbb00e4adaae89023ffc3e293dba64\\res\\values-km\\values.xml",
+                    "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-12.0.1.aar\\74682203f75d13e9fdeee7a036d3bc98\\res\\values-km\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
