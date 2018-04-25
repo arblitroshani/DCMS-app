@@ -51,7 +51,6 @@ public class ServicesFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        // set animation here
         Animation animation = AnimationUtils.loadAnimation(this.getContext(), R.anim.anim_about_card_show);
         FrameLayout flServices = view.findViewById(R.id.frameLayout);
         flServices.startAnimation(animation);

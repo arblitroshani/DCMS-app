@@ -50,8 +50,9 @@ public class MainActivity extends AppCompatActivity
         } else {
             if (navigationView.getMenu().findItem(R.id.nav_home).isChecked()) {
                 finish();
+            } else {
+                selectTab(R.id.nav_home);
             }
-            selectTab(R.id.nav_home);
         }
     }
 

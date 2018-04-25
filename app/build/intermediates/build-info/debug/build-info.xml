@@ -7,25 +7,28 @@
     format="10"
     ir-eligibility="REFLECTION_USED"
     plugin-version="3.1.2"
-    timestamp="1524694800781"
+    timestamp="1524696841701"
     token="-5114247391884262981"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="2488" />
+        duration="2438" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="37" />
+        duration="54" />
     <task
         name="verifier"
-        duration="10" />
+        duration="6" />
 
     <artifact
         location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
         type="SPLIT" />
 
     <build
@@ -90,9 +93,6 @@
             location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
@@ -107,8 +107,8 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1524693027392"
-        verifier="REFLECTION_USED" >
+        timestamp="1524696307571"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
@@ -116,10 +116,13 @@
     <build
         build-mode="COLD"
         ir-eligibility="REFLECTION_USED"
-        timestamp="1524694800781"
+        timestamp="1524696841701"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
     </build>
 
