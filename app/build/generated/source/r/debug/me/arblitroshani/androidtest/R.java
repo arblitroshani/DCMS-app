@@ -2239,7 +2239,7 @@ public final class R {
      * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>
@@ -4556,35 +4556,29 @@ public final class R {
     public static final int google_crash_reporting_api_key=0x7f0e0083;
     public static final int google_storage_bucket=0x7f0e0084;
     public static final int hello_blank_fragment=0x7f0e0085;
-    public static final int large_text=0x7f0e0086;
-    public static final int nav_header_desc=0x7f0e0087;
-    public static final int nav_header_subtitle=0x7f0e0088;
-    public static final int nav_header_title=0x7f0e0089;
-    public static final int navigation_drawer_close=0x7f0e008a;
-    public static final int navigation_drawer_open=0x7f0e008b;
-    public static final int password_toggle_content_description=0x7f0e008c;
-    public static final int path_password_eye=0x7f0e008d;
-    public static final int path_password_eye_mask_strike_through=0x7f0e008e;
-    public static final int path_password_eye_mask_visible=0x7f0e008f;
-    public static final int path_password_strike_through=0x7f0e0090;
-    public static final int project_id=0x7f0e0091;
-    public static final int search_menu_title=0x7f0e0092;
-    public static final int section_format=0x7f0e0093;
-    public static final int status_bar_notification_info_overflow=0x7f0e0094;
-    public static final int tab_text_1=0x7f0e0095;
-    public static final int tab_text_2=0x7f0e0096;
-    public static final int tab_text_3=0x7f0e0097;
-    public static final int tab_text_4=0x7f0e0098;
-    public static final int tab_text_5=0x7f0e0099;
-    public static final int title_activity_create_user_profile=0x7f0e009a;
-    public static final int title_activity_home=0x7f0e009b;
-    public static final int title_activity_main=0x7f0e009c;
-    public static final int title_activity_main2=0x7f0e009d;
-    public static final int title_activity_scervice_details=0x7f0e009e;
-    public static final int title_activity_service_details=0x7f0e009f;
-    public static final int title_activity_user_profile=0x7f0e00a0;
-    public static final int twitter_consumer_key=0x7f0e00a1;
-    public static final int twitter_consumer_secret=0x7f0e00a2;
+    public static final int nav_header_desc=0x7f0e0086;
+    public static final int nav_header_subtitle=0x7f0e0087;
+    public static final int nav_header_title=0x7f0e0088;
+    public static final int navigation_drawer_close=0x7f0e0089;
+    public static final int navigation_drawer_open=0x7f0e008a;
+    public static final int password_toggle_content_description=0x7f0e008b;
+    public static final int path_password_eye=0x7f0e008c;
+    public static final int path_password_eye_mask_strike_through=0x7f0e008d;
+    public static final int path_password_eye_mask_visible=0x7f0e008e;
+    public static final int path_password_strike_through=0x7f0e008f;
+    public static final int project_id=0x7f0e0090;
+    public static final int search_menu_title=0x7f0e0091;
+    public static final int section_format=0x7f0e0092;
+    public static final int status_bar_notification_info_overflow=0x7f0e0093;
+    public static final int title_activity_create_user_profile=0x7f0e0094;
+    public static final int title_activity_home=0x7f0e0095;
+    public static final int title_activity_main=0x7f0e0096;
+    public static final int title_activity_main2=0x7f0e0097;
+    public static final int title_activity_scervice_details=0x7f0e0098;
+    public static final int title_activity_service_details=0x7f0e0099;
+    public static final int title_activity_user_profile=0x7f0e009a;
+    public static final int twitter_consumer_key=0x7f0e009b;
+    public static final int twitter_consumer_secret=0x7f0e009c;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0f0000;
@@ -9935,7 +9929,7 @@ public final class R {
      * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>

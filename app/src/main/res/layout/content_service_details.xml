@@ -151,10 +151,11 @@
                     app:dotColor="#B2B2B2"
                     app:selectedDotColor="#3897F0"
                     app:dotSeparation="4dp"
-                    app:dotCount="7"
+                    app:dotCount="5"
                     android:layout_marginBottom="8dp"
                     android:layout_gravity="center"
-                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rvPhotos"

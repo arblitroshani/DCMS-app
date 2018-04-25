@@ -1,7 +1,6 @@
 package me.arblitroshani.androidtest.activity;
 
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.design.widget.NavigationView;
@@ -17,7 +16,6 @@ import android.view.MenuItem;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.fragment.HomeFragment;
 import me.arblitroshani.androidtest.fragment.ServicesFragment;
-import me.arblitroshani.androidtest.model.Service;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        selectTab(0);
+        selectTab(R.id.nav_home);
     }
 
     @Override
@@ -50,16 +48,10 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            int count = getFragmentManager().getBackStackEntryCount();
-            if (count == 0) {
+            if (navigationView.getMenu().findItem(R.id.nav_home).isChecked()) {
                 finish();
-            } else {
-                if (getFragmentManager().getBackStackEntryCount() > 1) {
-                    getFragmentManager().popBackStack();
-                } else {
-                    super.onBackPressed();
-                }
             }
+            selectTab(R.id.nav_home);
         }
     }
 
@@ -125,8 +117,8 @@ public class MainActivity extends AppCompatActivity
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .replace(R.id.flContent, fragment, tag);
 
-                if (fm.getFragments() != null)
-                    transaction.addToBackStack(tag);
+//                if (fm.getFragments() != null)
+//                    transaction.addToBackStack(tag);
 
                 transaction.commit();
             } catch (Exception e) {
@@ -134,6 +126,7 @@ public class MainActivity extends AppCompatActivity
             }
         }
 
+        uncheckAllMenuItems();
         item.setChecked(true);
         setTitle(tag);
         drawer.closeDrawer(GravityCompat.START);
@@ -142,7 +135,16 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void selectTab(int position) {
-        navigationView.getMenu().getItem(position).setChecked(true);
-        onNavigationItemSelected(navigationView.getMenu().getItem(position));
+        uncheckAllMenuItems();
+        MenuItem item = navigationView.getMenu().findItem(position);
+        item.setChecked(true);
+        onNavigationItemSelected(item);
+    }
+
+    private void uncheckAllMenuItems() {
+        int size = navigationView.getMenu().size();
+        for (int i = 0; i < size; i++) {
+            navigationView.getMenu().getItem(i).setChecked(false);
+        }
     }
 }

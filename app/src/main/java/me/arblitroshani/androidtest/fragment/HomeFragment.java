@@ -60,35 +60,35 @@ public class HomeFragment extends Fragment {
         myDataset.add(new HomeSection(
                 "Profile",
                 "this is a subtitle",
-                0,
+                R.id.nav_home,
                 getResources().getColor(R.color.teal_blue),
                 R.drawable.ic_account_circle_white_48dp)
         );
         myDataset.add(new HomeSection(
                 "Appointments",
                 "this is a subtitle",
-                0,
+                R.id.nav_home,
                 getResources().getColor(R.color.dark_slate_gray),
                 R.drawable.ic_today_white_48dp)
         );
         myDataset.add(new HomeSection(
                 "Treatments",
                 "this is a subtitle",
-                0,
+                R.id.nav_home,
                 getResources().getColor(R.color.gunmetal),
                 R.drawable.ic_receipt_white_48dp)
         );
         myDataset.add(new HomeSection(
                 "Our services",
                 "this is a subtitle",
-                4,
+                R.id.nav_services,
                 getResources().getColor(R.color.saffron),
                 R.drawable.ic_dashboard_white_48dp)
         );
         myDataset.add(new HomeSection(
                 "Clinic info",
                 "this is a subtitle",
-                0,
+                R.id.nav_home,
                 getResources().getColor(R.color.giants_orange_light),
                 R.drawable.ic_info_outline_white_48dp)
         );
