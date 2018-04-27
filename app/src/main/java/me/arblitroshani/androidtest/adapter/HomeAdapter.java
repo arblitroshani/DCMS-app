@@ -52,8 +52,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int position = myDataset.get(holder.getAdapterPosition()).getFragmentOpen();
-                mainActivity.selectTab(position);
+                String fragmentOpen = myDataset.get(holder.getAdapterPosition()).getFragmentOpen();
+                mainActivity.replaceFragment(fragmentOpen);
             }
         });
         return holder;

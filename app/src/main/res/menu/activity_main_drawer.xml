@@ -3,42 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Home" />
-        <item
-            android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Profile" />
-        <item
-            android:id="@+id/nav_appointments"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Appointments" />
-        <item
-            android:id="@+id/nav_treatments"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Treatments" />
-    </group>
-
-    <item android:title="Clinic">
-        <menu>
-            <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/nav_services"
-                    android:icon="@drawable/ic_menu_manage"
-                    android:title="Our services" />
-                <item
-                    android:id="@+id/nav_clinic"
-                    android:icon="@drawable/ic_menu_manage"
-                    android:title="Clinic info" />
-            </group>
-        </menu>
-    </item>
-
-    <item android:title="Other">
-        <menu>
+    <group>
+        <group android:checkableBehavior="single" android:id="@+id/group_items">
+            <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Home" />
+            <item
+                android:id="@+id/nav_services"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Our services" />
+            <item
+                android:id="@+id/nav_clinic"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Clinic info" />
+        </group>
+        <group android:checkableBehavior="single" android:id="@+id/group_items2">
             <item
                 android:id="@+id/nav_settings"
                 android:icon="@drawable/ic_menu_manage"
@@ -47,7 +27,6 @@
                 android:id="@+id/nav_help"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Help" />
-        </menu>
-    </item>
-
+        </group>
+    </group>
 </menu>

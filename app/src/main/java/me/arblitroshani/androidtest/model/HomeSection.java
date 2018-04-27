@@ -4,11 +4,11 @@ public class HomeSection {
 
     private String title;
     private String subtitle;
-    private int fragmentOpen;
+    private String fragmentOpen;
     private int backgroundColor;
     private int icon;
 
-    public HomeSection(String title, String subtitle, int fragmentOpen, int backgroundColor, int icon) {
+    public HomeSection(String title, String subtitle, String fragmentOpen, int backgroundColor, int icon) {
         this.title = title;
         this.subtitle = subtitle;
         this.fragmentOpen = fragmentOpen;
@@ -32,11 +32,11 @@ public class HomeSection {
         this.subtitle = subtitle;
     }
 
-    public int getFragmentOpen() {
+    public String getFragmentOpen() {
         return fragmentOpen;
     }
 
-    public void setFragmentOpen(int fragmentOpen) {
+    public void setFragmentOpen(String fragmentOpen) {
         this.fragmentOpen = fragmentOpen;
     }
 

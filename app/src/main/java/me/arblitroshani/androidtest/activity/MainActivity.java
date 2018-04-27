@@ -10,8 +10,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.fragment.HomeFragment;
@@ -22,6 +26,8 @@ public class MainActivity extends AppCompatActivity
 
     private DrawerLayout drawer;
     private NavigationView navigationView;
+
+    private Map<String, Integer> itemIds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +45,11 @@ public class MainActivity extends AppCompatActivity
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        selectTab(R.id.nav_home);
+        itemIds = new HashMap<>();
+        itemIds.put("Services", R.id.nav_services);
+        itemIds.put("Clinic", R.id.nav_clinic);
+
+        replaceFragment(R.id.nav_home);
     }
 
     @Override
@@ -51,7 +61,7 @@ public class MainActivity extends AppCompatActivity
             if (navigationView.getMenu().findItem(R.id.nav_home).isChecked()) {
                 finish();
             } else {
-                selectTab(R.id.nav_home);
+                replaceFragment(R.id.nav_home);
             }
         }
     }
@@ -80,70 +90,79 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
-        Fragment fragment;
-        Class fragmentClass;
+        String fragmentClassName;
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            fragmentClass = HomeFragment.class;
-        } else if (id == R.id.nav_profile) {
-            fragmentClass = HomeFragment.class;
-        } else if (id == R.id.nav_appointments) {
-            fragmentClass = HomeFragment.class;
-        } else if (id == R.id.nav_treatments) {
-            fragmentClass = HomeFragment.class;
+            fragmentClassName = "Home";
         } else if (id == R.id.nav_services) {
-            fragmentClass = ServicesFragment.class;
+            fragmentClassName = "Services";
         } else if (id == R.id.nav_clinic) {
-            fragmentClass = HomeFragment.class;
+            fragmentClassName = "Home";
         } else if (id == R.id.nav_settings) {
-            fragmentClass = HomeFragment.class;
+            fragmentClassName = "Home";
         } else if (id == R.id.nav_help) {
-            fragmentClass = HomeFragment.class;
+            fragmentClassName = "Home";
         } else {
-            fragmentClass = HomeFragment.class;
+            fragmentClassName = "Home";
         }
 
-        String tag = String.valueOf(item.getTitle());
-        FragmentManager fm = getSupportFragmentManager();
-        fragment = fm.findFragmentByTag(tag);
-
-        if (fragment != null) {
-            fm.popBackStackImmediate(tag, 0);
-        } else {
-            try {
-                fragment = (Fragment) fragmentClass.newInstance();
-
-                FragmentTransaction transaction = fm.beginTransaction()
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                        .replace(R.id.flContent, fragment, tag);
-
-//                if (fm.getFragments() != null)
-//                    transaction.addToBackStack(tag);
-
-                transaction.commit();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-        uncheckAllMenuItems();
+        replaceFragment(fragmentClassName);
         item.setChecked(true);
-        setTitle(tag);
+        setTitle(fragmentClassName);
+
         drawer.closeDrawer(GravityCompat.START);
 
         return true;
     }
 
-    public void selectTab(int position) {
+    public void replaceFragment(String className) {
         uncheckAllMenuItems();
-        MenuItem item = navigationView.getMenu().findItem(position);
-        item.setChecked(true);
-        onNavigationItemSelected(item);
+        Fragment fragment;
+        try {
+            FragmentManager fm = getSupportFragmentManager();
+            fragment = fm.findFragmentByTag(className);
+
+            if (fragment != null) {
+                fm.popBackStackImmediate(className, 0);
+            } else {
+                fragment = (Fragment) Class.forName("me.arblitroshani.androidtest.fragment." + className + "Fragment").newInstance();
+
+                FragmentTransaction transaction = fm.beginTransaction()
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .replace(R.id.flContent, fragment, className);
+
+//                if (fm.getFragments() != null)
+//                    transaction.addToBackStack(tag);
+
+                transaction.commit();
+            }
+            setTitle(className);
+
+            // if itemIds has Title use that, else use R.id.home
+            int id;
+            if (itemIds.containsKey(className)) {
+                id = itemIds.get(className);
+            } else {
+                id = R.id.nav_home;
+            }
+            navigationView.getMenu().findItem(id).setChecked(true);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void replaceFragment(int id) {
+        onNavigationItemSelected(navigationView.getMenu().findItem(id));
     }
 
     private void uncheckAllMenuItems() {
         int size = navigationView.getMenu().size();
+        Log.d("DEBUG", "called. size is: " + size);
         for (int i = 0; i < size; i++) {
             navigationView.getMenu().getItem(i).setChecked(false);
         }
