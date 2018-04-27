@@ -24,7 +24,6 @@ import com.github.chrisbanes.photoview.PhotoView;
 
 import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.R;
-import me.arblitroshani.androidtest.extra.Constants;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
@@ -70,7 +69,7 @@ public class PhotoFullPopupWindow extends PopupWindow {
         if (bitmap != null) {
             loading.setVisibility(View.GONE);
             if (Build.VERSION.SDK_INT >= 16) {
-                parent.setBackground(new BitmapDrawable(mContext.getResources(), Constants.fastblur(Bitmap.createScaledBitmap(bitmap, 50, 50, true))));// ));
+                parent.setBackground(new BitmapDrawable(mContext.getResources(), PopupConstants.fastblur(Bitmap.createScaledBitmap(bitmap, 50, 50, true))));// ));
             } else {
                 onPalette(Palette.from(bitmap).generate());
 
@@ -92,7 +91,7 @@ public class PhotoFullPopupWindow extends PopupWindow {
                         @Override
                         public boolean onResourceReady(Bitmap resource, Object model, Target<Bitmap> target, DataSource dataSource, boolean isFirstResource) {
                             if (Build.VERSION.SDK_INT >= 16) {
-                                parent.setBackground(new BitmapDrawable(mContext.getResources(), Constants.fastblur(Bitmap.createScaledBitmap(resource, 50, 50, true))));// ));
+                                parent.setBackground(new BitmapDrawable(mContext.getResources(), PopupConstants.fastblur(Bitmap.createScaledBitmap(resource, 50, 50, true))));// ));
                             } else {
                                 onPalette(Palette.from(resource).generate());
 

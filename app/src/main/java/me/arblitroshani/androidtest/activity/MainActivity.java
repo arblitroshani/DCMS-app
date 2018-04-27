@@ -1,6 +1,7 @@
 package me.arblitroshani.androidtest.activity;
 
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.design.widget.NavigationView;
@@ -13,10 +14,15 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.fragment.HomeFragment;
 import me.arblitroshani.androidtest.fragment.ServicesFragment;
@@ -26,14 +32,21 @@ public class MainActivity extends AppCompatActivity
 
     private DrawerLayout drawer;
     private NavigationView navigationView;
+    private Toolbar toolbar;
+    private CollapsingToolbarLayout collapsingToolbarLayout;
+
+    private ImageView ivPicture;
 
     private Map<String, Integer> itemIds;
+
+    private FirebaseStorage storage;
+    private StorageReference storageRefServices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
@@ -44,6 +57,17 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        collapsingToolbarLayout = findViewById(R.id.ctl);
+
+        // load image from storage in toolbar
+        ivPicture = findViewById(R.id.image_scrolling_top);
+        storage = FirebaseStorage.getInstance();
+        storageRefServices = storage.getReference().child("branding");
+
+        GlideApp.with(this)
+                .load(storageRefServices.child("tooth.png"))
+                .into(ivPicture);
 
         itemIds = new HashMap<>();
         itemIds.put("Services", R.id.nav_services);
@@ -86,7 +110,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
@@ -107,12 +130,8 @@ public class MainActivity extends AppCompatActivity
             fragmentClassName = "Home";
         }
 
-        replaceFragment(fragmentClassName);
-        item.setChecked(true);
-        setTitle(fragmentClassName);
-
         drawer.closeDrawer(GravityCompat.START);
-
+        replaceFragment(fragmentClassName);
         return true;
     }
 
@@ -137,9 +156,8 @@ public class MainActivity extends AppCompatActivity
 
                 transaction.commit();
             }
-            setTitle(className);
+            collapsingToolbarLayout.setTitle(className);
 
-            // if itemIds has Title use that, else use R.id.home
             int id;
             if (itemIds.containsKey(className)) {
                 id = itemIds.get(className);
@@ -162,7 +180,6 @@ public class MainActivity extends AppCompatActivity
 
     private void uncheckAllMenuItems() {
         int size = navigationView.getMenu().size();
-        Log.d("DEBUG", "called. size is: " + size);
         for (int i = 0; i < size; i++) {
             navigationView.getMenu().getItem(i).setChecked(false);
         }
