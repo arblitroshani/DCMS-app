@@ -9,24 +9,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.adapter.HomeAdapter;
+import me.arblitroshani.androidtest.extra.Constants;
 import me.arblitroshani.androidtest.model.HomeSection;
 
 public class HomeFragment extends Fragment {
-
-    private List<HomeSection> myDataset;
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    public HomeFragment() {
-        myDataset = new ArrayList<>();
-    }
+    public HomeFragment() {}
 
     public static HomeFragment newInstance() {
         HomeFragment fragment = new HomeFragment();
@@ -49,49 +45,16 @@ public class HomeFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        myDataset.clear();
-        addData();
-
-        mAdapter = new HomeAdapter(myDataset);
+        mAdapter = new HomeAdapter(getData());
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    private void addData() {
-        myDataset.add(new HomeSection(
-                "Profile",
-                "this is a subtitle",
-                "Home",
-                getResources().getColor(R.color.teal_blue),
-                R.drawable.ic_account_circle_white_48dp)
-        );
-        myDataset.add(new HomeSection(
-                "Appointments",
-                "this is a subtitle",
-                "Home",
-                getResources().getColor(R.color.dark_slate_gray),
-                R.drawable.ic_today_white_48dp)
-        );
-        myDataset.add(new HomeSection(
-                "Treatments",
-                "this is a subtitle",
-                "Home",
-                getResources().getColor(R.color.gunmetal),
-                R.drawable.ic_receipt_white_48dp)
-        );
-        myDataset.add(new HomeSection(
-                "Our services",
-                "this is a subtitle",
-                "Services",
-                getResources().getColor(R.color.saffron),
-                R.drawable.ic_dashboard_white_48dp)
-        );
-        myDataset.add(new HomeSection(
-                "Clinic info",
-                "this is a subtitle",
-                "Home",
-                getResources().getColor(R.color.giants_orange_light),
-                R.drawable.ic_info_outline_white_48dp)
-        );
+    private List<HomeSection> getData() {
+        // if user is not doctor, show user
+        if (1 == 1) {
+            return Constants.HomeSections.getUserSections();
+        }
+        return Constants.HomeSections.getUserSections();
     }
 
 }

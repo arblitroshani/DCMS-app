@@ -1,6 +1,7 @@
 package me.arblitroshani.androidtest.adapter;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.CardView;
@@ -22,6 +23,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     private List<HomeSection> myDataset;
 
     private Context context;
+    private Resources resources;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView tvTitle;
@@ -44,6 +46,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     @Override
     public HomeAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
+        resources = context.getResources();
         final MainActivity mainActivity = (MainActivity) context;
         View v = LayoutInflater.from(context)
                 .inflate(R.layout.item_card_home, parent, false);
@@ -65,8 +68,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
         holder.tvTitle.setText(currentSection.getTitle());
         holder.tvSubtitle.setText(currentSection.getSubtitle());
-        holder.ivIcon.setImageDrawable(context.getResources().getDrawable(currentSection.getIcon()));
-        holder.cvMain.setCardBackgroundColor(currentSection.getBackgroundColor());
+        holder.ivIcon.setImageDrawable(resources.getDrawable(currentSection.getIcon()));
+        holder.cvMain.setCardBackgroundColor(resources.getColor(currentSection.getBackgroundColor()));
     }
 
     @Override

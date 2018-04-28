@@ -11,7 +11,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -24,8 +23,6 @@ import java.util.Map;
 
 import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.R;
-import me.arblitroshani.androidtest.fragment.HomeFragment;
-import me.arblitroshani.androidtest.fragment.ServicesFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
