@@ -1,9 +1,11 @@
 package me.arblitroshani.androidtest.adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -24,6 +28,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     private Context context;
     private Resources resources;
+
+    private FirebaseAuth auth;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView tvTitle;
@@ -45,6 +51,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     @Override
     public HomeAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        auth = FirebaseAuth.getInstance();
         context = parent.getContext();
         resources = context.getResources();
         final MainActivity mainActivity = (MainActivity) context;
@@ -55,8 +62,23 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String fragmentOpen = myDataset.get(holder.getAdapterPosition()).getFragmentOpen();
-                mainActivity.replaceFragment(fragmentOpen);
+                HomeSection section = myDataset.get(holder.getAdapterPosition());
+
+                if (section.isRequiresLogin() && !isUserSignedIn()) {
+                    new AlertDialog.Builder(context)
+                            .setTitle("Warning!")
+                            .setMessage("You can only open this section if you are logging in.")
+                            .setPositiveButton("OK", null)
+                            .setNeutralButton("LOGIN", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    mainActivity.login();
+                                }
+                            })
+                            .show();
+                } else {
+                    mainActivity.replaceFragment(section.getFragmentOpen());
+                }
             }
         });
         return holder;
@@ -75,5 +97,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return myDataset.size();
+    }
+
+    private boolean isUserSignedIn() {
+        return auth.getCurrentUser() != null;
     }
 }

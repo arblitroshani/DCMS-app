@@ -1,7 +1,10 @@
 package me.arblitroshani.androidtest.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.design.widget.NavigationView;
@@ -13,29 +16,47 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.request.RequestOptions;
+import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.ErrorCodes;
+import com.firebase.ui.auth.IdpResponse;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.FirebaseUserMetadata;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.R;
+import me.arblitroshani.androidtest.fragment.HomeFragment;
+import me.arblitroshani.androidtest.model.User;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final int RC_SIGN_IN = 123;
 
     private DrawerLayout drawer;
     private NavigationView navigationView;
     private Toolbar toolbar;
     private CollapsingToolbarLayout collapsingToolbarLayout;
 
-    private ImageView ivPicture;
+    private TextView tvName, tvEmail;
+    private ImageView ivLogo, ivProfile;
 
     private Map<String, Integer> itemIds;
 
+    private FirebaseAuth auth;
     private FirebaseStorage storage;
     private StorageReference storageRefServices;
 
@@ -58,13 +79,30 @@ public class MainActivity extends AppCompatActivity
         collapsingToolbarLayout = findViewById(R.id.ctl);
 
         // load image from storage in toolbar
-        ivPicture = findViewById(R.id.image_scrolling_top);
+        ivLogo = findViewById(R.id.image_scrolling_top);
         storage = FirebaseStorage.getInstance();
         storageRefServices = storage.getReference().child("branding");
 
+        View headerView = navigationView.getHeaderView(0);
+        ivProfile = headerView.findViewById(R.id.imageView);
+        tvName = headerView.findViewById(R.id.tvName);
+        tvEmail = headerView.findViewById(R.id.tvEmail);
+
         GlideApp.with(this)
                 .load(storageRefServices.child("tooth.png"))
-                .into(ivPicture);
+                .into(ivLogo);
+
+        auth = FirebaseAuth.getInstance();
+        if (isUserSignedIn()) {
+            refreshNavigationDrawer();
+        }
+
+        tvName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                login();
+            }
+        });
 
         itemIds = new HashMap<>();
         itemIds.put("Services", R.id.nav_services);
@@ -73,13 +111,84 @@ public class MainActivity extends AppCompatActivity
         replaceFragment(R.id.nav_home);
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RC_SIGN_IN) {
+            invalidateOptionsMenu();
+            IdpResponse response = IdpResponse.fromResultIntent(data);
+            if (resultCode == RESULT_OK) {
+                FirebaseUserMetadata metadata = auth.getCurrentUser().getMetadata();
+                if (metadata.getCreationTimestamp() == metadata.getLastSignInTimestamp()) {
+                    // The user is new
+                    Intent i = new Intent(MainActivity.this, CreateUserProfileActivity.class);
+                    startActivity(i);
+                    showSnackbar("Success");
+                } else {
+                    // This is an existing user
+                    showSnackbar("Welcome back");
+                    //replaceFragment(R.id.nav_home);
+                }
+                auth = FirebaseAuth.getInstance();
+                refreshNavigationDrawer();
+                drawer.closeDrawer(GravityCompat.START);
+            } else {
+                if (response == null) {  // User pressed back button
+                    showSnackbar("Sign in cancelled");
+                    return;
+                }
+                if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
+                    showSnackbar("No internet connection");
+                    return;
+                }
+                showSnackbar("Unknown error");
+            }
+        }
+    }
+
+    public void login() {
+        if (!isUserSignedIn()) {
+            startActivityForResult(
+                    AuthUI.getInstance()
+                            .createSignInIntentBuilder()
+                            .setAvailableProviders(Arrays.asList(
+                                    new AuthUI.IdpConfig.PhoneBuilder()
+                                            .setDefaultCountryIso("al")
+                                            .build(),
+                                    new AuthUI.IdpConfig.GoogleBuilder().build()))
+                            .build(),
+                    RC_SIGN_IN);
+        }
+    }
+
+    private void logout() {
+        if (isUserSignedIn()) {
+            AuthUI.getInstance()
+                    .signOut(this)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        public void onComplete(@NonNull Task<Void> task) {
+                            showSnackbar("Signed out!");
+                            tvName.setText("Click to login");
+                            GlideApp.with(getApplicationContext())
+                                    .load(R.mipmap.ic_launcher_round)
+                                    .into(ivProfile);
+                            invalidateOptionsMenu();
+                        }
+                    });
+        }
+    }
+
+    private void showSnackbar(String message) {
+        Snackbar.make(findViewById(R.id.drawer_layout), message, Snackbar.LENGTH_SHORT).show();
+    }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            if (navigationView.getMenu().findItem(R.id.nav_home).isChecked()) {
+            Fragment f = getSupportFragmentManager().findFragmentByTag("Home");
+            if (f instanceof HomeFragment) {
                 finish();
             } else {
                 replaceFragment(R.id.nav_home);
@@ -90,6 +199,10 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
+        if (isUserSignedIn()) {
+            menu.getItem(0).setVisible(false);
+            menu.getItem(1).setVisible(true);
+        }
         return true;
     }
 
@@ -97,7 +210,11 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_login) {
+            login();
+            return true;
+        } else if (id == R.id.action_logout) {
+            logout();
             return true;
         } else if (id == R.id.home) {
             drawer.openDrawer(GravityCompat.START);
@@ -180,5 +297,21 @@ public class MainActivity extends AppCompatActivity
         for (int i = 0; i < size; i++) {
             navigationView.getMenu().getItem(i).setChecked(false);
         }
+    }
+
+    private boolean isUserSignedIn() {
+        return auth.getCurrentUser() != null;
+    }
+
+    private void refreshNavigationDrawer() {
+        FirebaseUser currentUser = auth.getCurrentUser();
+        tvName.setText(currentUser.getDisplayName());
+        tvEmail.setText(currentUser.getEmail());
+
+        String photoUrl = User.getHighResGmailPhotoUrl(currentUser.getPhotoUrl());
+        GlideApp.with(this)
+                .load(photoUrl)
+                .apply(RequestOptions.circleCropTransform())
+                .into(ivProfile);
     }
 }
