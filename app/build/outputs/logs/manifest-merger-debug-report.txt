@@ -31,6 +31,7 @@ MERGED from [com.android.support:cardview-v7:27.1.0] C:\Users\Arbli Troshani\.gr
 MERGED from [com.android.support:recyclerview-v7:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.0.aar\8266b4802ffd2a164a9459bcdd9f2e37\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:17:1-28:12
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\cbfbd0ffc806903628cf9b1be0b05580\AndroidManifest.xml:2:1-13:12
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\bf2c2bfd3e2809b5052bc651fb3301a9\AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.chrisbanes:PhotoView:2.0.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\PhotoView-2.0.0.aar\9f99185b1af401a62f23c4ed2acef423\AndroidManifest.xml:2:1-12:12
 MERGED from [android.arch.lifecycle:extensions:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\extensions-1.1.0.aar\5ea65747ba7be8bb8e6a5913d754bcdf\AndroidManifest.xml:17:1-30:12
 MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\77bf0f7ac33130c2b548a8f435284978\AndroidManifest.xml:17:1-22:12
@@ -42,10 +43,10 @@ MERGED from [com.android.support:support-media-compat:27.1.0] C:\Users\Arbli Tro
 MERGED from [com.android.support:support-vector-drawable:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.0.aar\2082fbb720a9e44caa5f429b2f030485\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.0.aar\65a958c67fbbabc3a26fc56d07d3b610\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\4441f7c6aab05952f21f54a2b0edea04\AndroidManifest.xml:2:1-11:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\64d4ea9f2df44af256af77b1bb269bfe\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\livedata-1.1.0.aar\9e4f5f32209f46a6f8ceab36aa62f3e6\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\ade6063c6788f471f23ada15dc097177\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bad57eda6c307ff80d6c098cf42ee9d6\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\64d4ea9f2df44af256af77b1bb269bfe\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\1c503b174c921eee1355818e05c8f885\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-analytics-license:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-12.0.1.aar\f98735f1690f62683b7556b1f172f133\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-basement-license:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-12.0.1.aar\1b5d5e2f5349baffdfcfbc254bde6c3b\AndroidManifest.xml:17:1-24:12
@@ -244,6 +245,8 @@ MERGED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gra
 MERGED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\cbfbd0ffc806903628cf9b1be0b05580\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\cbfbd0ffc806903628cf9b1be0b05580\AndroidManifest.xml:7:5-9:41
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\bf2c2bfd3e2809b5052bc651fb3301a9\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\bf2c2bfd3e2809b5052bc651fb3301a9\AndroidManifest.xml:5:5-43
 MERGED from [com.github.chrisbanes:PhotoView:2.0.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\PhotoView-2.0.0.aar\9f99185b1af401a62f23c4ed2acef423\AndroidManifest.xml:8:5-10:41
 MERGED from [com.github.chrisbanes:PhotoView:2.0.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\PhotoView-2.0.0.aar\9f99185b1af401a62f23c4ed2acef423\AndroidManifest.xml:8:5-10:41
 MERGED from [android.arch.lifecycle:extensions:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\extensions-1.1.0.aar\5ea65747ba7be8bb8e6a5913d754bcdf\AndroidManifest.xml:20:5-44
@@ -266,14 +269,14 @@ MERGED from [com.android.support:support-compat:27.1.0] C:\Users\Arbli Troshani\
 MERGED from [com.android.support:support-compat:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.0.aar\65a958c67fbbabc3a26fc56d07d3b610\AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\4441f7c6aab05952f21f54a2b0edea04\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\4441f7c6aab05952f21f54a2b0edea04\AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\64d4ea9f2df44af256af77b1bb269bfe\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\64d4ea9f2df44af256af77b1bb269bfe\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\livedata-1.1.0.aar\9e4f5f32209f46a6f8ceab36aa62f3e6\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\livedata-1.1.0.aar\9e4f5f32209f46a6f8ceab36aa62f3e6\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\ade6063c6788f471f23ada15dc097177\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\ade6063c6788f471f23ada15dc097177\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bad57eda6c307ff80d6c098cf42ee9d6\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\bad57eda6c307ff80d6c098cf42ee9d6\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\64d4ea9f2df44af256af77b1bb269bfe\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\64d4ea9f2df44af256af77b1bb269bfe\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\1c503b174c921eee1355818e05c8f885\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\1c503b174c921eee1355818e05c8f885\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-analytics-license:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-12.0.1.aar\f98735f1690f62683b7556b1f172f133\AndroidManifest.xml:20:5-44

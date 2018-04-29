@@ -54,7 +54,8 @@
         <item name="android:layout_marginEnd">@dimen/main_card_margin_horizontal</item>
         <item name="android:layout_marginTop">@dimen/main_card_margin_vertical</item>
         <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
-        <item name="cardCornerRadius">@dimen/card_recycler_corner_radius</item>
+        <!--<item name="cardCornerRadius">@dimen/card_recycler_corner_radius</item>-->
+        <item name="cardCornerRadius">10dp</item>
         <item name="cardElevation">@dimen/card_recycler_elevation</item>
     </style>
 

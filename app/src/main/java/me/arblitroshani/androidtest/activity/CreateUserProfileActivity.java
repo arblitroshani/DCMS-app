@@ -21,6 +21,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.model.User;
 
@@ -28,19 +30,22 @@ public class CreateUserProfileActivity extends AppCompatActivity {
 
     private String birthday;
 
+    @BindView(R.id.toolbar) Toolbar toolbar;
+
+    @BindView(R.id.etName) EditText etName;
+    @BindView(R.id.etEmail) EditText etEmail;
+    @BindView(R.id.dpBirthday) DatePicker dpBirthday;
+    @BindView(R.id.etPhone) EditText etPhone;
+    @BindView(R.id.bDone) Button bDone;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user_profile);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        final EditText etName = findViewById(R.id.etName);
-        final EditText etEmail = findViewById(R.id.etEmail);
-        final DatePicker dpBirthday = findViewById(R.id.dpBirthday);
-        final EditText etPhone = findViewById(R.id.etPhone);
-        final Button bDone = findViewById(R.id.bDone);
 
         // prepopulate firebaseuser nonnull fields
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

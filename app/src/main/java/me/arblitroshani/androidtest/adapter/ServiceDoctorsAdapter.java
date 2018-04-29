@@ -14,6 +14,8 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.model.DoctorBasic;
@@ -28,13 +30,12 @@ public class ServiceDoctorsAdapter extends RecyclerView.Adapter<ServiceDoctorsAd
     private Context context;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView ivPhoto;
-        public TextView tvName;
+        @BindView(R.id.imageView) ImageView ivPhoto;
+        @BindView(R.id.tvName) TextView tvName;
 
-        public ViewHolder(View v) {
-            super(v);
-            ivPhoto = v.findViewById(R.id.imageView);
-            tvName = v.findViewById(R.id.tvName);
+        public ViewHolder(View view) {
+            super(view);
+            ButterKnife.bind(this, view);
         }
     }
 

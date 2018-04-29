@@ -3,8 +3,6 @@ package me.arblitroshani.androidtest.adapter;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -18,6 +16,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.activity.MainActivity;
 import me.arblitroshani.androidtest.model.HomeSection;
@@ -32,16 +32,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     private FirebaseAuth auth;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvTitle;
-        public TextView tvSubtitle;
-        public ImageView ivIcon;
-        public CardView cvMain;
-        public ViewHolder(View v) {
-            super(v);
-            tvTitle = v.findViewById(R.id.tv_card_main_title);
-            tvSubtitle = v.findViewById(R.id.tv_card_main_subtitle);
-            ivIcon = v.findViewById(R.id.imageView);
-            cvMain = v.findViewById(R.id.card_main);
+        @BindView(R.id.tv_card_main_title) TextView tvTitle;
+        @BindView(R.id.tv_card_main_subtitle) TextView tvSubtitle;
+        @BindView(R.id.imageView) ImageView ivIcon;
+        @BindView(R.id.card_main) CardView cvMain;
+
+        public ViewHolder(View view) {
+            super(view);
+            ButterKnife.bind(this, view);
         }
     }
 

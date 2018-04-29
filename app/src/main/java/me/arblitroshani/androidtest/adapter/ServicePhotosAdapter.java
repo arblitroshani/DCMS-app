@@ -14,6 +14,8 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.extra.PhotoFullPopupWindow;
@@ -28,11 +30,11 @@ public class ServicePhotosAdapter extends RecyclerView.Adapter<ServicePhotosAdap
     private Context context;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView ivPhoto;
+        @BindView(R.id.ivPhoto) ImageView ivPhoto;
 
-        public ViewHolder(View v) {
-            super(v);
-            ivPhoto = v.findViewById(R.id.ivPhoto);
+        public ViewHolder(View view) {
+            super(view);
+            ButterKnife.bind(this, view);
         }
     }
 

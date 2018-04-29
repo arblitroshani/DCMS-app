@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.adapter.HomeAdapter;
 import me.arblitroshani.androidtest.extra.Constants;
@@ -18,7 +20,7 @@ import me.arblitroshani.androidtest.model.HomeSection;
 
 public class HomeFragment extends Fragment {
 
-    private RecyclerView mRecyclerView;
+    @BindView(R.id.rvHome) RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
@@ -34,12 +36,13 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, null, false);
+        View view = inflater.inflate(R.layout.fragment_home, null, false);
+        ButterKnife.bind(this, view);
+        return view;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        mRecyclerView = view.findViewById(R.id.rvHome);
         mRecyclerView.setHasFixedSize(true);
 
         mLayoutManager = new LinearLayoutManager(getActivity());

@@ -15,6 +15,8 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.activity.ServiceDetailsActivity;
@@ -31,16 +33,14 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
     private Context context;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvTitle;
-        public TextView tvSubtitle;
-        public ImageView ivPicture;
-        public CardView cvMain;
-        public ViewHolder(View v) {
-            super(v);
-            tvTitle = v.findViewById(R.id.tv_card_main_1_title);
-            tvSubtitle = v.findViewById(R.id.tv_card_main_1_subtitle);
-            ivPicture = v.findViewById(R.id.img_main_card_1);
-            cvMain = v.findViewById(R.id.card_main);
+        @BindView(R.id.tv_card_main_1_title) TextView tvTitle;
+        @BindView(R.id.tv_card_main_1_subtitle) TextView tvSubtitle;
+        @BindView(R.id.img_main_card_1) ImageView ivPicture;
+        @BindView(R.id.card_main) CardView cvMain;
+
+        public ViewHolder(View view) {
+            super(view);
+            ButterKnife.bind(this,  view);
         }
     }
 

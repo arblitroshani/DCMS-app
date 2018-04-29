@@ -18,6 +18,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.extra.PhotoFullPopupWindow;
@@ -25,8 +27,12 @@ import me.arblitroshani.androidtest.model.User;
 
 public class ProfileFragment extends Fragment {
 
-    private ImageView ivProfilePicture, ivBackground;
-    private TextView tvName, tvEmail, tvBday, tvPhone;
+    @BindView(R.id.ivProfilePicture) ImageView ivProfilePicture;
+    @BindView(R.id.background) ImageView ivBackground;
+    @BindView(R.id.tvName) TextView tvName;
+    @BindView(R.id.tvEmail) TextView tvEmail;
+    @BindView(R.id.tvBday) TextView tvBday;
+    @BindView(R.id.tvPhone) TextView tvPhone;
 
     public ProfileFragment() {}
 
@@ -40,19 +46,13 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_profile, null, false);
+        View view = inflater.inflate(R.layout.fragment_profile, null, false);
+        ButterKnife.bind(this, view);
+        return view;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-
-        ivProfilePicture = view.findViewById(R.id.ivProfilePicture);
-        ivBackground = view.findViewById(R.id.background);
-        tvName = view.findViewById(R.id.tvName);
-        tvEmail = view.findViewById(R.id.tvEmail);
-        tvBday = view.findViewById(R.id.tvBday);
-        tvPhone = view.findViewById(R.id.tvPhone);
-
         Glide.with(this)
                 .load(R.drawable.material_design_4)
                 .into(ivBackground);

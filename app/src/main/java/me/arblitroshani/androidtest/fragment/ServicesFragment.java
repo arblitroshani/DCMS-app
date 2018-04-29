@@ -21,6 +21,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.adapter.ServicesAdapter;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.model.Service;
@@ -30,9 +32,11 @@ public class ServicesFragment extends Fragment {
     private List<Service> myDataset;
     private List<String> serviceIds;
 
-    private RecyclerView mRecyclerView;
+    @BindView(R.id.rvServices) RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+
+    @BindView(R.id.frameLayout) FrameLayout flServices;
 
     public ServicesFragment() {}
 
@@ -46,18 +50,17 @@ public class ServicesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_services, null, false);
+        View view = inflater.inflate(R.layout.fragment_services, null, false);
+        ButterKnife.bind(this, view);
+        return view;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         Animation animation = AnimationUtils.loadAnimation(this.getContext(), R.anim.anim_about_card_show);
-        FrameLayout flServices = view.findViewById(R.id.frameLayout);
         flServices.startAnimation(animation);
 
-        mRecyclerView = view.findViewById(R.id.rvServices);
         mRecyclerView.setHasFixedSize(true);
-
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 

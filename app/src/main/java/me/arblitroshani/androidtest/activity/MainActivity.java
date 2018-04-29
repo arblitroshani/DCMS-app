@@ -36,6 +36,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.fragment.HomeFragment;
@@ -46,13 +48,15 @@ public class MainActivity extends AppCompatActivity
 
     private static final int RC_SIGN_IN = 123;
 
-    private DrawerLayout drawer;
-    private NavigationView navigationView;
-    private Toolbar toolbar;
-    private CollapsingToolbarLayout collapsingToolbarLayout;
+    @BindView(R.id.drawer_layout) DrawerLayout drawer;
+    @BindView(R.id.nav_view) NavigationView navigationView;
+    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.ctl) CollapsingToolbarLayout collapsingToolbarLayout;
 
-    private TextView tvName, tvEmail;
-    private ImageView ivLogo, ivProfile;
+    private TextView tvName;
+    private TextView tvEmail;
+    private ImageView ivProfile;
+    @BindView(R.id.image_scrolling_top) ImageView ivLogo;
 
     private Map<String, Integer> itemIds;
 
@@ -64,22 +68,18 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        toolbar = findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
+
         setSupportActionBar(toolbar);
 
-        drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        collapsingToolbarLayout = findViewById(R.id.ctl);
-
         // load image from storage in toolbar
-        ivLogo = findViewById(R.id.image_scrolling_top);
         storage = FirebaseStorage.getInstance();
         storageRefServices = storage.getReference().child("branding");
 

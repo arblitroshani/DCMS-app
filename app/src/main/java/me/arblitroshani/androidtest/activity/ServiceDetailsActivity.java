@@ -4,14 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -27,6 +25,8 @@ import com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.adapter.ServiceDoctorsAdapter;
@@ -36,17 +36,20 @@ import me.arblitroshani.androidtest.model.Service;
 
 public class ServiceDetailsActivity extends AppCompatActivity {
 
+    @BindView(R.id.tvDescription) TextView tvDescription;
+    @BindView(R.id.tvSubtitle) TextView tvSubtitle;
+    @BindView(R.id.image_scrolling_top) ImageView ivPicture;
+
+    @BindView(R.id.rvDoctors) RecyclerView rvDoctors;
+    @BindView(R.id.rvPhotos) RecyclerView rvPhotos;
+    @BindView(R.id.pager_indicator) IndefinitePagerIndicator ipi;
+    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.fab) FloatingActionButton fab;
+
     private List<DoctorBasic> myDataset;
 
-    private TextView tvDescription;
-    private TextView tvSubtitle;
-    private ImageView ivPicture;
-
-    private RecyclerView rvDoctors;
-    private RecyclerView rvPhotos;
     private RecyclerView.Adapter adapterDoctors, adapterPhotos;
     private RecyclerView.LayoutManager layoutManagerDoctors, layoutManagerPhotos;
-    private IndefinitePagerIndicator ipi;
 
     private FirebaseStorage storage;
     private StorageReference storageRefServices;
@@ -55,12 +58,11 @@ public class ServiceDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_details);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        ButterKnife.bind(this);
 
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,18 +74,10 @@ public class ServiceDetailsActivity extends AppCompatActivity {
         storage = FirebaseStorage.getInstance();
         storageRefServices = storage.getReference().child("services");
 
-        tvDescription = findViewById(R.id.tvDescription);
-        tvSubtitle = findViewById(R.id.tvSubtitle);
-        ivPicture = findViewById(R.id.image_scrolling_top);
-
-        rvDoctors = findViewById(R.id.rvDoctors);
         rvDoctors.setHasFixedSize(true);
         layoutManagerDoctors = new LinearLayoutManager(this);
         rvDoctors.setLayoutManager(layoutManagerDoctors);
 
-        ipi = findViewById(R.id.pager_indicator);
-
-        rvPhotos = findViewById(R.id.rvPhotos);
         rvPhotos.setHasFixedSize(true);
         layoutManagerPhotos = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         rvPhotos.setLayoutManager(layoutManagerPhotos);
@@ -123,14 +117,14 @@ public class ServiceDetailsActivity extends AppCompatActivity {
                 .into(ivPicture);
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case android.R.id.home:
-//                NavUtils.navigateUpFromSameTask(this);
-//                return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 }
