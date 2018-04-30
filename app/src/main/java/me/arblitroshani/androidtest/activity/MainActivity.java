@@ -246,10 +246,6 @@ public class MainActivity extends AppCompatActivity
             fragmentClassName = "Services";
         } else if (id == R.id.nav_clinic) {
             fragmentClassName = "Home";
-        } else if (id == R.id.nav_appointments) {
-            Intent i = new Intent(MainActivity.this, AppointmentsActivity.class);
-            startActivity(i);
-            return true;
         } else if (id == R.id.nav_settings) {
             fragmentClassName = "Home";
         } else if (id == R.id.nav_help) {

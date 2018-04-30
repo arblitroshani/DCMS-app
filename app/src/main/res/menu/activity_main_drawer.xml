@@ -17,10 +17,6 @@
                 android:id="@+id/nav_clinic"
                 android:icon="@drawable/ic_menu_manage"
                 android:title="Clinic info" />
-            <item
-                android:id="@+id/nav_appointments"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="Appointments" />
         </group>
         <group android:checkableBehavior="single" android:id="@+id/group_items2">
             <item

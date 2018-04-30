@@ -1,9 +1,11 @@
 package me.arblitroshani.androidtest.activity;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 import com.github.tibolte.agendacalendarview.AgendaCalendarView;
 import com.github.tibolte.agendacalendarview.CalendarPickerController;
@@ -43,7 +45,7 @@ public class AppointmentsActivity extends AppCompatActivity implements CalendarP
         Calendar maxDate = Calendar.getInstance();
 
         //minDate.add(Calendar.DAY_OF_YEAR, 1);
-        maxDate.add(Calendar.MONTH, 1);
+        //maxDate.add(Calendar.MONTH, 1);
 
         List<CalendarEvent> eventList = new ArrayList<>();
         mockList(eventList);
@@ -55,10 +57,12 @@ public class AppointmentsActivity extends AppCompatActivity implements CalendarP
 
     @Override
     public void onDaySelected(DayItem dayItem) {
+        Toast.makeText(this, "Day Clicked", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onEventSelected(CalendarEvent event) {
+        Toast.makeText(this, event.getDayReference().getDate().toString(), Toast.LENGTH_SHORT).show();
     }
 
     @Override

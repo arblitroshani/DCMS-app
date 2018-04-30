@@ -3,6 +3,7 @@ package me.arblitroshani.androidtest.adapter;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
@@ -23,6 +24,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.R;
+import me.arblitroshani.androidtest.activity.AppointmentsActivity;
 import me.arblitroshani.androidtest.activity.MainActivity;
 import me.arblitroshani.androidtest.model.HomeSection;
 
@@ -86,7 +88,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
                             })
                             .show();
                 } else {
-                    mainActivity.replaceFragment(section.getFragmentOpen());
+                    String fragmentOpen = section.getFragmentOpen();
+                    if (fragmentOpen.startsWith("Activity:")) {
+                        String n = fragmentOpen.substring(9) + "Activity";
+                        Intent i = new Intent(mainActivity, AppointmentsActivity.class);
+                        mainActivity.startActivity(i);
+                    } else {
+                        mainActivity.replaceFragment(section.getFragmentOpen());
+                    }
                 }
             }
         });

@@ -58,7 +58,7 @@ public final class Constants {
             userSections.add(new HomeSection(
                     "Appointments",
                     "this is a subtitle",
-                    "Home",
+                    "Activity:Appointments",
                     R.color.dark_slate_gray,
                     R.drawable.ic_today_white_48dp,
                     true)

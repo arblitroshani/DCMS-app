@@ -22,4 +22,6 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="title_activity_appointments">AppointmentsActivity</string>
+
+    <string name="agenda_event_no_events">No appointments</string>
 </resources>
