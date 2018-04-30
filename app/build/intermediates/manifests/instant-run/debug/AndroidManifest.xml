@@ -51,6 +51,15 @@
             android:name="me.arblitroshani.androidtest.activity.CreateUserProfileActivity"
             android:label="@string/title_activity_create_user_profile"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="me.arblitroshani.androidtest.activity.AppointmentsActivity"
+            android:label="@string/title_activity_appointments"
+            android:parentActivityName="me.arblitroshani.androidtest.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.arblitroshani.androidtest.activity.MainActivity" />
+        </activity>
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"

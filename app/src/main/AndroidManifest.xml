@@ -30,7 +30,16 @@
         <activity
             android:name=".activity.CreateUserProfileActivity"
             android:label="@string/title_activity_create_user_profile"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.AppointmentsActivity"
+            android:label="@string/title_activity_appointments"
+            android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.arblitroshani.androidtest.activity.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
