@@ -31,6 +31,7 @@ MERGED from [com.android.support:cardview-v7:27.1.0] C:\Users\Arbli Troshani\.gr
 MERGED from [com.android.support:recyclerview-v7:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.0.aar\8266b4802ffd2a164a9459bcdd9f2e37\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:17:1-28:12
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\cbfbd0ffc806903628cf9b1be0b05580\AndroidManifest.xml:2:1-13:12
+MERGED from [com.facebook.shimmer:shimmer:0.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\shimmer-0.1.0.aar\16df3c7fab59dedfffc6260b9bc9010b\AndroidManifest.xml:2:1-11:12
 MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\bf2c2bfd3e2809b5052bc651fb3301a9\AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.chrisbanes:PhotoView:2.0.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\PhotoView-2.0.0.aar\9f99185b1af401a62f23c4ed2acef423\AndroidManifest.xml:2:1-12:12
 MERGED from [android.arch.lifecycle:extensions:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\extensions-1.1.0.aar\5ea65747ba7be8bb8e6a5913d754bcdf\AndroidManifest.xml:17:1-30:12
@@ -245,6 +246,8 @@ MERGED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gra
 MERGED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\cbfbd0ffc806903628cf9b1be0b05580\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\cbfbd0ffc806903628cf9b1be0b05580\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.shimmer:shimmer:0.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\shimmer-0.1.0.aar\16df3c7fab59dedfffc6260b9bc9010b\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.shimmer:shimmer:0.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\shimmer-0.1.0.aar\16df3c7fab59dedfffc6260b9bc9010b\AndroidManifest.xml:7:5-9:41
 MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\bf2c2bfd3e2809b5052bc651fb3301a9\AndroidManifest.xml:5:5-43
 MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\bf2c2bfd3e2809b5052bc651fb3301a9\AndroidManifest.xml:5:5-43
 MERGED from [com.github.chrisbanes:PhotoView:2.0.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\PhotoView-2.0.0.aar\9f99185b1af401a62f23c4ed2acef423\AndroidManifest.xml:8:5-10:41

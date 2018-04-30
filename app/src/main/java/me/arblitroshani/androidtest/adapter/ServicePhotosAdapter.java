@@ -30,7 +30,8 @@ public class ServicePhotosAdapter extends RecyclerView.Adapter<ServicePhotosAdap
     private Context context;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.ivPhoto) ImageView ivPhoto;
+        @BindView(R.id.ivPhoto)
+        ImageView ivPhoto;
 
         public ViewHolder(View view) {
             super(view);

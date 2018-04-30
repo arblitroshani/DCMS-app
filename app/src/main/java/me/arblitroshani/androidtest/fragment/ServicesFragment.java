@@ -32,11 +32,14 @@ public class ServicesFragment extends Fragment {
     private List<Service> myDataset;
     private List<String> serviceIds;
 
-    @BindView(R.id.rvServices) RecyclerView mRecyclerView;
+    @BindView(R.id.rvServices)
+    RecyclerView mRecyclerView;
+
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    @BindView(R.id.frameLayout) FrameLayout flServices;
+    @BindView(R.id.frameLayout)
+    FrameLayout flServices;
 
     public ServicesFragment() {}
 

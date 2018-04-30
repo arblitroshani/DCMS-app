@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,12 +28,26 @@ import me.arblitroshani.androidtest.model.User;
 
 public class ProfileFragment extends Fragment {
 
-    @BindView(R.id.ivProfilePicture) ImageView ivProfilePicture;
-    @BindView(R.id.background) ImageView ivBackground;
-    @BindView(R.id.tvName) TextView tvName;
-    @BindView(R.id.tvEmail) TextView tvEmail;
-    @BindView(R.id.tvBday) TextView tvBday;
-    @BindView(R.id.tvPhone) TextView tvPhone;
+    @BindView(R.id.ivProfilePicture)
+    ImageView ivProfilePicture;
+
+    @BindView(R.id.background)
+    ImageView ivBackground;
+
+    @BindView(R.id.tvName)
+    TextView tvName;
+
+    @BindView(R.id.tvEmail)
+    TextView tvEmail;
+
+    @BindView(R.id.tvBday)
+    TextView tvBday;
+
+    @BindView(R.id.tvPhone)
+    TextView tvPhone;
+
+    @BindView(R.id.shimmer_view_container)
+    ShimmerFrameLayout container;
 
     public ProfileFragment() {}
 
@@ -53,6 +68,8 @@ public class ProfileFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        container.startShimmerAnimation();
+
         Glide.with(this)
                 .load(R.drawable.material_design_4)
                 .into(ivBackground);
@@ -78,6 +95,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 User user = documentSnapshot.toObject(User.class);
+                container.stopShimmerAnimation();
                 tvName.setText(user.getName());
                 tvEmail.setText(user.getEmail());
                 tvBday.setText(user.getBirthday());

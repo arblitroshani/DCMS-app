@@ -30,13 +30,23 @@ public class CreateUserProfileActivity extends AppCompatActivity {
 
     private String birthday;
 
-    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
-    @BindView(R.id.etName) EditText etName;
-    @BindView(R.id.etEmail) EditText etEmail;
-    @BindView(R.id.dpBirthday) DatePicker dpBirthday;
-    @BindView(R.id.etPhone) EditText etPhone;
-    @BindView(R.id.bDone) Button bDone;
+    @BindView(R.id.etName)
+    EditText etName;
+
+    @BindView(R.id.etEmail)
+    EditText etEmail;
+
+    @BindView(R.id.dpBirthday)
+    DatePicker dpBirthday;
+
+    @BindView(R.id.etPhone)
+    EditText etPhone;
+
+    @BindView(R.id.bDone)
+    Button bDone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

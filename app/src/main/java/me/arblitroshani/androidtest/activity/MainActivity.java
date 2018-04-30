@@ -48,15 +48,24 @@ public class MainActivity extends AppCompatActivity
 
     private static final int RC_SIGN_IN = 123;
 
-    @BindView(R.id.drawer_layout) DrawerLayout drawer;
-    @BindView(R.id.nav_view) NavigationView navigationView;
-    @BindView(R.id.toolbar) Toolbar toolbar;
-    @BindView(R.id.ctl) CollapsingToolbarLayout collapsingToolbarLayout;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawer;
+
+    @BindView(R.id.nav_view)
+    NavigationView navigationView;
+
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
+    @BindView(R.id.ctl)
+    CollapsingToolbarLayout collapsingToolbarLayout;
 
     private TextView tvName;
     private TextView tvEmail;
     private ImageView ivProfile;
-    @BindView(R.id.image_scrolling_top) ImageView ivLogo;
+
+    @BindView(R.id.image_scrolling_top)
+    ImageView ivLogo;
 
     private Map<String, Integer> itemIds;
 

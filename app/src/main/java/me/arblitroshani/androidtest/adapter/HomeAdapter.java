@@ -1,5 +1,6 @@
 package me.arblitroshani.androidtest.adapter;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
@@ -7,8 +8,11 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,10 +36,17 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     private FirebaseAuth auth;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.tv_card_main_title) TextView tvTitle;
-        @BindView(R.id.tv_card_main_subtitle) TextView tvSubtitle;
-        @BindView(R.id.imageView) ImageView ivIcon;
-        @BindView(R.id.card_main) CardView cvMain;
+        @BindView(R.id.tv_card_main_title)
+        TextView tvTitle;
+
+        @BindView(R.id.tv_card_main_subtitle)
+        TextView tvSubtitle;
+
+        @BindView(R.id.imageView)
+        ImageView ivIcon;
+
+        @BindView(R.id.card_main)
+        CardView cvMain;
 
         public ViewHolder(View view) {
             super(view);
@@ -77,6 +88,28 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
                 } else {
                     mainActivity.replaceFragment(section.getFragmentOpen());
                 }
+            }
+        });
+
+        holder.itemView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        ObjectAnimator upAnim = ObjectAnimator.ofFloat(view, "translationZ", 16);
+                        upAnim.setDuration(150);
+                        upAnim.setInterpolator(new DecelerateInterpolator());
+                        upAnim.start();
+                        break;
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        ObjectAnimator downAnim = ObjectAnimator.ofFloat(view, "translationZ", 0);
+                        downAnim.setDuration(150);
+                        downAnim.setInterpolator(new AccelerateInterpolator());
+                        downAnim.start();
+                        break;
+                }
+                return false;
             }
         });
         return holder;

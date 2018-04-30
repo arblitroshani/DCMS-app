@@ -20,7 +20,9 @@ import me.arblitroshani.androidtest.model.HomeSection;
 
 public class HomeFragment extends Fragment {
 
-    @BindView(R.id.rvHome) RecyclerView mRecyclerView;
+    @BindView(R.id.rvHome)
+    RecyclerView mRecyclerView;
+
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 

@@ -33,10 +33,17 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
     private Context context;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.tv_card_main_1_title) TextView tvTitle;
-        @BindView(R.id.tv_card_main_1_subtitle) TextView tvSubtitle;
-        @BindView(R.id.img_main_card_1) ImageView ivPicture;
-        @BindView(R.id.card_main) CardView cvMain;
+        @BindView(R.id.tv_card_main_1_title)
+        TextView tvTitle;
+
+        @BindView(R.id.tv_card_main_1_subtitle)
+        TextView tvSubtitle;
+
+        @BindView(R.id.img_main_card_1)
+        ImageView ivPicture;
+
+        @BindView(R.id.card_main)
+        CardView cvMain;
 
         public ViewHolder(View view) {
             super(view);

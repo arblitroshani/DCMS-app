@@ -36,15 +36,29 @@ import me.arblitroshani.androidtest.model.Service;
 
 public class ServiceDetailsActivity extends AppCompatActivity {
 
-    @BindView(R.id.tvDescription) TextView tvDescription;
-    @BindView(R.id.tvSubtitle) TextView tvSubtitle;
-    @BindView(R.id.image_scrolling_top) ImageView ivPicture;
+    @BindView(R.id.tvDescription)
+    TextView tvDescription;
 
-    @BindView(R.id.rvDoctors) RecyclerView rvDoctors;
-    @BindView(R.id.rvPhotos) RecyclerView rvPhotos;
-    @BindView(R.id.pager_indicator) IndefinitePagerIndicator ipi;
-    @BindView(R.id.toolbar) Toolbar toolbar;
-    @BindView(R.id.fab) FloatingActionButton fab;
+    @BindView(R.id.tvSubtitle)
+    TextView tvSubtitle;
+
+    @BindView(R.id.image_scrolling_top)
+    ImageView ivPicture;
+
+    @BindView(R.id.rvDoctors)
+    RecyclerView rvDoctors;
+
+    @BindView(R.id.rvPhotos)
+    RecyclerView rvPhotos;
+
+    @BindView(R.id.pager_indicator)
+    IndefinitePagerIndicator ipi;
+
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
+    @BindView(R.id.fab)
+    FloatingActionButton fab;
 
     private List<DoctorBasic> myDataset;
 
