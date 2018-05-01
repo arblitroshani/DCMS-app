@@ -12,11 +12,6 @@
             style="@style/MainCardTitle"
             android:id="@+id/tv_card_main_title"/>
 
-        <TextView
-            style="@style/MainCardSubtitle"
-            android:id="@+id/tv_card_main_subtitle"
-            android:layout_below="@id/tv_card_main_title"/>
-
         <ImageView
             style="@style/MainCardImage"
             android:id="@+id/imageView"

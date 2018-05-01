@@ -14,17 +14,24 @@
         android:layout_height="175dp"
         android:scaleType="centerCrop"/>
 
-    <TextView
-        android:id="@+id/tvName"
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textColor="@color/white"
-        android:fontFamily="sans-serif-light"
-        android:textSize="27sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivProfilePicture" />
+        app:layout_constraintTop_toBottomOf="@+id/ivProfilePicture">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-light"
+            android:textSize="27sp"
+            android:text="Name Surname" />
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
     <ImageView
         android:id="@+id/ivProfilePicture"

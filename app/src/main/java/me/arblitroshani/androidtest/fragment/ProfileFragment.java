@@ -30,24 +30,20 @@ public class ProfileFragment extends Fragment {
 
     @BindView(R.id.ivProfilePicture)
     ImageView ivProfilePicture;
-
     @BindView(R.id.background)
     ImageView ivBackground;
-
     @BindView(R.id.tvName)
     TextView tvName;
-
     @BindView(R.id.tvEmail)
     TextView tvEmail;
-
     @BindView(R.id.tvBday)
     TextView tvBday;
-
     @BindView(R.id.tvPhone)
     TextView tvPhone;
-
     @BindView(R.id.shimmer_view_container)
     ShimmerFrameLayout container;
+    @BindView(R.id.shimmer_view_name)
+    ShimmerFrameLayout nameContainer;
 
     public ProfileFragment() {}
 
@@ -69,6 +65,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         container.startShimmerAnimation();
+        nameContainer.startShimmerAnimation();
 
         Glide.with(this)
                 .load(R.drawable.material_design_4)
@@ -96,6 +93,7 @@ public class ProfileFragment extends Fragment {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 User user = documentSnapshot.toObject(User.class);
                 container.stopShimmerAnimation();
+                nameContainer.stopShimmerAnimation();
                 tvName.setText(user.getName());
                 tvEmail.setText(user.getEmail());
                 tvBday.setText(user.getBirthday());

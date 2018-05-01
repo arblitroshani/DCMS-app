@@ -1,12 +1,73 @@
 package me.arblitroshani.androidtest.extra;
 
+import android.content.Context;
+import android.support.v4.content.ContextCompat;
+
+import com.github.tibolte.agendacalendarview.models.BaseCalendarEvent;
+import com.github.tibolte.agendacalendarview.models.CalendarEvent;
+
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import me.arblitroshani.androidtest.R;
+import me.arblitroshani.androidtest.model.AppointmentCalendarEvent;
 import me.arblitroshani.androidtest.model.HomeSection;
 
 public final class Constants {
+
+    public static final class Appointments {
+
+        public static final String STATUS_COMPLETED = "completed";
+        public static final String STATUS_PENDING = "pending";
+        public static final String STATUS_CONFIRMED = "confirmed";
+
+        public static final String SERVICE_ORTHODONTICS = "orthodontics";
+        public static final String SERVICE_PERIODONTICS = "peiodontics";
+
+        public static List<CalendarEvent> getMockList() {
+            List<CalendarEvent> events = new ArrayList<>();
+
+            Calendar startTime1 = Calendar.getInstance();
+            Calendar endTime1 = Calendar.getInstance();
+            startTime1.set(Calendar.HOUR_OF_DAY, 10);
+            startTime1.set(Calendar.MINUTE, 0);
+            endTime1.set(Calendar.HOUR_OF_DAY, 11);
+            endTime1.set(Calendar.MINUTE, 0);
+
+            AppointmentCalendarEvent event1 = new AppointmentCalendarEvent("Visit of Harpa",
+                    "description", startTime1, endTime1, true, Appointments.STATUS_COMPLETED,
+                    Appointments.SERVICE_ORTHODONTICS, true);
+            events.add(event1);
+
+            Calendar startTime = Calendar.getInstance();
+            Calendar endTime = Calendar.getInstance();
+            startTime.set(Calendar.HOUR_OF_DAY, 14);
+            startTime.set(Calendar.MINUTE, 0);
+            endTime.set(Calendar.HOUR_OF_DAY, 15);
+            endTime.set(Calendar.MINUTE, 0);
+
+            AppointmentCalendarEvent event = new AppointmentCalendarEvent("Visit of Harpa",
+                    "description", startTime, endTime, true, Appointments.STATUS_PENDING,
+                    Appointments.SERVICE_ORTHODONTICS, true);
+            events.add(event);
+
+            Calendar startTime2 = Calendar.getInstance();
+            Calendar endTime2 = Calendar.getInstance();
+            startTime2.set(Calendar.DAY_OF_WEEK, 5);
+            endTime2.set(Calendar.HOUR_OF_DAY, 15);
+
+            AppointmentCalendarEvent event2 = new AppointmentCalendarEvent("Visit of Harpa",
+                    "description", startTime2, endTime2, true, Appointments.STATUS_CONFIRMED,
+                    Appointments.SERVICE_ORTHODONTICS, true);
+            events.add(event2);
+
+            Collections.sort(events, (a, b) -> a.getStartTime().compareTo(b.getStartTime()));
+            return events;
+        }
+    }
 
     public static final class HomeSections {
 

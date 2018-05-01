@@ -8,14 +8,12 @@
 
     <!-- Description -->
     <LinearLayout
-        android:id="@+id/view_agenda_event_description_container"
+        android:id="@+id/view_agenda_event"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="#02C39A"
         android:padding="10dp">
-
-        <ImageView android:id="@+id/view_agenda_event_image" android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/view_agenda_event_title"
@@ -24,28 +22,21 @@
             android:textColor="@android:color/black"
             android:textSize="16dp"/>
 
-        <LinearLayout
-            android:id="@+id/view_agenda_event_location_container"
+        <TextView
+            android:id="@+id/view_agenda_event_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:textColor="@color/gray_very_deep"
+            android:textSize="14dp"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/img_location"/>
-
-            <TextView
-                android:id="@+id/view_agenda_event_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:textColor="@color/calendar_text_default"
-                android:textSize="11dp"/>
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/view_agenda_event_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_very_deep"
+            android:text="Completed"
+            android:textSize="14dp"/>
 
     </LinearLayout>
 

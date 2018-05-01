@@ -43,9 +43,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         @BindView(R.id.tv_card_main_title)
         TextView tvTitle;
 
-        @BindView(R.id.tv_card_main_subtitle)
-        TextView tvSubtitle;
-
         @BindView(R.id.imageView)
         ImageView ivIcon;
 
@@ -129,7 +126,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         final HomeSection currentSection = myDataset.get(position);
 
         holder.tvTitle.setText(currentSection.getTitle());
-        holder.tvSubtitle.setText(currentSection.getSubtitle());
         holder.ivIcon.setImageDrawable(resources.getDrawable(currentSection.getIcon()));
         holder.cvMain.setCardBackgroundColor(resources.getColor(currentSection.getBackgroundColor()));
     }
