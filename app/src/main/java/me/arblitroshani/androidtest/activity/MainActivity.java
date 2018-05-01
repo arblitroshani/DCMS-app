@@ -101,17 +101,12 @@ public class MainActivity extends AppCompatActivity
                 .load(storageRefServices.child("tooth.png"))
                 .into(ivLogo);
 
+        setupMenuLoggedIn(false);
+
         auth = FirebaseAuth.getInstance();
         if (isUserSignedIn()) {
             refreshNavigationDrawer();
         }
-
-        tvName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                login();
-            }
-        });
 
         itemIds = new HashMap<>();
         itemIds.put("Services", R.id.nav_services);
@@ -140,6 +135,7 @@ public class MainActivity extends AppCompatActivity
                 auth = FirebaseAuth.getInstance();
                 refreshNavigationDrawer();
                 drawer.closeDrawer(GravityCompat.START);
+                replaceFragment(R.id.nav_home);
             } else {
                 if (response == null) {  // User pressed back button
                     showSnackbar("Sign in cancelled");
@@ -176,11 +172,14 @@ public class MainActivity extends AppCompatActivity
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         public void onComplete(@NonNull Task<Void> task) {
                             showSnackbar("Signed out!");
-                            tvName.setText("Click to login");
+                            tvName.setText("");
                             tvEmail.setText("");
                             GlideApp.with(getApplicationContext())
-                                    .load(R.mipmap.ic_launcher_round)
+                                    .load(R.drawable.default_profile)
+                                    .apply(RequestOptions.circleCropTransform())
                                     .into(ivProfile);
+                            setupMenuLoggedIn(false);
+                            replaceFragment(R.id.nav_home);
                             invalidateOptionsMenu();
                         }
                     });
@@ -220,10 +219,10 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_login) {
+        if (id == R.id.action_sign_in) {
             login();
             return true;
-        } else if (id == R.id.action_logout) {
+        } else if (id == R.id.action_sign_out) {
             logout();
             return true;
         } else if (id == R.id.home) {
@@ -250,6 +249,12 @@ public class MainActivity extends AppCompatActivity
             fragmentClassName = "Home";
         } else if (id == R.id.nav_help) {
             fragmentClassName = "Home";
+        } else if (id == R.id.nav_sign_in) {
+            login();
+            return true;
+        } else if (id == R.id.nav_sign_out) {
+            logout();
+            return true;
         } else {
             fragmentClassName = "Home";
         }
@@ -302,6 +307,19 @@ public class MainActivity extends AppCompatActivity
         onNavigationItemSelected(navigationView.getMenu().findItem(id));
     }
 
+    public void startActivity(String className) {
+        Intent i;
+        switch (className) {
+            case "AppointmentsActivity":
+                i = new Intent(MainActivity.this, AppointmentsActivity.class);
+                break;
+            default:
+                i = new Intent(MainActivity.this, MainActivity.class);
+                break;
+        }
+        startActivity(i);
+    }
+
     private void uncheckAllMenuItems() {
         int size = navigationView.getMenu().size();
         for (int i = 0; i < size; i++) {
@@ -314,6 +332,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void refreshNavigationDrawer() {
+        setupMenuLoggedIn(true);
+
         FirebaseUser currentUser = auth.getCurrentUser();
         tvName.setText(currentUser.getDisplayName());
         tvEmail.setText(currentUser.getEmail());
@@ -323,5 +343,11 @@ public class MainActivity extends AppCompatActivity
                 .load(photoUrl)
                 .apply(RequestOptions.circleCropTransform())
                 .into(ivProfile);
+    }
+
+    private void setupMenuLoggedIn(boolean b) {
+        Menu navMenu = navigationView.getMenu();
+        navMenu.findItem(R.id.nav_sign_in).setVisible(!b);
+        navMenu.findItem(R.id.nav_sign_out).setVisible(b);
     }
 }

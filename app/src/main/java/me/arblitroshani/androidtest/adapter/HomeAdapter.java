@@ -1,6 +1,7 @@
 package me.arblitroshani.androidtest.adapter;
 
 import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,6 +17,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -90,11 +92,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
                 } else {
                     String fragmentOpen = section.getFragmentOpen();
                     if (fragmentOpen.startsWith("Activity:")) {
-                        String n = fragmentOpen.substring(9) + "Activity";
-                        Intent i = new Intent(mainActivity, AppointmentsActivity.class);
-                        mainActivity.startActivity(i);
+                        mainActivity.startActivity(fragmentOpen.substring(9) + "Activity");
                     } else {
-                        mainActivity.replaceFragment(section.getFragmentOpen());
+                        mainActivity.replaceFragment(fragmentOpen);
                     }
                 }
             }
