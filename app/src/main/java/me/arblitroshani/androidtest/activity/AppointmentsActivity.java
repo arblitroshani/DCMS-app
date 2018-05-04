@@ -13,11 +13,8 @@ import com.github.tibolte.agendacalendarview.CalendarPickerController;
 import com.github.tibolte.agendacalendarview.models.CalendarEvent;
 import com.github.tibolte.agendacalendarview.models.DayItem;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -28,11 +25,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.adapter.AppointmentEventRenderer;
-import me.arblitroshani.androidtest.adapter.ServicesAdapter;
 import me.arblitroshani.androidtest.extra.Constants;
-import me.arblitroshani.androidtest.model.AppointmentCalendarEvent;
 import me.arblitroshani.androidtest.model.FirebaseAppointmentCalendarEvent;
-import me.arblitroshani.androidtest.model.Service;
 
 public class AppointmentsActivity extends AppCompatActivity implements CalendarPickerController {
 
@@ -43,8 +37,10 @@ public class AppointmentsActivity extends AppCompatActivity implements CalendarP
     @BindView(R.id.fab)
     FloatingActionButton fab;
 
-    Calendar minDate = Calendar.getInstance();
-    Calendar maxDate = Calendar.getInstance();
+    private FirebaseFirestore db;
+
+    private Calendar minDate = Calendar.getInstance();
+    private Calendar maxDate = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,18 +51,18 @@ public class AppointmentsActivity extends AppCompatActivity implements CalendarP
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        db = FirebaseFirestore.getInstance();
         minDate.add(Calendar.MONTH, -1);
 
         initCalendar();
 
         fab.setOnClickListener(view -> {
             Intent i = new Intent(AppointmentsActivity.this, AppointmentRequestActivity.class);
-            startActivityForResult(i, 5);
+            startActivityForResult(i, Constants.Appointments.RESULT_OK);
         });
     }
 
     public void initCalendar() {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("appointments")
                 .whereEqualTo("uid", FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .addSnapshotListener((snapshot, e) -> {
@@ -84,7 +80,7 @@ public class AppointmentsActivity extends AppCompatActivity implements CalendarP
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 5) {
+        if (requestCode == Constants.Appointments.RESULT_OK) {
             if(resultCode == Activity.RESULT_OK){
                 initCalendar();
             }

@@ -1,15 +1,10 @@
 package me.arblitroshani.androidtest.extra;
 
-import android.content.Context;
-import android.support.v4.content.ContextCompat;
-
-import com.github.tibolte.agendacalendarview.models.BaseCalendarEvent;
 import com.github.tibolte.agendacalendarview.models.CalendarEvent;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import me.arblitroshani.androidtest.R;
@@ -26,6 +21,8 @@ public final class Constants {
 
         public static final String SERVICE_ORTHODONTICS = "orthodontics";
         public static final String SERVICE_PERIODONTICS = "peiodontics";
+
+        public static int RESULT_OK = 5;
 
         public static List<CalendarEvent> getMockList() {
             List<CalendarEvent> events = new ArrayList<>();

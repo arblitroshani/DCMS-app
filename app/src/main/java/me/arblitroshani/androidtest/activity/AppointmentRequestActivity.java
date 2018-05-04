@@ -5,22 +5,13 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TimePicker;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.unstoppable.submitbuttonview.SubmitButton;
 
@@ -32,7 +23,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.extra.Constants;
-import me.arblitroshani.androidtest.model.AppointmentCalendarEvent;
 import me.arblitroshani.androidtest.model.FirebaseAppointmentCalendarEvent;
 
 public class AppointmentRequestActivity extends AppCompatActivity implements View.OnClickListener {
@@ -48,9 +38,11 @@ public class AppointmentRequestActivity extends AppCompatActivity implements Vie
     @BindView(R.id.etDescription)
     EditText etDescription;
 
-    String[] services = {"Orthodontics", "Periodontics"};
+    private FirebaseFirestore db;
 
-    Calendar myCalendar = Calendar.getInstance();
+    private String[] services = {"Orthodontics", "Periodontics"};
+
+    private Calendar myCalendar = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +53,8 @@ public class AppointmentRequestActivity extends AppCompatActivity implements Vie
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        db = FirebaseFirestore.getInstance();
 
         ArrayAdapter<String>adapter = new ArrayAdapter<>(AppointmentRequestActivity.this,
                 android.R.layout.simple_spinner_item, services);
@@ -128,22 +122,19 @@ public class AppointmentRequestActivity extends AppCompatActivity implements Vie
                 pickTime();
                 break;
             case R.id.bDone:
-                FirebaseAppointmentCalendarEvent appointment = new FirebaseAppointmentCalendarEvent(
-                        etDescription.getText().toString(),
-                        Constants.Appointments.STATUS_PENDING,
-                        spinner.getSelectedItem().toString(),
-                        true,
-                        myCalendar.getTimeInMillis(),
-                        30
-                );
-                // upload to firebase
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
                 db.collection("appointments")
-                        .add(appointment)
+                        .add(new FirebaseAppointmentCalendarEvent(
+                                etDescription.getText().toString(),
+                                Constants.Appointments.STATUS_PENDING,
+                                spinner.getSelectedItem().toString(),
+                                true,
+                                myCalendar.getTimeInMillis(),
+                                30
+                        ))
                         .addOnSuccessListener(documentReference -> {
                             bSubmit.doResult(true);
                             Intent returnIntent = new Intent();
-                            returnIntent.putExtra("result", 5);
+                            returnIntent.putExtra("result", Constants.Appointments.RESULT_OK);
                             setResult(Activity.RESULT_OK, returnIntent);
                             finish();
                         })
