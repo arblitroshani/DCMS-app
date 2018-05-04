@@ -12,9 +12,9 @@ public class AppointmentCalendarEvent extends BaseCalendarEvent {
     private boolean isForSelf;
 
     public AppointmentCalendarEvent(String title, String description, Calendar startTime,
-                                    Calendar endTime, boolean allDay, String status, String service,
+                                    Calendar endTime, String status, String service,
                                     boolean isForSelf) {
-        super(title, description, "", R.color.gray_light, startTime, endTime, allDay);
+        super(title, description, "", R.color.gray_light, startTime, endTime, true);
         this.status = status;
         this.service = service;
         this.isForSelf = isForSelf;

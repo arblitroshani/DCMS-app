@@ -24,4 +24,5 @@
     <string name="title_activity_appointments">AppointmentsActivity</string>
 
     <string name="agenda_event_no_events">No appointments</string>
+    <string name="title_activity_appointment_request">AppointmentRequestActivity</string>
 </resources>

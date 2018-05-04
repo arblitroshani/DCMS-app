@@ -1,4 +1,4 @@
-#Tue May 01 16:10:28 CEST 2018
-base.0=C\:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+#Fri May 04 14:22:03 CEST 2018
+base.0=C\:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
 path.0=classes.dex
 renamed.0=classes.dex

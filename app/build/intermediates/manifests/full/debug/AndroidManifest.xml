@@ -60,6 +60,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="me.arblitroshani.androidtest.activity.MainActivity" />
         </activity>
+        <activity
+            android:name="me.arblitroshani.androidtest.activity.AppointmentRequestActivity"
+            android:label="New appointment"
+            android:parentActivityName="me.arblitroshani.androidtest.activity.AppointmentsActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.arblitroshani.androidtest.activity.AppointmentsActivity" />
+        </activity>
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"

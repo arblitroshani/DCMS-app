@@ -38,7 +38,7 @@ public final class Constants {
             endTime1.set(Calendar.MINUTE, 0);
 
             AppointmentCalendarEvent event1 = new AppointmentCalendarEvent("Visit of Harpa",
-                    "description", startTime1, endTime1, true, Appointments.STATUS_COMPLETED,
+                    "description", startTime1, endTime1, Appointments.STATUS_COMPLETED,
                     Appointments.SERVICE_ORTHODONTICS, true);
             events.add(event1);
 
@@ -50,17 +50,19 @@ public final class Constants {
             endTime.set(Calendar.MINUTE, 0);
 
             AppointmentCalendarEvent event = new AppointmentCalendarEvent("Visit of Harpa",
-                    "description", startTime, endTime, true, Appointments.STATUS_PENDING,
+                    "description", startTime, endTime, Appointments.STATUS_PENDING,
                     Appointments.SERVICE_ORTHODONTICS, true);
             events.add(event);
 
             Calendar startTime2 = Calendar.getInstance();
             Calendar endTime2 = Calendar.getInstance();
-            startTime2.set(Calendar.DAY_OF_WEEK, 5);
-            endTime2.set(Calendar.HOUR_OF_DAY, 15);
+            startTime2.set(Calendar.HOUR_OF_DAY, 18);
+            startTime2.set(Calendar.MINUTE, 30);
+            endTime2.set(Calendar.HOUR_OF_DAY, 19);
+            endTime2.set(Calendar.MINUTE, 0);
 
             AppointmentCalendarEvent event2 = new AppointmentCalendarEvent("Visit of Harpa",
-                    "description", startTime2, endTime2, true, Appointments.STATUS_CONFIRMED,
+                    "description", startTime2, endTime2, Appointments.STATUS_CONFIRMED,
                     Appointments.SERVICE_ORTHODONTICS, true);
             events.add(event2);
 

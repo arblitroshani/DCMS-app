@@ -12,11 +12,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.facebook.shimmer.ShimmerFrameLayout;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import butterknife.BindView;
@@ -79,26 +77,19 @@ public class ProfileFragment extends Fragment {
                 .apply(RequestOptions.circleCropTransform())
                 .into(ivProfilePicture);
 
-        ivProfilePicture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new PhotoFullPopupWindow(getContext(), R.layout.popup_photo_full, view, photoPath, null);
-            }
-        });
+        ivProfilePicture.setOnClickListener(view1 ->
+                new PhotoFullPopupWindow(getContext(), R.layout.popup_photo_full, view1, photoPath, null));
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db.collection("users").document(currentUser.getUid());
-        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                User user = documentSnapshot.toObject(User.class);
-                container.stopShimmerAnimation();
-                nameContainer.stopShimmerAnimation();
-                tvName.setText(user.getName());
-                tvEmail.setText(user.getEmail());
-                tvBday.setText(user.getBirthday());
-                tvPhone.setText(user.getPhone());
-            }
+        docRef.get().addOnSuccessListener(documentSnapshot -> {
+            User user = documentSnapshot.toObject(User.class);
+            container.stopShimmerAnimation();
+            nameContainer.stopShimmerAnimation();
+            tvName.setText(user.getName());
+            tvEmail.setText(user.getEmail());
+            tvBday.setText(user.getBirthday());
+            tvPhone.setText(user.getPhone());
         });
     }
 
