@@ -35,6 +35,7 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-core:12.0.1'
     implementation 'com.google.firebase:firebase-firestore:12.0.1'
+    implementation 'com.google.firebase:firebase-messaging:12.0.1'
     implementation 'com.firebaseui:firebase-ui-auth:3.3.0'
     implementation 'com.firebaseui:firebase-ui-storage:3.3.0'
 
