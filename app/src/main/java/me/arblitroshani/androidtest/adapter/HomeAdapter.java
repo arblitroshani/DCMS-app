@@ -69,54 +69,43 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
                 .inflate(R.layout.item_card_home, parent, false);
         final ViewHolder holder = new ViewHolder(v);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                HomeSection section = myDataset.get(holder.getAdapterPosition());
+        holder.itemView.setOnClickListener(view -> {
+            HomeSection section = myDataset.get(holder.getAdapterPosition());
 
-                if (section.isRequiresLogin() && !isUserSignedIn()) {
-                    new AlertDialog.Builder(context)
-                            .setTitle("Warning!")
-                            .setMessage("You can only open this section if you are logging in.")
-                            .setPositiveButton("OK", null)
-                            .setNeutralButton("LOGIN", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    mainActivity.login();
-                                }
-                            })
-                            .show();
+            if (section.isRequiresLogin() && !isUserSignedIn()) {
+                new AlertDialog.Builder(context)
+                        .setTitle("Warning!")
+                        .setMessage("You can only open this section if you are logging in.")
+                        .setPositiveButton("OK", null)
+                        .setNeutralButton("LOGIN", (dialogInterface, i) -> mainActivity.login())
+                        .show();
+            } else {
+                String fragmentOpen = section.getFragmentOpen();
+                if (fragmentOpen.startsWith("Activity:")) {
+                    mainActivity.startActivity(fragmentOpen.substring(9) + "Activity");
                 } else {
-                    String fragmentOpen = section.getFragmentOpen();
-                    if (fragmentOpen.startsWith("Activity:")) {
-                        mainActivity.startActivity(fragmentOpen.substring(9) + "Activity");
-                    } else {
-                        mainActivity.replaceFragment(fragmentOpen);
-                    }
+                    mainActivity.replaceFragment(fragmentOpen);
                 }
             }
         });
 
-        holder.itemView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        ObjectAnimator upAnim = ObjectAnimator.ofFloat(view, "translationZ", 16);
-                        upAnim.setDuration(150);
-                        upAnim.setInterpolator(new DecelerateInterpolator());
-                        upAnim.start();
-                        break;
-                    case MotionEvent.ACTION_UP:
-                    case MotionEvent.ACTION_CANCEL:
-                        ObjectAnimator downAnim = ObjectAnimator.ofFloat(view, "translationZ", 0);
-                        downAnim.setDuration(150);
-                        downAnim.setInterpolator(new AccelerateInterpolator());
-                        downAnim.start();
-                        break;
-                }
-                return false;
+        holder.itemView.setOnTouchListener((view, motionEvent) -> {
+            switch (motionEvent.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    ObjectAnimator upAnim = ObjectAnimator.ofFloat(view, "translationZ", 16);
+                    upAnim.setDuration(150);
+                    upAnim.setInterpolator(new DecelerateInterpolator());
+                    upAnim.start();
+                    break;
+                case MotionEvent.ACTION_UP:
+                case MotionEvent.ACTION_CANCEL:
+                    ObjectAnimator downAnim = ObjectAnimator.ofFloat(view, "translationZ", 0);
+                    downAnim.setDuration(150);
+                    downAnim.setInterpolator(new AccelerateInterpolator());
+                    downAnim.start();
+                    break;
             }
+            return false;
         });
         return holder;
     }

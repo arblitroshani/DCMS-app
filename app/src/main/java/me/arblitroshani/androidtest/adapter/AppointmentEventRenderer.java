@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.github.tibolte.agendacalendarview.render.EventRenderer;
 
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.extra.Constants;
@@ -16,7 +17,7 @@ import me.arblitroshani.androidtest.model.AppointmentCalendarEvent;
 
 public class AppointmentEventRenderer extends EventRenderer<AppointmentCalendarEvent> {
 
-    private static final SimpleDateFormat TIME_FORMAT = new SimpleDateFormat("KK:mm a");
+    private static final SimpleDateFormat TIME_FORMAT = new SimpleDateFormat(Constants.Appointments.TIME_FORMAT, Locale.getDefault());
 
     private static Resources resources;
 

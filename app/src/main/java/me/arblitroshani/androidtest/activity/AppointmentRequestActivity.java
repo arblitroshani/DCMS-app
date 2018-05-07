@@ -5,14 +5,19 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.unstoppable.submitbuttonview.SubmitButton;
 
 import java.text.SimpleDateFormat;
@@ -40,7 +45,10 @@ public class AppointmentRequestActivity extends AppCompatActivity implements Vie
 
     private FirebaseFirestore db;
 
-    private String[] services = {"Orthodontics", "Periodontics"};
+    private String[] services = {
+            Constants.Appointments.SERVICE_ORTHODONTICS,
+            Constants.Appointments.SERVICE_PERIODONTICS
+    };
 
     private Calendar myCalendar = Calendar.getInstance();
 
@@ -74,7 +82,7 @@ public class AppointmentRequestActivity extends AppCompatActivity implements Vie
                     myCalendar.set(Calendar.YEAR, year);
                     myCalendar.set(Calendar.MONTH, monthOfYear);
                     myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                    updateDateLabel();
+                    updateLabel(etDatePicker, Constants.Appointments.DATE_FORMAT);
                     pickTime();
                 },
                 myCalendar.get(Calendar.YEAR),
@@ -91,7 +99,7 @@ public class AppointmentRequestActivity extends AppCompatActivity implements Vie
                 (timePicker, i, i1) -> {
                     myCalendar.set(Calendar.HOUR_OF_DAY, i);
                     myCalendar.set(Calendar.MINUTE, i1);
-                    updateTimeLabel();
+                    updateLabel(etTimePicker, Constants.Appointments.TIME_FORMAT);
                 },
                 myCalendar.get(Calendar.HOUR_OF_DAY),
                 myCalendar.get(Calendar.MINUTE),
@@ -99,18 +107,10 @@ public class AppointmentRequestActivity extends AppCompatActivity implements Vie
         ).show();
     }
 
-    private void updateDateLabel() {
-        String myFormat = "MM/dd/yy";
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.getDefault());
-        etDatePicker.setText(sdf.format(myCalendar.getTime()));
+    private void updateLabel(EditText editText, String format) {
+        SimpleDateFormat sdf = new SimpleDateFormat(format, Locale.getDefault());
+        editText.setText(sdf.format(myCalendar.getTime()));
     }
-
-    private void updateTimeLabel() {
-        String myFormat = "HH:mm";
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.getDefault());
-        etTimePicker.setText(sdf.format(myCalendar.getTime()));
-    }
-
 
     @Override
     public void onClick(View view) {
@@ -122,23 +122,35 @@ public class AppointmentRequestActivity extends AppCompatActivity implements Vie
                 pickTime();
                 break;
             case R.id.bDone:
-                db.collection("appointments")
-                        .add(new FirebaseAppointmentCalendarEvent(
-                                etDescription.getText().toString(),
-                                Constants.Appointments.STATUS_PENDING,
-                                spinner.getSelectedItem().toString(),
-                                true,
-                                myCalendar.getTimeInMillis(),
-                                30
-                        ))
-                        .addOnSuccessListener(documentReference -> {
-                            bSubmit.doResult(true);
-                            Intent returnIntent = new Intent();
-                            returnIntent.putExtra("result", Constants.Appointments.RESULT_OK);
-                            setResult(Activity.RESULT_OK, returnIntent);
-                            finish();
-                        })
-                        .addOnFailureListener(e -> bSubmit.doResult(false));
+                etDatePicker.setError(null);
+                etTimePicker.setError(null);
+                if (TextUtils.isEmpty(etDatePicker.getText())) {
+                    etDatePicker.setHint("Date is required!");
+                    etDatePicker.setError("Date is required!");
+                    bSubmit.reset();
+                } else if (TextUtils.isEmpty(etTimePicker.getText())) {
+                    etTimePicker.setHint("Please set the time!");
+                    etTimePicker.setError("Please set the time!");
+                    bSubmit.reset();
+                } else {
+                    db.collection("appointments")
+                            .add(new FirebaseAppointmentCalendarEvent(
+                                    etDescription.getText().toString(),
+                                    Constants.Appointments.STATUS_PENDING,
+                                    spinner.getSelectedItem().toString(),
+                                    true,
+                                    myCalendar.getTimeInMillis(),
+                                    30
+                            ))
+                            .addOnSuccessListener(documentReference -> {
+                                bSubmit.doResult(true);
+                                Intent returnIntent = new Intent();
+                                returnIntent.putExtra("result", Constants.Appointments.RESULT_OK);
+                                setResult(Activity.RESULT_OK, returnIntent);
+                                finish();
+                            })
+                            .addOnFailureListener(e -> bSubmit.reset());
+                }
                 break;
         }
     }

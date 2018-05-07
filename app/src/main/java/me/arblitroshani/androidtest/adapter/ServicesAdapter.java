@@ -74,14 +74,11 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
         GlideApp.with(context)
                 .load(storageRefServices.child(currentService.getPhotoUrl()))
                 .into(holder.ivPicture);
-        holder.cvMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(context, ServiceDetailsActivity.class);
-                i.putExtra("service_to_display", currentService);
-                i.putExtra("service_id", serviceIds.get(position));
-                context.startActivity(i);
-            }
+        holder.cvMain.setOnClickListener(view -> {
+            Intent i = new Intent(context, ServiceDetailsActivity.class);
+            i.putExtra("service_to_display", currentService);
+            i.putExtra("service_id", serviceIds.get(position));
+            context.startActivity(i);
         });
     }
 

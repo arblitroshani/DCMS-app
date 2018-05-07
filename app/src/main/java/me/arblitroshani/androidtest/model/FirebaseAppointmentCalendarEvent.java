@@ -40,9 +40,9 @@ public class FirebaseAppointmentCalendarEvent {
     @Exclude
     public AppointmentCalendarEvent getCalendarFormat() {
         Calendar startTime = Calendar.getInstance();
+        Calendar endTime = Calendar.getInstance();
         startTime.setTimeInMillis(this.startTimeMillis);
-        Calendar endTime = startTime;
-        endTime.add(Calendar.MINUTE, this.getDurationMinutes());
+        endTime.setTimeInMillis(this.startTimeMillis + this.durationMinutes * 60 * 1000);
 
         return new AppointmentCalendarEvent(
                 this.getTitle(),
@@ -53,7 +53,6 @@ public class FirebaseAppointmentCalendarEvent {
                 this.getService(),
                 this.isForSelf
         );
-
     }
 
     public String getPatientName() {

@@ -288,12 +288,12 @@
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\ed3bf378c6819a1ac993f30b01a1dcd2\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_today_white_48dp.png.flat",
-        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\drawable-xhdpi\\ic_today_white_48dp.png"
-    },
-    {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-watch-v20_common_google_signin_btn_text_light_normal.xml.flat",
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-auth-12.0.1.aar\\a35b1d2249251febb6171bc6ab0c8aaf\\res\\drawable-watch-v20\\common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_today_white_48dp.png.flat",
+        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\drawable-xhdpi\\ic_today_white_48dp.png"
     },
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23_abc_control_background_material.xml.flat",
@@ -1234,6 +1234,10 @@
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\ed3bf378c6819a1ac993f30b01a1dcd2\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_view_event.xml.flat",
+        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\layout\\dialog_view_event.xml"
     },
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fui_idp_button_twitter.xml.flat",

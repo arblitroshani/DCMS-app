@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-    android:layout_marginVertical="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activity.AppointmentRequestActivity"
-    tools:showIn="@layout/activity_appointment_request">
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -16,34 +13,12 @@
         android:focusable="true"
         android:focusableInTouchMode="true"/>
 
-    <TextView
-        android:id="@+id/tvService"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Service"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <android.support.constraint.Barrier
         android:id="@+id/barrier1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="end"
         app:constraint_referenced_ids="tvService, tvDate, tvStartTime, tvIsForSelf, tvDescription" />
-
-    <Spinner
-        android:id="@+id/sServices"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvService"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/barrier1"
-        app:layout_constraintTop_toTopOf="@+id/tvService" />
 
     <TextView
         android:id="@+id/tvDate"
@@ -56,16 +31,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvService" />
 
-    <EditText
-        android:id="@+id/etDatePicker"
+    <TextView
+        android:id="@+id/tvDateData"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:ems="10"
-        android:inputType="date"
-        android:clickable="true"
         android:focusable="false"
+        app:layout_constraintVertical_bias="1.0"
         app:layout_constraintBottom_toBottomOf="@+id/tvDate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/barrier1"
@@ -82,16 +56,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDate" />
 
-    <EditText
-        android:id="@+id/etStartTimePicker"
+    <TextView
+        android:id="@+id/tvStartTimeData"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="time"
-        android:clickable="true"
+        app:layout_constraintVertical_bias="1.0"
         android:focusable="false"
         app:layout_constraintBottom_toBottomOf="@+id/tvStartTime"
         app:layout_constraintEnd_toEndOf="parent"
@@ -124,49 +97,22 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="28dp"
         android:text="Description"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/tvIsForSelf" />
 
-    <EditText
-        android:id="@+id/etDescription"
+    <TextView
+        android:id="@+id/tvDescriptionData"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:ems="10"
-        android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toEndOf="@+id/barrier1"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <com.unstoppable.submitbuttonview.SubmitButton
-        android:id="@+id/bDone"
-        android:layout_width="315dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:buttonText="SUBMIT"
-        app:buttonTextSize="20sp"
-        app:buttonColor="@color/colorAccent"
-        app:succeedColor="@color/colorAccent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="If scheduling for someone else, please uncheck and provide more information below."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/barrier1"
-        app:layout_constraintTop_toBottomOf="@+id/chbIsForSelf" />
+        app:layout_constraintTop_toTopOf="@+id/tvDescription" />
 
 </android.support.constraint.ConstraintLayout>
