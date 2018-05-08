@@ -25,4 +25,10 @@
 
     <string name="agenda_event_no_events">No appointments</string>
     <string name="title_activity_appointment_request">AppointmentRequestActivity</string>
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="default_notification_channel_name" translatable="true">Appointments</string>
+
+    <string name="pref_firebase_instance_id_key">pref_firebase_instance_id</string>
+    <string name="pref_firebase_instance_id_default_key">default</string>
 </resources>

@@ -1,6 +1,9 @@
 package me.arblitroshani.androidtest.activity;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -14,21 +17,25 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.request.RequestOptions;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.FirebaseUserMetadata;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -40,8 +47,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.R;
+import me.arblitroshani.androidtest.extra.Utility;
 import me.arblitroshani.androidtest.fragment.HomeFragment;
 import me.arblitroshani.androidtest.model.User;
+import me.arblitroshani.androidtest.services.MyFirebaseInstanceIDService;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -70,6 +79,7 @@ public class MainActivity extends AppCompatActivity
     private Map<String, Integer> itemIds;
 
     private FirebaseAuth auth;
+    private FirebaseUser currentUser;
     private FirebaseStorage storage;
     private StorageReference storageRefServices;
 
@@ -106,6 +116,7 @@ public class MainActivity extends AppCompatActivity
         auth = FirebaseAuth.getInstance();
         if (isUserSignedIn()) {
             refreshNavigationDrawer();
+            updateRegistrationToken();
         }
 
         itemIds = new HashMap<>();
@@ -113,6 +124,29 @@ public class MainActivity extends AppCompatActivity
         itemIds.put("Clinic", R.id.nav_clinic);
 
         replaceFragment(R.id.nav_home);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            // Create channel to show notifications.
+            String channelId  = getString(R.string.default_notification_channel_id);
+            String channelName = getString(R.string.default_notification_channel_name);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(new NotificationChannel(channelId,
+                    channelName, NotificationManager.IMPORTANCE_LOW));
+        }
+    }
+
+    private void updateRegistrationToken() {
+        MyFirebaseInstanceIDService myFirebaseInstanceIdService = new MyFirebaseInstanceIDService();
+        Intent intent = new Intent(getApplicationContext(), myFirebaseInstanceIdService.getClass());
+        startService(intent); //invoke onCreate
+
+        Map<String, String> m = new HashMap<>();
+        m.put("value", Utility.getFirebaseInstanceId(getApplicationContext()));
+
+        FirebaseFirestore.getInstance()
+                .collection("registrationTokens")
+                .document(currentUser.getUid())
+                .set(m);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -134,6 +168,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 auth = FirebaseAuth.getInstance();
                 refreshNavigationDrawer();
+                updateRegistrationToken();
                 drawer.closeDrawer(GravityCompat.START);
                 replaceFragment(R.id.nav_home);
             } else {
@@ -169,19 +204,17 @@ public class MainActivity extends AppCompatActivity
         if (isUserSignedIn()) {
             AuthUI.getInstance()
                     .signOut(this)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        public void onComplete(@NonNull Task<Void> task) {
-                            showSnackbar("Signed out!");
-                            tvName.setText("");
-                            tvEmail.setText("");
-                            GlideApp.with(getApplicationContext())
-                                    .load(R.drawable.default_profile)
-                                    .apply(RequestOptions.circleCropTransform())
-                                    .into(ivProfile);
-                            setupMenuLoggedIn(false);
-                            replaceFragment(R.id.nav_home);
-                            invalidateOptionsMenu();
-                        }
+                    .addOnCompleteListener(task -> {
+                        showSnackbar("Signed out!");
+                        tvName.setText("");
+                        tvEmail.setText("");
+                        GlideApp.with(getApplicationContext())
+                                .load(R.drawable.default_profile)
+                                .apply(RequestOptions.circleCropTransform())
+                                .into(ivProfile);
+                        setupMenuLoggedIn(false);
+                        replaceFragment(R.id.nav_home);
+                        invalidateOptionsMenu();
                     });
         }
     }
@@ -334,7 +367,7 @@ public class MainActivity extends AppCompatActivity
     private void refreshNavigationDrawer() {
         setupMenuLoggedIn(true);
 
-        FirebaseUser currentUser = auth.getCurrentUser();
+        currentUser = auth.getCurrentUser();
         tvName.setText(currentUser.getDisplayName());
         tvEmail.setText(currentUser.getEmail());
 

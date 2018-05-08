@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri May 04 14:22:06 CEST 2018
+#Tue May 08 11:19:28 CEST 2018
 1.base=C\:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\assets\\debug
 2.path=classes.dex
 0.baseType=DIRECTORY

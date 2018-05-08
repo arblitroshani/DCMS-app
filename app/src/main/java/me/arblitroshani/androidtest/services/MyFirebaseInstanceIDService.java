@@ -5,16 +5,31 @@ import android.util.Log;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
+import me.arblitroshani.androidtest.R;
+import me.arblitroshani.androidtest.extra.Utility;
+
 public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
     @Override
-    public void onTokenRefresh() {
+    public void onCreate()
+    {
+        String currentToken = FirebaseInstanceId.getInstance().getToken();
 
-        //For registration of token
-        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        String savedToken = Utility.getFirebaseInstanceId(getApplicationContext());
+        String defaultToken = getApplication().getString(R.string.pref_firebase_instance_id_default_key);
 
-        //To displaying token on logcat
-        Log.d("TOKEN: ", refreshedToken);
+        if(currentToken != null && !savedToken.equalsIgnoreCase(defaultToken)) {
+            Utility.setFirebaseInstanceId(getApplicationContext(), currentToken);
+        }
+
+        super.onCreate();
     }
 
+    @Override
+    public void onTokenRefresh() {
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Log.d("TOKEN: ", refreshedToken);
+
+        Utility.setFirebaseInstanceId(getApplicationContext(),refreshedToken);
+    }
 }
