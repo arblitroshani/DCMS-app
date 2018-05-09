@@ -23,6 +23,10 @@ public final class Constants {
         public static int RESULT_OK = 5;
     }
 
+    public static final class Treatments {
+        public static final String DATE_FORMAT = "dd/MM/yyyy";
+    }
+
     public static final class HomeSections {
 
         private static List<HomeSection> getCommonSections() {
@@ -33,7 +37,7 @@ public final class Constants {
                     "this is a subtitle",
                     "Profile",
                     R.color.teal_blue,
-                    R.drawable.ic_account_circle_white_48dp,
+                    R.drawable.outline_account_circle_white_48,
                     true)
             );
 
@@ -44,11 +48,11 @@ public final class Constants {
             List<HomeSection> commonSections = new ArrayList<>();
 
             commonSections.add(new HomeSection(
-                    "Our services",
+                    "Services",
                     "this is a subtitle",
                     "Services",
                     R.color.saffron,
-                    R.drawable.ic_dashboard_white_48dp,
+                    R.drawable.outline_dashboard_white_48,
                     false)
             );
             commonSections.add(new HomeSection(
@@ -56,7 +60,7 @@ public final class Constants {
                     "this is a subtitle",
                     "Home",
                     R.color.giants_orange_light,
-                    R.drawable.ic_info_outline_white_48dp,
+                    R.drawable.outline_info_white_48,
                     false)
             );
 
@@ -75,15 +79,15 @@ public final class Constants {
                     "this is a subtitle",
                     "Activity:Appointments",
                     R.color.dark_slate_gray,
-                    R.drawable.ic_today_white_48dp,
+                    R.drawable.outline_today_white_48,
                     true)
             );
             userSections.add(new HomeSection(
                     "Treatments",
                     "this is a subtitle",
-                    "Home",
+                    "Treatments",
                     R.color.gunmetal,
-                    R.drawable.ic_receipt_white_48dp,
+                    R.drawable.outline_receipt_white_48,
                     true)
             );
 

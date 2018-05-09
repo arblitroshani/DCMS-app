@@ -1,0 +1,24 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="appointments"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_today"
+        android:shortcutShortLabel="@string/shortcut_short_name">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="me.arblitroshani.androidtest"
+            android:targetClass="me.arblitroshani.androidtest.activity.AppointmentsActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="new appointment"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_add"
+        android:shortcutShortLabel="@string/shortcut_short_name1">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="me.arblitroshani.androidtest"
+            android:targetClass="me.arblitroshani.androidtest.activity.AppointmentRequestActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+</shortcuts>

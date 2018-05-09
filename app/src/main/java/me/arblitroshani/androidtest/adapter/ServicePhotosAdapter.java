@@ -61,17 +61,9 @@ public class ServicePhotosAdapter extends RecyclerView.Adapter<ServicePhotosAdap
                 .centerCrop()
                 .into(holder.ivPhoto);
 
-        ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(final Uri uri) {
-                holder.ivPhoto.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        new PhotoFullPopupWindow(context, R.layout.popup_photo_full, view, uri.toString(), null);
-                    }
-                });
-            }
-        });
+        ref.getDownloadUrl().addOnSuccessListener(uri ->
+                holder.ivPhoto.setOnClickListener(view ->
+                        new PhotoFullPopupWindow(context, R.layout.popup_photo_full, view, uri.toString(), null)));
     }
 
     @Override

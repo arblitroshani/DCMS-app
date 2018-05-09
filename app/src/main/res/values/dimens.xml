@@ -6,8 +6,8 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
-    <dimen name="main_card_margin_horizontal">8dp</dimen>
-    <dimen name="main_card_margin_vertical">8dp</dimen>
+    <dimen name="main_card_margin_horizontal">12dp</dimen>
+    <dimen name="main_card_margin_vertical">10dp</dimen>
 
     <dimen name="card_recycler_corner_radius">2dp</dimen>
     <dimen name="card_recycler_elevation">2dp</dimen>
@@ -18,7 +18,7 @@
     <dimen name="card_button_margin">8dp</dimen>
 
     <!-- Navigation Drawer -->
-    <dimen name="navigation_drawer_max_width">280dp</dimen>
+    <dimen name="navigation_drawer_max_width">320dp</dimen>
 
     <dimen name="spacing_8">8dp</dimen>
     <dimen name="spacing_56">56dp</dimen>

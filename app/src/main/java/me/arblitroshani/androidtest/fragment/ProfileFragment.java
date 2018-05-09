@@ -66,7 +66,7 @@ public class ProfileFragment extends Fragment {
         nameContainer.startShimmerAnimation();
 
         Glide.with(this)
-                .load(R.drawable.material_design_4)
+                .load(R.drawable.header3)
                 .into(ivBackground);
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();

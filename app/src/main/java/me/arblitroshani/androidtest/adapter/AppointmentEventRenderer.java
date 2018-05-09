@@ -52,7 +52,7 @@ public class AppointmentEventRenderer extends EventRenderer<AppointmentCalendarE
 
     @Override
     public int getEventLayout() {
-        return R.layout.view_agenda_appointment_event;
+        return R.layout.item_appointment_event;
     }
 
     @Override

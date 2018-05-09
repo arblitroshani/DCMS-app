@@ -15,7 +15,6 @@ import com.google.firebase.messaging.RemoteMessage;
 
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.activity.AppointmentsActivity;
-import me.arblitroshani.androidtest.activity.MainActivity;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
@@ -25,7 +24,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     }
 
     private void sendNotification(String messageBody) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, AppointmentsActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 
@@ -34,7 +33,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this, channelId)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("FCM Message")
+                .setContentTitle("Your appointment is confirmed!")
                 .setContentText(messageBody)
                 .setAutoCancel(true)
                 .setSound(soundUri)

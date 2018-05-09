@@ -63,7 +63,8 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
         context = parent.getContext();
         View v = LayoutInflater.from(context)
                 .inflate(R.layout.item_card_service, parent, false);
-        return new ViewHolder(v);
+        final ViewHolder holder = new ViewHolder(v);
+        return holder;
     }
 
     @Override

@@ -1,73 +1,82 @@
 package me.arblitroshani.androidtest.model;
 
+import java.util.Date;
+
 public class Treatment {
 
-    private String name;
-    private String categoryName;
-    private String dateStarted;
-
-    private boolean consentIsAgreed;
-    private boolean statusIsFinished;
-
-    private int paymentTotal;
+    private String service;
+    private String description;
+    private String doctorId;
+    private String uid;
+    private Date dateStarted;
+    private boolean isOngoing;
     private int numSessions;
 
     public Treatment() {}
 
-    public Treatment(String name, String categoryName, String dateStarted, boolean consentIsAgreed, boolean statusIsFinished, int paymentTotal) {
-        this.name = name;
-        this.categoryName = categoryName;
+    public Treatment(String service, String description, String doctorId, String uid, Date dateStarted, boolean isOngoing, int numSessions) {
+        this.service = service;
+        this.description = description;
+        this.doctorId = doctorId;
+        this.uid = uid;
         this.dateStarted = dateStarted;
-        this.consentIsAgreed = consentIsAgreed;
-        this.statusIsFinished = statusIsFinished;
-        this.paymentTotal = paymentTotal;
+        this.isOngoing = isOngoing;
+        this.numSessions = numSessions;
     }
 
-    public String getName() {
-        return name;
+    public String getService() {
+        return service;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setService(String service) {
+        this.service = service;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getDateStarted() {
+    public String getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(String doctorId) {
+        this.doctorId = doctorId;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public Date getDateStarted() {
         return dateStarted;
     }
 
-    public void setDateStarted(String dateStarted) {
+    public void setDateStarted(Date dateStarted) {
         this.dateStarted = dateStarted;
     }
 
-    public boolean isConsentIsAgreed() {
-        return consentIsAgreed;
+    public boolean isOngoing() {
+        return isOngoing;
     }
 
-    public void setConsentIsAgreed(boolean consentIsAgreed) {
-        this.consentIsAgreed = consentIsAgreed;
+    public void setOngoing(boolean ongoing) {
+        isOngoing = ongoing;
     }
 
-    public boolean isStatusIsFinished() {
-        return statusIsFinished;
+    public int getNumSessions() {
+        return numSessions;
     }
 
-    public void setStatusIsFinished(boolean statusIsFinished) {
-        this.statusIsFinished = statusIsFinished;
-    }
-
-    public int getPaymentTotal() {
-        return paymentTotal;
-    }
-
-    public void setPaymentTotal(int paymentTotal) {
-        this.paymentTotal = paymentTotal;
+    public void setNumSessions(int numSessions) {
+        this.numSessions = numSessions;
     }
 }
