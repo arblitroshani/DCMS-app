@@ -17,14 +17,15 @@ public final class Constants {
         public static final String SERVICE_ORTHODONTICS = "Orthodontics";
         public static final String SERVICE_PERIODONTICS = "Periodontics";
 
-        public static final String DATE_FORMAT = "dd/MM/yyyy";
+        //public static final String DATE_FORMAT = "dd/MM/yyyy";
+        public static final String DATE_FORMAT = "MMM d, yyyy";
         public static final String TIME_FORMAT = "KK:mm a";
 
         public static int RESULT_OK = 5;
     }
 
     public static final class Treatments {
-        public static final String DATE_FORMAT = "dd/MM/yyyy";
+        public static final String DATE_FORMAT = Appointments.DATE_FORMAT;
     }
 
     public static final class HomeSections {

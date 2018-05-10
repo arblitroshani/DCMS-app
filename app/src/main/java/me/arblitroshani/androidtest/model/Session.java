@@ -1,24 +1,22 @@
 package me.arblitroshani.androidtest.model;
 
+import java.util.Date;
+
 public class Session {
 
     private String name;
-    private String date;
-    private String doctorName;
+    private Date date;
     private String doctorId;
     private String description;
     private String diagnosis;
 
     private int price;
 
-    // private List<String> photoLinks;
-
     public Session() {}
 
-    public Session(String name, String date, String doctorName, String doctorId, String description, String diagnosis, int price) {
+    public Session(String name, Date date, String doctorId, String description, String diagnosis, int price) {
         this.name = name;
         this.date = date;
-        this.doctorName = doctorName;
         this.doctorId = doctorId;
         this.description = description;
         this.diagnosis = diagnosis;
@@ -33,20 +31,12 @@ public class Session {
         this.name = name;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
-    }
-
-    public String getDoctorName() {
-        return doctorName;
-    }
-
-    public void setDoctorName(String doctorName) {
-        this.doctorName = doctorName;
     }
 
     public String getDoctorId() {

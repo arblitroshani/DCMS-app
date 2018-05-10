@@ -40,7 +40,7 @@ public class AppointmentEventRenderer extends EventRenderer<AppointmentCalendarE
             container.setBackgroundColor(resources.getColor(R.color.colorAccent));
             tvStatus.setText("Pending approval");
         } else if (event.getStatus().equals(Constants.Appointments.STATUS_CONFIRMED)) {
-            container.setBackgroundColor(Color.parseColor("#028090"));
+            container.setBackgroundColor(resources.getColor(R.color.appointmentConfirmed));
             tvStatus.setText("Confirmed");
             tvTitle.setTextColor(resources.getColor(R.color.white));
             tvTime.setTextColor(resources.getColor(R.color.gray_very_light));

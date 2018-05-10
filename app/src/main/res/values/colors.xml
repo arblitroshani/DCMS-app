@@ -41,5 +41,6 @@
     <color name="giants_orange_light">#f67e2d</color>
 
     <color name="appointmentCompleted">#02C39A</color>
+    <color name="appointmentConfirmed">#028090</color>
 
 </resources>

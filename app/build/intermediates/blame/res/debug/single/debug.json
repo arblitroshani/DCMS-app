@@ -792,6 +792,10 @@
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\ed3bf378c6819a1ac993f30b01a1dcd2\\res\\color-v21\\abc_btn_colored_borderless_text_material.xml"
     },
     {
+        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_card_session.xml.flat",
+        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\layout\\item_card_session.xml"
+    },
+    {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_spinner_textfield_background_material.xml.flat",
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\ed3bf378c6819a1ac993f30b01a1dcd2\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
@@ -2106,6 +2110,10 @@
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable_outline_info_24.xml.flat",
         "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\drawable\\outline_info_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_treatment.xml.flat",
+        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\layout\\fragment_treatment.xml"
     },
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_baseline_info_black_18.png.flat",

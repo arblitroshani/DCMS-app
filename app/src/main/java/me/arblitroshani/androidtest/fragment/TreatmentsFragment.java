@@ -33,6 +33,7 @@ import me.arblitroshani.androidtest.model.Treatment;
 public class TreatmentsFragment extends Fragment {
 
     private List<Treatment> myDataset;
+    private List<String> treatmentIds;
 
     @BindView(R.id.frameLayout)
     FrameLayout flServices;
@@ -41,6 +42,8 @@ public class TreatmentsFragment extends Fragment {
 
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+
+    private FirebaseFirestore db;
 
     public TreatmentsFragment() {}
 
@@ -56,6 +59,7 @@ public class TreatmentsFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_treatments, null, false);
         ButterKnife.bind(this, view);
+        db = FirebaseFirestore.getInstance();
         return view;
     }
 
@@ -68,14 +72,18 @@ public class TreatmentsFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("treatments")
                 .whereEqualTo("uid", FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .addSnapshotListener((snapshot, e) -> {
                     if (e != null) return;
                     if (snapshot != null) {
-                        myDataset = snapshot.toObjects(Treatment.class);
-                        adapter = new TreatmentsAdapter(myDataset);
+                        myDataset = new ArrayList<>();
+                        treatmentIds = new ArrayList<>();
+                        for (QueryDocumentSnapshot doc : snapshot) {
+                            myDataset.add(doc.toObject(Treatment.class));
+                            treatmentIds.add(doc.getId());
+                        }
+                        adapter = new TreatmentsAdapter(myDataset, treatmentIds);
                         recyclerView.setAdapter(adapter);
                     }
                 });

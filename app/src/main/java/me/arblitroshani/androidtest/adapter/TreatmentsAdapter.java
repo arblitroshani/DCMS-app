@@ -21,6 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.R;
+import me.arblitroshani.androidtest.activity.MainActivity;
 import me.arblitroshani.androidtest.activity.ServiceDetailsActivity;
 import me.arblitroshani.androidtest.extra.Constants;
 import me.arblitroshani.androidtest.model.Service;
@@ -31,6 +32,8 @@ public class TreatmentsAdapter extends RecyclerView.Adapter<TreatmentsAdapter.Vi
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat(Constants.Treatments.DATE_FORMAT, Locale.getDefault());
 
     private List<Treatment> myDataset;
+    private List<String> treatmentIds;
+
     private Context context;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -52,8 +55,9 @@ public class TreatmentsAdapter extends RecyclerView.Adapter<TreatmentsAdapter.Vi
         }
     }
 
-    public TreatmentsAdapter(List<Treatment> myDataset) {
+    public TreatmentsAdapter(List<Treatment> myDataset, List<String> treatmentIds) {
         this.myDataset = myDataset;
+        this.treatmentIds = treatmentIds;
     }
 
     @Override
@@ -61,15 +65,12 @@ public class TreatmentsAdapter extends RecyclerView.Adapter<TreatmentsAdapter.Vi
         context = parent.getContext();
         View v = LayoutInflater.from(context)
                 .inflate(R.layout.item_card_treatment, parent, false);
-        final ViewHolder holder = new ViewHolder(v);
 
-        // add click listener
-//        holder.cvMain.setOnClickListener(view -> {
-//            Intent i = new Intent(context, ServiceDetailsActivity.class);
-//            i.putExtra("service_to_display", currentService);
-//            i.putExtra("service_id", serviceIds.get(position));
-//            context.startActivity(i);
-//        });
+        final ViewHolder holder = new ViewHolder(v);
+        final MainActivity mainActivity = (MainActivity) context;
+
+        holder.cvMain.setOnClickListener(view ->
+                mainActivity.replaceFragment("Treatment", treatmentIds.get(holder.getAdapterPosition())));
 
         return holder;
     }

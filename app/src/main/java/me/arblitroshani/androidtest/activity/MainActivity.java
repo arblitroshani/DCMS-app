@@ -49,6 +49,8 @@ import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.extra.Utility;
 import me.arblitroshani.androidtest.fragment.HomeFragment;
+import me.arblitroshani.androidtest.fragment.TreatmentFragment;
+import me.arblitroshani.androidtest.model.Treatment;
 import me.arblitroshani.androidtest.model.User;
 import me.arblitroshani.androidtest.services.MyFirebaseInstanceIDService;
 
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final int RC_SIGN_IN = 123;
+    private static final String DEFAULT_TREATMENT_ID = "default";
 
     @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
@@ -229,8 +232,10 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            Fragment f = getSupportFragmentManager().findFragmentByTag("Home");
-            if (f instanceof HomeFragment) {
+            FragmentManager fm = getSupportFragmentManager();
+            if (fm.findFragmentByTag("Treatment") instanceof TreatmentFragment) {
+                replaceFragment("Treatments");
+            } else if (fm.findFragmentByTag("Home") instanceof HomeFragment) {
                 finish();
             } else {
                 replaceFragment(R.id.nav_home);
@@ -297,7 +302,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void replaceFragment(String className) {
+    public void replaceFragment(String className, String optionalTreatmentId) {
         uncheckAllMenuItems();
         Fragment fragment;
         try {
@@ -307,7 +312,11 @@ public class MainActivity extends AppCompatActivity
             if (fragment != null) {
                 fm.popBackStackImmediate(className, 0);
             } else {
-                fragment = (Fragment) Class.forName("me.arblitroshani.androidtest.fragment." + className + "Fragment").newInstance();
+                if (optionalTreatmentId.equals(DEFAULT_TREATMENT_ID) || !className.equals("Treatment")) {
+                    fragment = (Fragment) Class.forName("me.arblitroshani.androidtest.fragment." + className + "Fragment").newInstance();
+                } else {
+                    fragment = TreatmentFragment.newInstance(optionalTreatmentId);
+                }
 
                 FragmentTransaction transaction = fm.beginTransaction()
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
@@ -334,6 +343,10 @@ public class MainActivity extends AppCompatActivity
         } catch (InstantiationException e) {
             e.printStackTrace();
         }
+    }
+
+    public void replaceFragment(String className) {
+        replaceFragment(className, DEFAULT_TREATMENT_ID);
     }
 
     public void replaceFragment(int id) {

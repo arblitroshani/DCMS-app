@@ -18,25 +18,25 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp">
+        android:layout_height="wrap_content"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/tv_card_title"
             style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:text="Orthodontics Treatment"
             android:textColor="@color/white"
             card_view:layout_constraintBottom_toTopOf="@+id/tv_card_date"
-            card_view:layout_constraintStart_toStartOf="parent" />
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_card_numAppointments" />
 
         <TextView
             android:id="@+id/tv_card_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginStart="16dp"
             android:text="Jan 15, 2018"
             android:textColor="@color/white"
             card_view:layout_constraintBottom_toBottomOf="parent"
@@ -46,8 +46,6 @@
             android:id="@+id/tv_card_numAppointments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp"
             android:text="2 sessions"
             android:textColor="@color/white"
             android:background="@drawable/rectangle_back"

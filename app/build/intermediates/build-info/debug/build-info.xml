@@ -2,40 +2,38 @@
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="26"
-    build-mode="HOT_WARM"
+    build-mode="COLD"
     density="xxhdpi"
     format="10"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.1.0"
-    timestamp="1525872299268"
+    timestamp="1525958275525"
     token="-5114247391884262981"
-    verifier="COMPATIBLE" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="3601" />
+        duration="4496" />
     <task
         name="instant-run-dex"
-        duration="37" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="34" />
+        duration="37" />
     <task
         name="verifier"
-        duration="4" />
+        duration="12" />
 
     <artifact
-        location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
         type="SPLIT" />
-    <artifact
-        location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
 
     <build
         build-mode="FULL"
-        timestamp="1525871863551"
+        timestamp="1525956307744"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
@@ -65,7 +63,7 @@
             location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
@@ -76,31 +74,24 @@
     </build>
     <build
         build-mode="COLD"
+        ir-eligibility="FIELD_ADDED"
+        timestamp="1525958108423"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1525872153690"
+        timestamp="1525958275525"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1525872273547"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\builds\debug\1525872273547\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1525872299268"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>
