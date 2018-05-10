@@ -5,7 +5,6 @@ import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -17,25 +16,20 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.request.RequestOptions;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.FirebaseUserMetadata;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.SetOptions;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -49,8 +43,7 @@ import me.arblitroshani.androidtest.GlideApp;
 import me.arblitroshani.androidtest.R;
 import me.arblitroshani.androidtest.extra.Utility;
 import me.arblitroshani.androidtest.fragment.HomeFragment;
-import me.arblitroshani.androidtest.fragment.TreatmentFragment;
-import me.arblitroshani.androidtest.model.Treatment;
+import me.arblitroshani.androidtest.fragment.SessionsFragment;
 import me.arblitroshani.androidtest.model.User;
 import me.arblitroshani.androidtest.services.MyFirebaseInstanceIDService;
 
@@ -233,7 +226,7 @@ public class MainActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
             FragmentManager fm = getSupportFragmentManager();
-            if (fm.findFragmentByTag("Treatment") instanceof TreatmentFragment) {
+            if (fm.findFragmentByTag("Sessions") instanceof SessionsFragment) {
                 replaceFragment("Treatments");
             } else if (fm.findFragmentByTag("Home") instanceof HomeFragment) {
                 finish();
@@ -312,10 +305,10 @@ public class MainActivity extends AppCompatActivity
             if (fragment != null) {
                 fm.popBackStackImmediate(className, 0);
             } else {
-                if (optionalTreatmentId.equals(DEFAULT_TREATMENT_ID) || !className.equals("Treatment")) {
+                if (optionalTreatmentId.equals(DEFAULT_TREATMENT_ID) || !className.equals("Sessions")) {
                     fragment = (Fragment) Class.forName("me.arblitroshani.androidtest.fragment." + className + "Fragment").newInstance();
                 } else {
-                    fragment = TreatmentFragment.newInstance(optionalTreatmentId);
+                    fragment = SessionsFragment.newInstance(optionalTreatmentId);
                 }
 
                 FragmentTransaction transaction = fm.beginTransaction()

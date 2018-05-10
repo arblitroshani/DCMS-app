@@ -70,7 +70,7 @@ public class TreatmentsAdapter extends RecyclerView.Adapter<TreatmentsAdapter.Vi
         final MainActivity mainActivity = (MainActivity) context;
 
         holder.cvMain.setOnClickListener(view ->
-                mainActivity.replaceFragment("Treatment", treatmentIds.get(holder.getAdapterPosition())));
+                mainActivity.replaceFragment("Sessions", treatmentIds.get(holder.getAdapterPosition())));
 
         return holder;
     }
