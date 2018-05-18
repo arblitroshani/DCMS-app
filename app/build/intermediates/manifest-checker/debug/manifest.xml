@@ -73,14 +73,21 @@
                 android:value="me.arblitroshani.androidtest.activity.AppointmentsActivity" />
         </activity>
 
-        <service android:name="me.arblitroshani.androidtest.services.MyFirebaseMessagingService" >
+        <service android:name="me.arblitroshani.androidtest.service.MyFirebaseMessagingService" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name="me.arblitroshani.androidtest.services.MyFirebaseInstanceIDService" >
+        <service android:name="me.arblitroshani.androidtest.service.MyFirebaseInstanceIDService" >
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="service.ReminderJobService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
             </intent-filter>
         </service>
         <!--
@@ -252,6 +259,18 @@
         <meta-data
             android:name="android.support.VERSION"
             android:value="26.1.0" />
+        <!--
+             Receives GooglePlay execution requests and forwards them to the
+             appropriate internal service.
+        -->
+        <service
+            android:name="com.firebase.jobdispatcher.GooglePlayReceiver"
+            android:exported="true"
+            android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE" >
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
+            </intent-filter>
+        </service>
 
         <provider
             android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"

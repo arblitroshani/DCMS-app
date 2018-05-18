@@ -26,7 +26,6 @@
         android:label="@string/app_name_title"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="me.arblitroshani.androidtest.activity.MainActivity"
@@ -73,12 +72,12 @@
                 android:value="me.arblitroshani.androidtest.activity.AppointmentsActivity" />
         </activity>
 
-        <service android:name="me.arblitroshani.androidtest.services.MyFirebaseMessagingService" >
+        <service android:name="me.arblitroshani.androidtest.service.MyFirebaseMessagingService" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name="me.arblitroshani.androidtest.services.MyFirebaseInstanceIDService" >
+        <service android:name="me.arblitroshani.androidtest.service.MyFirebaseInstanceIDService" >
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>

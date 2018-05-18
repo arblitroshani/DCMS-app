@@ -53,13 +53,13 @@
                 android:value="me.arblitroshani.androidtest.activity.AppointmentsActivity" />
         </activity>
 
-        <service android:name=".services.MyFirebaseMessagingService">
+        <service android:name=".service.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <service android:name=".services.MyFirebaseInstanceIDService">
+        <service android:name=".service.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>

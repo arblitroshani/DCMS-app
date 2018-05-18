@@ -10,6 +10,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvServices"
+        tools:listitem="@layout/item_card_service"
         android:clipToPadding="false"
         android:paddingBottom="8dp"
         android:layoutAnimation="@anim/layout_animation_from_bottom"

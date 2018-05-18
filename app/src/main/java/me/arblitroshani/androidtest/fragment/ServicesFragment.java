@@ -67,7 +67,7 @@ public class ServicesFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("services")
+        db.collection("service")
                 .addSnapshotListener((snapshot, e) -> {
                     if (e != null) return; // listen failed
                     if (snapshot != null) {

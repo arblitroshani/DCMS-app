@@ -86,7 +86,7 @@ public class ServiceDetailsActivity extends AppCompatActivity {
         });
 
         storage = FirebaseStorage.getInstance();
-        storageRefServices = storage.getReference().child("services");
+        storageRefServices = storage.getReference().child("service");
 
         rvDoctors.setHasFixedSize(true);
         layoutManagerDoctors = new LinearLayoutManager(this);
@@ -105,7 +105,7 @@ public class ServiceDetailsActivity extends AppCompatActivity {
         final String serviceId = i.getStringExtra("service_id");
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("services").document(serviceId).collection("doctors")
+        db.collection("service").document(serviceId).collection("doctors")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(QuerySnapshot snapshot, FirebaseFirestoreException e) {

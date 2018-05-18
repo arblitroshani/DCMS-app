@@ -10,6 +10,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvSessions"
+        tools:listitem="@layout/item_card_session"
         android:clipToPadding="false"
         android:paddingBottom="8dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"

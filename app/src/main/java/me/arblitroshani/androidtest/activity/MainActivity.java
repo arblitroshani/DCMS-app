@@ -5,6 +5,8 @@ import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -45,7 +47,7 @@ import me.arblitroshani.androidtest.extra.Utility;
 import me.arblitroshani.androidtest.fragment.HomeFragment;
 import me.arblitroshani.androidtest.fragment.SessionsFragment;
 import me.arblitroshani.androidtest.model.User;
-import me.arblitroshani.androidtest.services.MyFirebaseInstanceIDService;
+import me.arblitroshani.androidtest.service.MyFirebaseInstanceIDService;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -55,13 +57,12 @@ public class MainActivity extends AppCompatActivity
 
     @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
-
     @BindView(R.id.nav_view)
     NavigationView navigationView;
-
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-
+    @BindView(R.id.abl)
+    AppBarLayout abl;
     @BindView(R.id.ctl)
     CollapsingToolbarLayout collapsingToolbarLayout;
 
@@ -129,6 +130,8 @@ public class MainActivity extends AppCompatActivity
             notificationManager.createNotificationChannel(new NotificationChannel(channelId,
                     channelName, NotificationManager.IMPORTANCE_LOW));
         }
+
+        collapseAppBar();
     }
 
     private void updateRegistrationToken() {
@@ -388,5 +391,13 @@ public class MainActivity extends AppCompatActivity
         Menu navMenu = navigationView.getMenu();
         navMenu.findItem(R.id.nav_sign_in).setVisible(!b);
         navMenu.findItem(R.id.nav_sign_out).setVisible(b);
+    }
+
+    public void collapseAppBar() {
+        // after 3 seconds, automatically collapse
+        final Handler handler = new Handler();
+        handler.postDelayed(() -> {
+            abl.setExpanded(false, true);
+        }, 3000);
     }
 }

@@ -65,9 +65,6 @@ public class TreatmentsFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        Animation animation = AnimationUtils.loadAnimation(this.getContext(), R.anim.anim_about_card_show);
-        flServices.startAnimation(animation);
-
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);

@@ -1,4 +1,4 @@
-package me.arblitroshani.androidtest.services;
+package me.arblitroshani.androidtest.service;
 
 import android.util.Log;
 
@@ -11,8 +11,7 @@ import me.arblitroshani.androidtest.extra.Utility;
 public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
     @Override
-    public void onCreate()
-    {
+    public void onCreate() {
         String currentToken = FirebaseInstanceId.getInstance().getToken();
 
         String savedToken = Utility.getFirebaseInstanceId(getApplicationContext());

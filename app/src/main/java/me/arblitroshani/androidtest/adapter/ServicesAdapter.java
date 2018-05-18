@@ -55,7 +55,7 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
         this.myDataset = myDataset;
         this.serviceIds = serviceIds;
         storage = FirebaseStorage.getInstance();
-        storageRefServices = storage.getReference().child("services");
+        storageRefServices = storage.getReference().child("service");
     }
 
     @Override
