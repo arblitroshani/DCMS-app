@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="me.arblitroshani.androidtest">
+    package="me.arblitroshani.dentalclinic">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -41,7 +41,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="me.arblitroshani.androidtest.activity.MainActivity" />
+                android:value="me.arblitroshani.dentalclinic.activity.MainActivity" />
         </activity>
         <activity
             android:name=".activity.AppointmentRequestActivity"
@@ -50,7 +50,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="me.arblitroshani.androidtest.activity.AppointmentsActivity" />
+                android:value="me.arblitroshani.dentalclinic.activity.AppointmentsActivity" />
         </activity>
 
         <service android:name=".service.MyFirebaseMessagingService">
@@ -58,12 +58,19 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
         <service android:name=".service.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+
+        <receiver
+            android:name="me.arblitroshani.dentalclinic.service.ReminderReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.NOTIFY" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

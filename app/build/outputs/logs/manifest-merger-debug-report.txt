@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-69:12
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-76:12
 MERGED from [com.firebaseui:firebase-ui-storage:3.3.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-ui-storage-3.3.0.aar\c73f9e4a898107905dd7594c80b6d2de\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-firestore:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-firestore-12.0.1.aar\df00a11734bc28b3782e5958374ade7f\AndroidManifest.xml:2:1-8:12
 MERGED from [com.google.firebase:firebase-messaging:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-messaging-12.0.1.aar\83487c91c21314d396735e43a447cedb\AndroidManifest.xml:17:1-37:12
@@ -29,14 +29,15 @@ MERGED from [com.ryanjeffreybrooks:indefinitepagerindicator:1.0.8] C:\Users\Arbl
 MERGED from [com.unstoppable:submitbutton:1.1.3] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\submitbutton-1.1.3.aar\e878a5a55c0db1ebe95018f23a2b7cf2\AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:customtabs:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\customtabs-27.1.0.aar\01b567504f970117a0af1193aff27044\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.0.aar\5c07533b7e1d1c9a6602e791415ba904\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta6] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta6.aar\58a505c689c8dc1076302047585e567c\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:cardview-v7:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.0.aar\1b0c0fd739666392e4a7aca5fdd79b21\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:recyclerview-v7:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.0.aar\8266b4802ffd2a164a9459bcdd9f2e37\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta6] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta6.aar\58a505c689c8dc1076302047585e567c\AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\cbfbd0ffc806903628cf9b1be0b05580\AndroidManifest.xml:2:1-13:12
 MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\bf2c2bfd3e2809b5052bc651fb3301a9\AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.chrisbanes:PhotoView:2.0.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\PhotoView-2.0.0.aar\9f99185b1af401a62f23c4ed2acef423\AndroidManifest.xml:2:1-12:12
 MERGED from [com.facebook.shimmer:shimmer:0.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\shimmer-0.1.0.aar\16df3c7fab59dedfffc6260b9bc9010b\AndroidManifest.xml:2:1-11:12
+MERGED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:2:1-71:12
 MERGED from [android.arch.lifecycle:extensions:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\extensions-1.1.0.aar\5ea65747ba7be8bb8e6a5913d754bcdf\AndroidManifest.xml:17:1-30:12
 MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\77bf0f7ac33130c2b548a8f435284978\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.0.aar\33531c226f995cccc560d8e5e79816d4\AndroidManifest.xml:17:1-22:12
@@ -66,20 +67,20 @@ MERGED from [com.google.android.gms:play-services-base-license:12.0.1] C:\Users\
 MERGED from [com.google.android.gms:play-services-auth-api-phone-license:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-license-12.0.1.aar\6639342f8860fb0fcd386732621cac09\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-auth-base-license:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-license-12.0.1.aar\ae090e398c3eecbef935b4c985dde9a1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-storage-common-license:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-license-12.0.1.aar\d04f35c4428845cdd67037df0cd9ab81\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-76:12
 	package
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:3:5-43
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:3:5-44
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-69:12
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-76:12
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-69:12
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-76:12
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:11-69
@@ -96,7 +97,7 @@ MERGED from [com.firebaseui:firebase-ui-auth:3.3.0] C:\Users\Arbli Troshani\.gra
 	android:name
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:7:5-67:19
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:7:5-74:19
 MERGED from [com.google.firebase:firebase-messaging:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-messaging-12.0.1.aar\83487c91c21314d396735e43a447cedb\AndroidManifest.xml:22:5-35:19
 MERGED from [com.google.firebase:firebase-messaging:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-messaging-12.0.1.aar\83487c91c21314d396735e43a447cedb\AndroidManifest.xml:22:5-35:19
 MERGED from [com.google.firebase:firebase-core:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-core-12.0.1.aar\2766e98d2c84991ed8ab82742bc1e8ea\AndroidManifest.xml:5:5-20
@@ -123,12 +124,14 @@ MERGED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\Arbl
 MERGED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.1.aar\461e44c279e602241eda26e4db75a037\AndroidManifest.xml:22:5-26:19
 MERGED from [com.unstoppable:submitbutton:1.1.3] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\submitbutton-1.1.3.aar\e878a5a55c0db1ebe95018f23a2b7cf2\AndroidManifest.xml:11:5-12:19
 MERGED from [com.unstoppable:submitbutton:1.1.3] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\submitbutton-1.1.3.aar\e878a5a55c0db1ebe95018f23a2b7cf2\AndroidManifest.xml:11:5-12:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta6] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta6.aar\58a505c689c8dc1076302047585e567c\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta6] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta6.aar\58a505c689c8dc1076302047585e567c\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta6] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta6.aar\58a505c689c8dc1076302047585e567c\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta6] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta6.aar\58a505c689c8dc1076302047585e567c\AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\cbfbd0ffc806903628cf9b1be0b05580\AndroidManifest.xml:11:5-20
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\cbfbd0ffc806903628cf9b1be0b05580\AndroidManifest.xml:11:5-20
+MERGED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:36:5-69:19
+MERGED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:36:5-69:19
 MERGED from [android.arch.lifecycle:extensions:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\extensions-1.1.0.aar\5ea65747ba7be8bb8e6a5913d754bcdf\AndroidManifest.xml:22:5-28:19
 MERGED from [android.arch.lifecycle:extensions:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\extensions-1.1.0.aar\5ea65747ba7be8bb8e6a5913d754bcdf\AndroidManifest.xml:22:5-28:19
 MERGED from [com.github.bumptech.glide:gifdecoder:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.6.1.aar\4441f7c6aab05952f21f54a2b0edea04\AndroidManifest.xml:9:5-20
@@ -163,15 +166,19 @@ MERGED from [com.google.firebase:firebase-storage-common-license:12.0.1] C:\User
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:12:9-35
 	android:label
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:10:9-47
+	tools:ignore
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:38:9-39
 	android:roundIcon
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:11:9-54
+	android:largeHeap
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:37:9-33
 	android:icon
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:9:9-43
 	android:allowBackup
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:13:9-40
-activity#me.arblitroshani.androidtest.activity.MainActivity
+activity#me.arblitroshani.dentalclinic.activity.MainActivity
 ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:14:9-24:20
 	android:label
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:16:13-51
@@ -195,7 +202,7 @@ ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManif
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:23:17-50
 	android:name
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:22:24-60
-activity#me.arblitroshani.androidtest.activity.ServiceDetailsActivity
+activity#me.arblitroshani.dentalclinic.activity.ServiceDetailsActivity
 ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:25:9-32:20
 	android:label
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:27:13-67
@@ -209,7 +216,7 @@ ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManif
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:31:17-55
 	android:name
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:30:17-63
-activity#me.arblitroshani.androidtest.activity.CreateUserProfileActivity
+activity#me.arblitroshani.dentalclinic.activity.CreateUserProfileActivity
 ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:33:9-36:59
 	android:label
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:35:13-71
@@ -217,7 +224,7 @@ ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManif
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:36:13-56
 	android:name
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:34:13-63
-activity#me.arblitroshani.androidtest.activity.AppointmentsActivity
+activity#me.arblitroshani.dentalclinic.activity.AppointmentsActivity
 ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:37:9-45:20
 	android:parentActivityName
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:40:13-64
@@ -227,7 +234,7 @@ ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManif
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:41:13-56
 	android:name
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:38:13-58
-activity#me.arblitroshani.androidtest.activity.AppointmentRequestActivity
+activity#me.arblitroshani.dentalclinic.activity.AppointmentRequestActivity
 ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:46:9-54:20
 	android:parentActivityName
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:49:13-72
@@ -237,7 +244,7 @@ ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManif
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:50:13-56
 	android:name
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:47:13-64
-service#me.arblitroshani.androidtest.service.MyFirebaseMessagingService
+service#me.arblitroshani.dentalclinic.service.MyFirebaseMessagingService
 ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:56:9-60:19
 	android:name
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:56:18-68
@@ -247,16 +254,28 @@ action#com.google.firebase.MESSAGING_EVENT
 ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:58:17-78
 	android:name
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:58:25-75
-service#me.arblitroshani.androidtest.service.MyFirebaseInstanceIDService
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:62:9-66:19
+service#me.arblitroshani.dentalclinic.service.MyFirebaseInstanceIDService
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:61:9-65:19
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:62:18-69
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:61:18-69
 intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:63:13-65:29
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:62:13-64:29
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:64:17-80
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:63:17-80
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:64:25-77
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:63:25-77
+receiver#me.arblitroshani.dentalclinic.service.ReminderReceiver
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:67:9-73:20
+	android:exported
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:69:13-36
+	android:name
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:68:13-82
+intent-filter#action:name:android.intent.action.NOTIFY
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:70:13-72:29
+action#android.intent.action.NOTIFY
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:71:17-71
+	android:name
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:71:25-68
 uses-sdk
 INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
@@ -311,14 +330,14 @@ MERGED from [com.android.support:customtabs:27.1.0] C:\Users\Arbli Troshani\.gra
 MERGED from [com.android.support:customtabs:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\customtabs-27.1.0.aar\01b567504f970117a0af1193aff27044\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.0.aar\5c07533b7e1d1c9a6602e791415ba904\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.0.aar\5c07533b7e1d1c9a6602e791415ba904\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta6] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta6.aar\58a505c689c8dc1076302047585e567c\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta6] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta6.aar\58a505c689c8dc1076302047585e567c\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:cardview-v7:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.0.aar\1b0c0fd739666392e4a7aca5fdd79b21\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.0.aar\1b0c0fd739666392e4a7aca5fdd79b21\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.0.aar\8266b4802ffd2a164a9459bcdd9f2e37\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.0.aar\8266b4802ffd2a164a9459bcdd9f2e37\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta6] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta6.aar\58a505c689c8dc1076302047585e567c\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0-beta6] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0-beta6.aar\58a505c689c8dc1076302047585e567c\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\cbfbd0ffc806903628cf9b1be0b05580\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.bumptech.glide:glide:4.6.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\glide-4.6.1.aar\cbfbd0ffc806903628cf9b1be0b05580\AndroidManifest.xml:7:5-9:41
 MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\butterknife-8.8.1.aar\bf2c2bfd3e2809b5052bc651fb3301a9\AndroidManifest.xml:5:5-43
@@ -327,6 +346,8 @@ MERGED from [com.github.chrisbanes:PhotoView:2.0.0] C:\Users\Arbli Troshani\.gra
 MERGED from [com.github.chrisbanes:PhotoView:2.0.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\PhotoView-2.0.0.aar\9f99185b1af401a62f23c4ed2acef423\AndroidManifest.xml:8:5-10:41
 MERGED from [com.facebook.shimmer:shimmer:0.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\shimmer-0.1.0.aar\16df3c7fab59dedfffc6260b9bc9010b\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.shimmer:shimmer:0.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\shimmer-0.1.0.aar\16df3c7fab59dedfffc6260b9bc9010b\AndroidManifest.xml:7:5-9:41
+MERGED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:8:5-10:41
+MERGED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:8:5-10:41
 MERGED from [android.arch.lifecycle:extensions:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\extensions-1.1.0.aar\5ea65747ba7be8bb8e6a5913d754bcdf\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:extensions:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\extensions-1.1.0.aar\5ea65747ba7be8bb8e6a5913d754bcdf\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.0.aar\77bf0f7ac33130c2b548a8f435284978\AndroidManifest.xml:20:5-44
@@ -475,7 +496,7 @@ ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gr
 		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:30:9-44
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:29:9-63
-permission#me.arblitroshani.androidtest.permission.C2D_MESSAGE
+permission#me.arblitroshani.dentalclinic.permission.C2D_MESSAGE
 ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:28:5-30:47
 	android:protectionLevel
 		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:30:9-44
@@ -485,7 +506,7 @@ uses-permission#${applicationId}.permission.C2D_MESSAGE
 ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:32:5-79
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:32:22-76
-uses-permission#me.arblitroshani.androidtest.permission.C2D_MESSAGE
+uses-permission#me.arblitroshani.dentalclinic.permission.C2D_MESSAGE
 ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:32:5-79
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:32:22-76
@@ -499,7 +520,7 @@ ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gr
 		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:36:13-78
 intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:${applicationId}
 ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:39:13-43:29
-intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:me.arblitroshani.androidtest
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:me.arblitroshani.dentalclinic
 ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:39:13-43:29
 action#com.google.android.c2dm.intent.RECEIVE
 ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:40:17-81
@@ -509,7 +530,7 @@ category#${applicationId}
 ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:42:17-61
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:42:27-58
-category#me.arblitroshani.androidtest
+category#me.arblitroshani.dentalclinic
 ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:42:17-61
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\0cd2111c68b10b67a29a2e81821e574c\AndroidManifest.xml:42:27-58
@@ -723,6 +744,98 @@ ADDED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.grad
 		ADDED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:25:13-35
 	android:name
 		ADDED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:24:13-51
+supports-screens
+ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:12:5-17:39
+	android:largeScreens
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:14:9-36
+	android:smallScreens
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:17:9-36
+	android:normalScreens
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:15:9-37
+	android:resizeable
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:16:9-34
+	android:anyDensity
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:13:9-34
+uses-permission#android.permission.CAMERA
+ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:19:5-65
+	android:name
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:19:22-62
+uses-permission#android.permission.FLASHLIGHT
+ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:20:5-69
+	android:name
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:20:22-66
+uses-feature#android.hardware.camera
+ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:22:5-24:36
+	android:required
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:24:9-33
+	android:name
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:23:9-47
+uses-feature#android.hardware.camera.autofocus
+ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:25:5-27:36
+	android:required
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:27:9-33
+	android:name
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:26:9-57
+uses-feature#android.hardware.camera.flash
+ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:28:5-30:36
+	android:required
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:30:9-33
+	android:name
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:29:9-53
+uses-feature#0x00020000
+ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:31:5-34:20
+	android:glEsVersion
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:32:9-41
+	android:required
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:33:9-33
+activity#com.microblink.activity.ScanActivity
+ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:39:9-43:20
+	android:screenOrientation
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:42:13-49
+	android:configChanges
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:41:13-59
+	android:name
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:40:13-64
+activity#com.microblink.activity.ScanCard
+ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:44:9-48:20
+	android:screenOrientation
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:47:13-49
+	android:configChanges
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:46:13-59
+	android:name
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:45:13-60
+activity#com.microblink.activity.Pdf417ScanActivity
+ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:49:9-53:20
+	android:screenOrientation
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:52:13-49
+	android:configChanges
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:51:13-59
+	android:name
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:50:13-70
+activity#com.microblink.activity.SegmentScanActivity
+ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:54:9-58:20
+	android:screenOrientation
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:57:13-49
+	android:configChanges
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:56:13-59
+	android:name
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:55:13-71
+activity#com.microblink.activity.RandomScanActivity
+ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:59:9-63:20
+	android:screenOrientation
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:62:13-49
+	android:configChanges
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:61:13-59
+	android:name
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:60:13-70
+activity#com.microblink.activity.VerificationFlowActivity
+ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:64:9-68:20
+	android:screenOrientation
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:67:13-49
+	android:configChanges
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:66:13-59
+	android:name
+		ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:65:13-76
 provider#android.arch.lifecycle.ProcessLifecycleOwnerInitializer
 ADDED from [android.arch.lifecycle:extensions:1.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\extensions-1.1.0.aar\5ea65747ba7be8bb8e6a5913d754bcdf\AndroidManifest.xml:23:9-27:43
 	android:authorities

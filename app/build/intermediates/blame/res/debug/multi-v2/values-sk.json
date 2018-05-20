@@ -4,6 +4,23 @@
             "outputFile": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\LibBlinkID.aar\\910c93421d9135828c4b450c0bd90d3d\\res\\values-sk\\values-sk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,104,194,267,404",
+                        "endColumns": "48,89,72,136,54",
+                        "endOffsets": "99,189,262,399,454"
+                    },
+                    "to": {
+                        "startLines": "105,106,107,108,109",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "10710,10759,10849,10922,11059",
+                        "endColumns": "48,89,72,136,54",
+                        "endOffsets": "10754,10844,10917,11054,11109"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-12.0.1.aar\\461e44c279e602241eda26e4db75a037\\res\\values-sk\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -47,11 +64,11 @@
                         "endOffsets": "207,307,418,504,612,730,811,892,976,1081,1190,1289,1395,1506,1615,1781,1879,1967"
                     },
                     "to": {
-                        "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,105",
+                        "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,110",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "612,719,819,930,1016,1124,1242,1323,1404,1488,1593,1702,1801,1907,2018,2127,2293,10710",
+                        "startOffsets": "612,719,819,930,1016,1124,1242,1323,1404,1488,1593,1702,1801,1907,2018,2127,2293,11114",
                         "endColumns": "106,99,110,85,107,117,80,80,83,104,108,98,105,110,108,165,97,87",
-                        "endOffsets": "714,814,925,1011,1119,1237,1318,1399,1483,1588,1697,1796,1902,2013,2122,2288,2386,10793"
+                        "endOffsets": "714,814,925,1011,1119,1237,1318,1399,1483,1588,1697,1796,1902,2013,2122,2288,2386,11197"
                     }
                 },
                 {
@@ -64,11 +81,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "106",
+                        "startLines": "111",
                         "startColumns": "4",
-                        "startOffsets": "10798",
+                        "startOffsets": "11202",
                         "endColumns": "100",
-                        "endOffsets": "10894"
+                        "endOffsets": "11298"
                     }
                 },
                 {

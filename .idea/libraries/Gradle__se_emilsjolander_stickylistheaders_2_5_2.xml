@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: se.emilsjolander:stickylistheaders-2.5.2">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/stickylistheaders-2.5.2.aar/1e1e89bcfdd77cc3b593a3851cef2911/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/stickylistheaders-2.5.2.aar/1e1e89bcfdd77cc3b593a3851cef2911/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/stickylistheaders-2.5.2.aar/cbd47902b2deda7ab5a7011d849aa530/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/stickylistheaders-2.5.2.aar/cbd47902b2deda7ab5a7011d849aa530/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

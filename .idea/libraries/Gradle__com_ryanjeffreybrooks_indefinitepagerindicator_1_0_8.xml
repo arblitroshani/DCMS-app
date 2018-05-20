@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.ryanjeffreybrooks:indefinitepagerindicator-1.0.8">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/indefinitepagerindicator-1.0.8.aar/d8207288f3cedb059fd4a91ed6716e53/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/indefinitepagerindicator-1.0.8.aar/d8207288f3cedb059fd4a91ed6716e53/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/indefinitepagerindicator-1.0.8.aar/9cbb7bb057791d4d81718df3f1b14634/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/indefinitepagerindicator-1.0.8.aar/9cbb7bb057791d4d81718df3f1b14634/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

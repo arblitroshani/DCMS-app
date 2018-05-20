@@ -6,7 +6,7 @@ import com.bumptech.glide.manager.Lifecycle;
 import com.bumptech.glide.manager.RequestManagerRetriever;
 import com.bumptech.glide.manager.RequestManagerTreeNode;
 import java.lang.Override;
-import me.arblitroshani.androidtest.GlideRequests;
+import me.arblitroshani.dentalclinic.GlideRequests;
 
 /**
  * Generated code, do not modify

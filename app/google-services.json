@@ -49,6 +49,50 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068644900470:android:b5c501ba610e530e",
+        "android_client_info": {
+          "package_name": "me.arblitroshani.dentalclinic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068644900470-gqebjkn6fc4mhgb9l3l7mvd97k0p564s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "me.arblitroshani.dentalclinic",
+            "certificate_hash": "c3744d85c2e6a26496677b4d82ceb409086f0b2a"
+          }
+        },
+        {
+          "client_id": "1068644900470-63kfqbgdmr7jg9jonsqmji0jae6r0mqo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJSYafHUz5srJmYLoKQOKAHYWHivkW6cI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068644900470-63kfqbgdmr7jg9jonsqmji0jae6r0mqo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

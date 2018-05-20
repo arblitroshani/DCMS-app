@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="me.arblitroshani.androidtest"
+    package="me.arblitroshani.dentalclinic"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -14,21 +14,47 @@
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <permission
-        android:name="me.arblitroshani.androidtest.permission.C2D_MESSAGE"
+        android:name="me.arblitroshani.dentalclinic.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="me.arblitroshani.androidtest.permission.C2D_MESSAGE" />
+    <uses-permission android:name="me.arblitroshani.dentalclinic.permission.C2D_MESSAGE" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="false" >
+    </uses-feature>
 
     <application
         android:allowBackup="true"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name_title"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="me.arblitroshani.androidtest.activity.MainActivity"
+            android:name="me.arblitroshani.dentalclinic.activity.MainActivity"
             android:label="@string/app_name_title"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -42,7 +68,7 @@
                 android:resource="@xml/shortcuts" />
         </activity>
         <activity
-            android:name="me.arblitroshani.androidtest.activity.ServiceDetailsActivity"
+            android:name="me.arblitroshani.dentalclinic.activity.ServiceDetailsActivity"
             android:label="@string/title_activity_service_details"
             android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
@@ -50,38 +76,46 @@
                 android:value=".activity.MainActivity" />
         </activity>
         <activity
-            android:name="me.arblitroshani.androidtest.activity.CreateUserProfileActivity"
+            android:name="me.arblitroshani.dentalclinic.activity.CreateUserProfileActivity"
             android:label="@string/title_activity_create_user_profile"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="me.arblitroshani.androidtest.activity.AppointmentsActivity"
+            android:name="me.arblitroshani.dentalclinic.activity.AppointmentsActivity"
             android:label="@string/title_activity_appointments"
-            android:parentActivityName="me.arblitroshani.androidtest.activity.MainActivity"
+            android:parentActivityName="me.arblitroshani.dentalclinic.activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="me.arblitroshani.androidtest.activity.MainActivity" />
+                android:value="me.arblitroshani.dentalclinic.activity.MainActivity" />
         </activity>
         <activity
-            android:name="me.arblitroshani.androidtest.activity.AppointmentRequestActivity"
+            android:name="me.arblitroshani.dentalclinic.activity.AppointmentRequestActivity"
             android:label="New appointment"
-            android:parentActivityName="me.arblitroshani.androidtest.activity.AppointmentsActivity"
+            android:parentActivityName="me.arblitroshani.dentalclinic.activity.AppointmentsActivity"
             android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="me.arblitroshani.androidtest.activity.AppointmentsActivity" />
+                android:value="me.arblitroshani.dentalclinic.activity.AppointmentsActivity" />
         </activity>
 
-        <service android:name="me.arblitroshani.androidtest.service.MyFirebaseMessagingService" >
+        <service android:name="me.arblitroshani.dentalclinic.service.MyFirebaseMessagingService" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name="me.arblitroshani.androidtest.service.MyFirebaseInstanceIDService" >
+        <service android:name="me.arblitroshani.dentalclinic.service.MyFirebaseInstanceIDService" >
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+
+        <receiver
+            android:name="me.arblitroshani.dentalclinic.service.ReminderReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.NOTIFY" />
+            </intent-filter>
+        </receiver>
         <!--
              FirebaseMessagingService performs security checks at runtime,
              no need for explicit permissions despite exported="true"
@@ -126,7 +160,7 @@
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
 
-                <category android:name="me.arblitroshani.androidtest" />
+                <category android:name="me.arblitroshani.dentalclinic" />
             </intent-filter>
         </receiver>
         <!--
@@ -211,7 +245,7 @@
 
         <provider
             android:name="com.firebase.ui.auth.data.client.AuthUiInitProvider"
-            android:authorities="me.arblitroshani.androidtest.authuiinitprovider"
+            android:authorities="me.arblitroshani.dentalclinic.authuiinitprovider"
             android:exported="false"
             android:initOrder="90" />
 
@@ -225,7 +259,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="me.arblitroshani.androidtest.firebaseinitprovider"
+            android:authorities="me.arblitroshani.dentalclinic.firebaseinitprovider"
             android:exported="false"
             android:initOrder="100" />
 
@@ -252,9 +286,40 @@
             android:name="android.support.VERSION"
             android:value="26.1.0" />
 
+        <activity
+            android:name="com.microblink.activity.ScanActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.microblink.activity.ScanCard"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.microblink.activity.Pdf417ScanActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.microblink.activity.SegmentScanActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.microblink.activity.RandomScanActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.microblink.activity.VerificationFlowActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+
         <provider
             android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"
-            android:authorities="me.arblitroshani.androidtest.lifecycle-trojan"
+            android:authorities="me.arblitroshani.dentalclinic.lifecycle-trojan"
             android:exported="false"
             android:multiprocess="true" />
     </application>

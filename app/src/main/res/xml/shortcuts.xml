@@ -6,8 +6,8 @@
         android:shortcutShortLabel="@string/shortcut_short_name">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="me.arblitroshani.androidtest"
-            android:targetClass="me.arblitroshani.androidtest.activity.AppointmentsActivity" />
+            android:targetPackage="me.arblitroshani.dentalclinic"
+            android:targetClass="me.arblitroshani.dentalclinic.activity.AppointmentsActivity" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
     <shortcut
@@ -17,8 +17,8 @@
         android:shortcutShortLabel="@string/shortcut_short_name1">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="me.arblitroshani.androidtest"
-            android:targetClass="me.arblitroshani.androidtest.activity.AppointmentRequestActivity" />
+            android:targetPackage="me.arblitroshani.dentalclinic"
+            android:targetClass="me.arblitroshani.dentalclinic.activity.AppointmentRequestActivity" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
 </shortcuts>

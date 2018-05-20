@@ -8,7 +8,7 @@ import java.lang.Override;
 import java.lang.SuppressWarnings;
 import java.util.Collections;
 import java.util.Set;
-import me.arblitroshani.androidtest.MyAppGlideModule;
+import me.arblitroshani.dentalclinic.MyAppGlideModule;
 
 @SuppressWarnings("deprecation")
 final class GeneratedAppGlideModuleImpl extends GeneratedAppGlideModule {
@@ -17,7 +17,7 @@ final class GeneratedAppGlideModuleImpl extends GeneratedAppGlideModule {
   GeneratedAppGlideModuleImpl() {
     appGlideModule = new MyAppGlideModule();
     if (Log.isLoggable("Glide", Log.DEBUG)) {
-      Log.d("Glide", "Discovered AppGlideModule from annotation: me.arblitroshani.androidtest.MyAppGlideModule");
+      Log.d("Glide", "Discovered AppGlideModule from annotation: me.arblitroshani.dentalclinic.MyAppGlideModule");
     }
   }
 

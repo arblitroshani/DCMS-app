@@ -14,12 +14,12 @@
                         "endOffsets": "232"
                     },
                     "to": {
-                        "startLines": "6",
+                        "startLines": "8",
                         "startColumns": "4",
-                        "startOffsets": "328",
-                        "endLines": "9",
+                        "startOffsets": "458",
+                        "endLines": "11",
                         "endColumns": "12",
-                        "endOffsets": "505"
+                        "endOffsets": "635"
                     }
                 },
                 {
@@ -30,6 +30,23 @@
                         "startOffsets": "55,125,189,260",
                         "endColumns": "69,63,70,67",
                         "endOffsets": "120,184,255,323"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\LibBlinkID.aar\\910c93421d9135828c4b450c0bd90d3d\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,121",
+                        "endColumns": "65,63",
+                        "endOffsets": "116,180"
+                    },
+                    "to": {
+                        "startLines": "6,7",
+                        "startColumns": "4,4",
+                        "startOffsets": "328,394",
+                        "endColumns": "65,63",
+                        "endOffsets": "389,453"
                     }
                 }
             ]
