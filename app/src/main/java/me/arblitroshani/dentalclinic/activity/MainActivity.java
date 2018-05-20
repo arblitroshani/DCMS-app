@@ -282,7 +282,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_clinic) {
             fragmentClassName = "Home";
         } else if (id == R.id.nav_settings) {
-            fragmentClassName = "Home";
+            Intent i = new Intent(this, IdCardScanActivity.class);
+            startActivity(i);
+            return true;
         } else if (id == R.id.nav_help) {
             fragmentClassName = "Home";
         } else if (id == R.id.nav_sign_in) {

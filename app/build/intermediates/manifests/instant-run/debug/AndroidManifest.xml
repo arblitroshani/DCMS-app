@@ -116,6 +116,11 @@
                 <action android:name="android.intent.action.NOTIFY" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name="me.arblitroshani.dentalclinic.activity.IdCardScanActivity"
+            android:label="@string/title_activity_id_card_scan"
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              FirebaseMessagingService performs security checks at runtime,
              no need for explicit permissions despite exported="true"
