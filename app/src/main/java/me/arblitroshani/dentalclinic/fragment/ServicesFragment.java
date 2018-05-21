@@ -12,11 +12,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,7 +64,7 @@ public class ServicesFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("service")
+        db.collection("services")
                 .addSnapshotListener((snapshot, e) -> {
                     if (e != null) return; // listen failed
                     if (snapshot != null) {

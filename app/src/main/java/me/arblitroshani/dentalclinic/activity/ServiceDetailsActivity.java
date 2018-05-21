@@ -11,14 +11,10 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator;
@@ -77,16 +73,11 @@ public class ServiceDetailsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show());
 
         storage = FirebaseStorage.getInstance();
-        storageRefServices = storage.getReference().child("service");
+        storageRefServices = storage.getReference().child("services");
 
         rvDoctors.setHasFixedSize(true);
         layoutManagerDoctors = new LinearLayoutManager(this);
@@ -105,20 +96,17 @@ public class ServiceDetailsActivity extends AppCompatActivity {
         final String serviceId = i.getStringExtra("service_id");
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("service").document(serviceId).collection("doctors")
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(QuerySnapshot snapshot, FirebaseFirestoreException e) {
-                        if (e != null) return; // listen failed
+        db.collection("services").document(serviceId).collection("doctors")
+                .addSnapshotListener((snapshot, e) -> {
+                    if (e != null) return; // listen failed
 
-                        myDataset = snapshot.toObjects(DoctorBasic.class);
+                    myDataset = snapshot.toObjects(DoctorBasic.class);
 
-                        adapterDoctors = new ServiceDoctorsAdapter(myDataset);
-                        rvDoctors.setAdapter(adapterDoctors);
+                    adapterDoctors = new ServiceDoctorsAdapter(myDataset);
+                    rvDoctors.setAdapter(adapterDoctors);
 
-                        adapterPhotos = new ServicePhotosAdapter(currentService.getPhotoUrls(), serviceId);
-                        rvPhotos.setAdapter(adapterPhotos);
-                    }
+                    adapterPhotos = new ServicePhotosAdapter(currentService.getPhotoUrls(), serviceId);
+                    rvPhotos.setAdapter(adapterPhotos);
                 });
 
         // bind values

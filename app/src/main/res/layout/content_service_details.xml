@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<me.arblitroshani.androidtest.extra.MyNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<me.arblitroshani.dentalclinic.extra.MyNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -167,4 +167,4 @@
 
     </LinearLayout>
 
-</me.arblitroshani.androidtest.extra.MyNestedScrollView>
+</me.arblitroshani.dentalclinic.extra.MyNestedScrollView>

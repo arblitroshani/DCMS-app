@@ -69,7 +69,7 @@ public class IdCardScanActivity extends AppCompatActivity {
 
         // Flip after 2 seconds
         final Handler handler = new Handler();
-        handler.postDelayed(this::flip, 2000);
+        handler.postDelayed(this::flip, 1000);
 
         // ScanActivity
         // check if BlinkID is supported on the device

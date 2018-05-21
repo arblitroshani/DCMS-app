@@ -34,5 +34,5 @@
 
     <string name="shortcut_short_name">Appointments</string>
     <string name="shortcut_short_name1">New Appointment</string>
-    <string name="title_activity_id_card_scan">IdCardScanActivity</string>
+    <string name="title_activity_id_card_scan">ID Scan</string>
 </resources>
