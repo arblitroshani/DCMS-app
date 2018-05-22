@@ -35,4 +35,5 @@
     <string name="shortcut_short_name">Appointments</string>
     <string name="shortcut_short_name1">New Appointment</string>
     <string name="title_activity_id_card_scan">ID Scan</string>
+    <string name="title_activity_create_user_profile2">Complete your profile</string>
 </resources>

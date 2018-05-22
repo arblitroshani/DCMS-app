@@ -7,10 +7,8 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -30,6 +28,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.dentalclinic.R;
 import me.arblitroshani.dentalclinic.extra.Config;
+import me.arblitroshani.dentalclinic.model.User;
 
 public class IdCardScanActivity extends AppCompatActivity {
 
@@ -109,15 +108,27 @@ public class IdCardScanActivity extends AppCompatActivity {
 
                 if(result.isValid() && !result.isEmpty()) {
                     if(result.isMRZParsed()) {
-                        Log.i("DATA_READ", result.getPrimaryId());
-                        Log.i("DATA_READ", result.getSecondaryId());
-                        Log.i("DATA_READ", result.getDocumentNumber());
-                        Log.i("DATA_READ", result.getIssuer());
-                        Log.i("DATA_READ", result.getNationality());
-                        Log.i("DATA_READ", result.getRawDateOfBirth());
-                        Log.i("DATA_READ", result.getSex());
-                        Log.i("DATA_READ", result.getOpt1().substring(0, 10));
-                        Log.i("DATA_READ", result.getDocumentType().toString());
+                        // read data
+                        User incompleteUser = new User(
+                                result.getSecondaryId(),
+                                result.getPrimaryId(),
+                                "no_email",
+                                "no_phone",
+                                getBirthday(result.getRawDateOfBirth()),
+                                result.getSex(),
+                                result.getDocumentNumber(),
+                                result.getOpt1().substring(0, 10),
+                                result.getNationality(),
+                                User.TYPE_USER
+                        );
+
+                        // TODO: check if name same as in firebase, validate
+
+                        // pass it in intent
+                        Intent intent = new Intent(this, CreateUserProfileActivity.class);
+                        intent.putExtra("incomplete_user", incompleteUser);
+                        startActivity(intent);
+                        finish();
                     } else {
                         OcrResult rawOcr = result.getOcrResult();
                         // attempt to parse OCR result by yourself
@@ -129,6 +140,12 @@ public class IdCardScanActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    private String getBirthday(String rawDateOfBirth) {
+        return rawDateOfBirth.substring(2, 4) + '/' +
+                rawDateOfBirth.substring(4) + '/' +
+                rawDateOfBirth.substring(0, 2);
     }
 
     public void flip() {

@@ -34,10 +34,6 @@
                 android:value=".activity.MainActivity" />
         </activity>
         <activity
-            android:name=".activity.CreateUserProfileActivity"
-            android:label="@string/title_activity_create_user_profile"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".activity.AppointmentsActivity"
             android:label="@string/title_activity_appointments"
             android:parentActivityName=".activity.MainActivity"
@@ -55,6 +51,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="me.arblitroshani.dentalclinic.activity.AppointmentsActivity" />
         </activity>
+        <activity
+            android:name=".activity.IdCardScanActivity"
+            android:label="@string/title_activity_id_card_scan"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.CreateUserProfileActivity"
+            android:label="@string/title_activity_create_user_profile2"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <service android:name=".service.MyFirebaseMessagingService">
             <intent-filter>
@@ -74,11 +78,6 @@
                 <action android:name="android.intent.action.NOTIFY" />
             </intent-filter>
         </receiver>
-
-        <activity
-            android:name=".activity.IdCardScanActivity"
-            android:label="@string/title_activity_id_card_scan"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

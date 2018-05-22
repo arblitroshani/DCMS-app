@@ -76,10 +76,6 @@
                 android:value=".activity.MainActivity" />
         </activity>
         <activity
-            android:name="me.arblitroshani.dentalclinic.activity.CreateUserProfileActivity"
-            android:label="@string/title_activity_create_user_profile"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name="me.arblitroshani.dentalclinic.activity.AppointmentsActivity"
             android:label="@string/title_activity_appointments"
             android:parentActivityName="me.arblitroshani.dentalclinic.activity.MainActivity"
@@ -97,6 +93,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="me.arblitroshani.dentalclinic.activity.AppointmentsActivity" />
         </activity>
+        <activity
+            android:name="me.arblitroshani.dentalclinic.activity.IdCardScanActivity"
+            android:label="@string/title_activity_id_card_scan"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="me.arblitroshani.dentalclinic.activity.CreateUserProfileActivity"
+            android:label="@string/title_activity_create_user_profile2"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <service android:name="me.arblitroshani.dentalclinic.service.MyFirebaseMessagingService" >
             <intent-filter>
@@ -116,11 +120,6 @@
                 <action android:name="android.intent.action.NOTIFY" />
             </intent-filter>
         </receiver>
-
-        <activity
-            android:name="me.arblitroshani.dentalclinic.activity.IdCardScanActivity"
-            android:label="@string/title_activity_id_card_scan"
-            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              FirebaseMessagingService performs security checks at runtime,
              no need for explicit permissions despite exported="true"

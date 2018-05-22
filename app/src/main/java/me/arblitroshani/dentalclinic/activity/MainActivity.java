@@ -66,12 +66,12 @@ public class MainActivity extends AppCompatActivity
     @BindView(R.id.ctl)
     CollapsingToolbarLayout collapsingToolbarLayout;
 
+    @BindView(R.id.image_scrolling_top)
+    ImageView ivLogo;
+
     private TextView tvName;
     private TextView tvEmail;
     private ImageView ivProfile;
-
-    @BindView(R.id.image_scrolling_top)
-    ImageView ivLogo;
 
     private Map<String, Integer> itemIds;
 
@@ -92,8 +92,6 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-
 
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -159,9 +157,9 @@ public class MainActivity extends AppCompatActivity
                 FirebaseUserMetadata metadata = auth.getCurrentUser().getMetadata();
                 if (metadata.getCreationTimestamp() == metadata.getLastSignInTimestamp()) {
                     // The user is new
-                    Intent i = new Intent(MainActivity.this, CreateUserProfileActivity.class);
+                    Intent i = new Intent(MainActivity.this, IdCardScanActivity.class);
                     startActivity(i);
-                    showSnackbar("Success");
+                    //showSnackbar("Success");
                 } else {
                     // This is an existing user
                     showSnackbar("Welcome back");
@@ -282,9 +280,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_clinic) {
             fragmentClassName = "Home";
         } else if (id == R.id.nav_settings) {
-            Intent i = new Intent(this, IdCardScanActivity.class);
-            startActivity(i);
-            return true;
+            fragmentClassName = "Home";
         } else if (id == R.id.nav_help) {
             fragmentClassName = "Home";
         } else if (id == R.id.nav_sign_in) {
@@ -354,16 +350,16 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void startActivity(String className) {
-        Intent i;
+        Class toOpen;
         switch (className) {
             case "AppointmentsActivity":
-                i = new Intent(MainActivity.this, AppointmentsActivity.class);
+                toOpen = AppointmentsActivity.class;
                 break;
             default:
-                i = new Intent(MainActivity.this, MainActivity.class);
+                toOpen = MainActivity.class;
                 break;
         }
-        startActivity(i);
+        startActivity(new Intent(MainActivity.this, toOpen));
     }
 
     private void uncheckAllMenuItems() {

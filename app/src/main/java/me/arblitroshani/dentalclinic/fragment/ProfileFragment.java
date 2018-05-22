@@ -1,32 +1,20 @@
 package me.arblitroshani.dentalclinic.fragment;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.facebook.shimmer.ShimmerFrameLayout;
-import com.firebase.ui.auth.ui.AppCompatBase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.lang.reflect.Method;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -65,7 +53,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_profile1, null, false);
+        View view = inflater.inflate(R.layout.fragment_profile, null, false);
         ButterKnife.bind(this, view);
         return view;
     }
@@ -92,7 +80,7 @@ public class ProfileFragment extends Fragment {
             User user = documentSnapshot.toObject(User.class);
             container.stopShimmerAnimation();
             nameContainer.stopShimmerAnimation();
-            tvName.setText(user.getName());
+            tvName.setText(user.getFullName());
             tvEmail.setText(user.getEmail());
             tvBday.setText(user.getBirthday());
             tvPhone.setText(user.getPhone());
