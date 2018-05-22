@@ -6,45 +6,48 @@
     density="xxhdpi"
     format="10"
     plugin-version="3.1.2"
-    timestamp="1527006806298"
+    timestamp="1527007617367"
     token="-5114247391884262981"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="4111" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="214" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="57" />
     <task
         name="verifier"
-        duration="0" />
+        duration="5" />
 
     <artifact
         location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
         type="SPLIT" />
+    <artifact
+        location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
     <build
         build-mode="FULL"
-        timestamp="1527004161110"
+        timestamp="1527007492068"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
@@ -72,21 +75,15 @@
             type="SPLIT_MAIN" />
     </build>
     <build
-        build-mode="COLD"
-        ir-eligibility="REFLECTION_USED"
-        timestamp="1527006319848"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-    </build>
-    <build
         build-mode="HOT_WARM"
-        timestamp="1527006806298"
+        timestamp="1527007617367"
         verifier="COMPATIBLE" >
         <artifact
             location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
+        <artifact
+            location="C:\Users\Arbli Troshani\Desktop\AndroidTest\app\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

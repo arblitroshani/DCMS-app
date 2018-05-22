@@ -83,7 +83,7 @@ public class CreateUserProfileActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         bSubmit.doResult(true);
-                        new Handler().postDelayed(() -> finish(), 500);
+                        new Handler().postDelayed(() -> finish(), 600);
                     }
                 });
             }

@@ -63,6 +63,9 @@ public class ProfileFragment extends Fragment {
 
         ((MainActivity) getActivity()).collapseAppBar();
 
+        container.startShimmerAnimation();
+        nameContainer.startShimmerAnimation();
+
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         final String photoPath = User.getHighResGmailPhotoUrl(currentUser.getPhotoUrl());
