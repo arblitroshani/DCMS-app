@@ -83,11 +83,17 @@ public class ProfileFragment extends Fragment {
             User user = documentSnapshot.toObject(User.class);
             container.stopShimmerAnimation();
             nameContainer.stopShimmerAnimation();
-            tvName.setText(user.getFullName());
+            tvName.setText(getFullNameCamelCase(user.getName(), user.getSurname()));
             tvEmail.setText(user.getEmail());
             tvBday.setText(user.getBirthday());
             tvPhone.setText(user.getPhone());
         });
+    }
+
+    private String getFullNameCamelCase(String name, String surname) {
+        name = name.charAt(0) + name.substring(1).toLowerCase();
+        surname = surname.charAt(0) + surname.substring(1).toLowerCase();
+        return name + " " + surname;
     }
 
 }

@@ -65,7 +65,7 @@
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmer_view_container"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -90,11 +90,17 @@
                     android:text="loading.."
                     android:textSize="16sp" />
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/gray_light" />
+
                 <TextView
                     android:id="@+id/tvBdayText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"
                     android:textSize="16sp"
@@ -108,13 +114,19 @@
                     android:textSize="16sp" >
                 </TextView>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/gray_light" />
+
                 <TextView
                     android:id="@+id/tvPhoneText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:text="Phone"
                     android:textSize="16sp" />
 

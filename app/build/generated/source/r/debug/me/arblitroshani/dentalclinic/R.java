@@ -43,13 +43,11 @@ public final class R {
     public static final int out_animation=0x7f020002;
   }
   public static final class array {
-    public static final int list_preference_entries=0x7f030000;
-    public static final int list_preference_entry_values=0x7f030001;
-    public static final int multi_select_list_preference_default_value=0x7f030002;
-    public static final int pref_example_list_titles=0x7f030003;
-    public static final int pref_example_list_values=0x7f030004;
-    public static final int pref_sync_frequency_titles=0x7f030005;
-    public static final int pref_sync_frequency_values=0x7f030006;
+    public static final int multi_select_list_preference_default_value=0x7f030000;
+    public static final int pref_example_list_titles=0x7f030001;
+    public static final int pref_example_list_values=0x7f030002;
+    public static final int reminder_before_titles=0x7f030003;
+    public static final int reminder_before_values=0x7f030004;
   }
   public static final class attr {
     /**
@@ -5736,10 +5734,10 @@ public final class R {
     public static final int pref_ringtone_silent=0x7f1000d2;
     public static final int pref_title_add_friends_to_messages=0x7f1000d3;
     public static final int pref_title_display_name=0x7f1000d4;
-    public static final int pref_title_new_message_notifications=0x7f1000d5;
-    public static final int pref_title_ringtone=0x7f1000d6;
-    public static final int pref_title_social_recommendations=0x7f1000d7;
-    public static final int pref_title_sync_frequency=0x7f1000d8;
+    public static final int pref_title_notification_reminder=0x7f1000d5;
+    public static final int pref_title_reminder_before=0x7f1000d6;
+    public static final int pref_title_ringtone=0x7f1000d7;
+    public static final int pref_title_social_recommendations=0x7f1000d8;
     public static final int pref_title_system_sync_settings=0x7f1000d9;
     public static final int pref_title_vibrate=0x7f1000da;
     public static final int project_id=0x7f1000db;

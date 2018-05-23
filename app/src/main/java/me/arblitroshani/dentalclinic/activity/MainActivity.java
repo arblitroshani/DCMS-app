@@ -46,6 +46,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.dentalclinic.GlideApp;
 import me.arblitroshani.dentalclinic.R;
+import me.arblitroshani.dentalclinic.extra.Config;
 import me.arblitroshani.dentalclinic.extra.Utility;
 import me.arblitroshani.dentalclinic.fragment.HomeFragment;
 import me.arblitroshani.dentalclinic.fragment.SessionsFragment;
@@ -137,7 +138,7 @@ public class MainActivity extends AppCompatActivity
         collapseAppBar();
 
         Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
+        if (bundle != null && bundle.get(Config.CLOUD_MESSAGING_SERVER_KEY) != null) {
             Intent intent = new Intent(this, AppointmentsActivity.class);
             startActivity(intent);
         }

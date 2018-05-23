@@ -5,7 +5,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -14,10 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.unstoppable.submitbuttonview.SubmitButton;
 
 import java.text.SimpleDateFormat;
@@ -146,8 +143,10 @@ public class AppointmentRequestActivity extends AppCompatActivity implements Vie
                                 bSubmit.doResult(true);
                                 Intent returnIntent = new Intent();
                                 returnIntent.putExtra("result", Constants.Appointments.RESULT_OK);
-                                setResult(Activity.RESULT_OK, returnIntent);
-                                finish();
+                                new Handler().postDelayed(() -> {
+                                    setResult(Activity.RESULT_OK, returnIntent);
+                                    finish();
+                                }, 600);
                             })
                             .addOnFailureListener(e -> bSubmit.reset());
                 }
