@@ -1,11 +1,9 @@
 package me.arblitroshani.dentalclinic.activity;
 
-import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -35,11 +33,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.FirebaseUserMetadata;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.io.IOException;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -52,7 +51,6 @@ import me.arblitroshani.dentalclinic.fragment.HomeFragment;
 import me.arblitroshani.dentalclinic.fragment.SessionsFragment;
 import me.arblitroshani.dentalclinic.model.User;
 import me.arblitroshani.dentalclinic.service.MyFirebaseInstanceIDService;
-import me.arblitroshani.dentalclinic.service.ReminderReceiver;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -225,8 +223,25 @@ public class MainActivity extends AppCompatActivity
                         setupMenuLoggedIn(false);
                         replaceFragment(R.id.nav_home);
                         invalidateOptionsMenu();
+                        deleteInstanceId();
                     });
         }
+    }
+
+    private static void deleteInstanceId() {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+                try {
+                    FirebaseInstanceId.getInstance().deleteInstanceId();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+            @Override
+            protected void onPostExecute(Void result) {}
+        }.execute();
     }
 
     private void showSnackbar(String message) {
@@ -291,7 +306,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_clinic) {
             fragmentClassName = "Home";
         } else if (id == R.id.nav_settings) {
-            fragmentClassName = "Home";
+            startActivity("SettingsActivity");
+            drawer.closeDrawer(GravityCompat.START);
+            return true;
         } else if (id == R.id.nav_help) {
             fragmentClassName = "Home";
         } else if (id == R.id.nav_sign_in) {
@@ -365,6 +382,9 @@ public class MainActivity extends AppCompatActivity
         switch (className) {
             case "AppointmentsActivity":
                 toOpen = AppointmentsActivity.class;
+                break;
+            case "SettingsActivity":
+                toOpen = SettingsActivity.class;
                 break;
             default:
                 toOpen = MainActivity.class;

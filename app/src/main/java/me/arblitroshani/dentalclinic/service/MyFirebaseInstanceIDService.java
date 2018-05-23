@@ -14,6 +14,12 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
     public void onCreate() {
         String currentToken = FirebaseInstanceId.getInstance().getToken();
 
+        // TODO: TRY:
+//        String token = FirebaseInstanceId.getInstance().getToken();
+//        while(token == null) {
+//            token = FirebaseInstanceId.getInstance().getToken();
+//        }
+
         String savedToken = Utility.getFirebaseInstanceId(getApplicationContext());
         String defaultToken = getApplication().getString(R.string.pref_firebase_instance_id_default_key);
 

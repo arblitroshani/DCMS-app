@@ -1,9 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-83:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-83:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-83:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-83:12
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-92:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-92:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-92:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-92:12
+MERGED from [com.android.support:preference-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\preference-v7-26.1.0.aar\7003bc55c7c3dd2549be3b7a6e349ba8\AndroidManifest.xml:17:1-28:12
 MERGED from [com.firebaseui:firebase-ui-storage:3.3.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-ui-storage-3.3.0.aar\c73f9e4a898107905dd7594c80b6d2de\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-firestore:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-firestore-12.0.1.aar\df00a11734bc28b3782e5958374ade7f\AndroidManifest.xml:2:1-8:12
 MERGED from [com.google.firebase:firebase-messaging:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-messaging-12.0.1.aar\83487c91c21314d396735e43a447cedb\AndroidManifest.xml:17:1-37:12
@@ -67,20 +68,20 @@ MERGED from [com.google.android.gms:play-services-base-license:12.0.1] C:\Users\
 MERGED from [com.google.android.gms:play-services-auth-api-phone-license:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-license-12.0.1.aar\6639342f8860fb0fcd386732621cac09\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-auth-base-license:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-license-12.0.1.aar\ae090e398c3eecbef935b4c985dde9a1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-storage-common-license:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-license-12.0.1.aar\d04f35c4428845cdd67037df0cd9ab81\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-83:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-83:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-92:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-92:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-92:12
 	package
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:3:5-44
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-83:12
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-92:12
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-83:12
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-92:12
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:11-69
@@ -97,7 +98,9 @@ MERGED from [com.firebaseui:firebase-ui-auth:3.3.0] C:\Users\Arbli Troshani\.gra
 	android:name
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:7:5-81:19
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:7:5-90:19
+MERGED from [com.android.support:preference-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\preference-v7-26.1.0.aar\7003bc55c7c3dd2549be3b7a6e349ba8\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:preference-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\preference-v7-26.1.0.aar\7003bc55c7c3dd2549be3b7a6e349ba8\AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.firebase:firebase-messaging:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-messaging-12.0.1.aar\83487c91c21314d396735e43a447cedb\AndroidManifest.xml:22:5-35:19
 MERGED from [com.google.firebase:firebase-messaging:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-messaging-12.0.1.aar\83487c91c21314d396735e43a447cedb\AndroidManifest.xml:22:5-35:19
 MERGED from [com.google.firebase:firebase-core:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-core-12.0.1.aar\2766e98d2c84991ed8ab82742bc1e8ea\AndroidManifest.xml:5:5-20
@@ -284,10 +287,20 @@ action#android.intent.action.NOTIFY
 ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:78:17-71
 	android:name
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:78:25-68
+activity#me.arblitroshani.dentalclinic.activity.SettingsActivity
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:82:9-89:20
+	android:parentActivityName
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:85:13-64
+	android:label
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:84:13-60
+	android:name
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:83:13-54
 uses-sdk
 INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:preference-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\preference-v7-26.1.0.aar\7003bc55c7c3dd2549be3b7a6e349ba8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:preference-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\preference-v7-26.1.0.aar\7003bc55c7c3dd2549be3b7a6e349ba8\AndroidManifest.xml:20:5-44
 MERGED from [com.firebaseui:firebase-ui-storage:3.3.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-ui-storage-3.3.0.aar\c73f9e4a898107905dd7594c80b6d2de\AndroidManifest.xml:7:5-9:41
 MERGED from [com.firebaseui:firebase-ui-storage:3.3.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-ui-storage-3.3.0.aar\c73f9e4a898107905dd7594c80b6d2de\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-firestore:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-firestore-12.0.1.aar\df00a11734bc28b3782e5958374ade7f\AndroidManifest.xml:6:5-44
@@ -424,6 +437,14 @@ INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidMa
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:preference-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\preference-v7-26.1.0.aar\7003bc55c7c3dd2549be3b7a6e349ba8\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:23:9-25:38
+	android:value
+		ADDED from [com.android.support:preference-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\preference-v7-26.1.0.aar\7003bc55c7c3dd2549be3b7a6e349ba8\AndroidManifest.xml:25:13-35
+	android:name
+		ADDED from [com.android.support:preference-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\preference-v7-26.1.0.aar\7003bc55c7c3dd2549be3b7a6e349ba8\AndroidManifest.xml:24:13-51
 service#com.google.firebase.messaging.FirebaseMessagingService
 ADDED from [com.google.firebase:firebase-messaging:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-messaging-12.0.1.aar\83487c91c21314d396735e43a447cedb\AndroidManifest.xml:28:9-34:19
 	android:exported
@@ -746,12 +767,6 @@ ADDED from [com.google.android.gms:play-services-base:12.0.1] C:\Users\Arbli Tro
 		ADDED from [com.google.android.gms:play-services-base:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.1.aar\74682203f75d13e9fdeee7a036d3bc98\AndroidManifest.xml:26:13-72
 	android:name
 		ADDED from [com.google.android.gms:play-services-base:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.1.aar\74682203f75d13e9fdeee7a036d3bc98\AndroidManifest.xml:24:13-79
-meta-data#android.support.VERSION
-ADDED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:23:9-25:38
-	android:value
-		ADDED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:25:13-35
-	android:name
-		ADDED from [com.android.support:palette-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\palette-v7-26.1.0.aar\b11627253f9ef3358455bc2c7df88b59\AndroidManifest.xml:24:13-51
 supports-screens
 ADDED from [:LibBlinkID] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\LibBlinkID.aar\910c93421d9135828c4b450c0bd90d3d\AndroidManifest.xml:12:5-17:39
 	android:largeScreens

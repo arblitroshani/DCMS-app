@@ -78,6 +78,15 @@
                 <action android:name="android.intent.action.NOTIFY" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.arblitroshani.dentalclinic.activity.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

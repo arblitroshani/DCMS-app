@@ -120,6 +120,19 @@
                 <action android:name="android.intent.action.NOTIFY" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name="me.arblitroshani.dentalclinic.activity.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="me.arblitroshani.dentalclinic.activity.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.arblitroshani.dentalclinic.activity.MainActivity" />
+        </activity>
+
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="26.1.0" />
         <!--
              FirebaseMessagingService performs security checks at runtime,
              no need for explicit permissions despite exported="true"
@@ -285,11 +298,6 @@
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <meta-data
-            android:name="android.support.VERSION"
-            android:value="26.1.0" />
-
         <activity
             android:name="com.microblink.activity.ScanActivity"
             android:configChanges="orientation|screenSize"
