@@ -14,7 +14,6 @@ public class ReminderReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        Log.i("NOTIFICATION", "onReceive fired!");
         Intent notificationIntent = new Intent(context, AppointmentsActivity.class);
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);

@@ -1,7 +1,10 @@
 package me.arblitroshani.dentalclinic.activity;
 
+import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -36,6 +39,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,6 +52,7 @@ import me.arblitroshani.dentalclinic.fragment.HomeFragment;
 import me.arblitroshani.dentalclinic.fragment.SessionsFragment;
 import me.arblitroshani.dentalclinic.model.User;
 import me.arblitroshani.dentalclinic.service.MyFirebaseInstanceIDService;
+import me.arblitroshani.dentalclinic.service.ReminderReceiver;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -132,6 +137,12 @@ public class MainActivity extends AppCompatActivity
         }
 
         collapseAppBar();
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            Intent intent = new Intent(this, AppointmentsActivity.class);
+            startActivity(intent);
+        }
     }
 
     private void updateRegistrationToken() {
