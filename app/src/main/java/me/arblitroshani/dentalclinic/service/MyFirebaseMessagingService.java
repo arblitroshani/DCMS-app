@@ -25,21 +25,18 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     this,
                     AppointmentsActivity.class);
             notification.send(MyNotification.NOTIFICATION_CONFIRM);
-            setReminder();
+            setReminder(message.getData().get("time"));
         }
-
-//        // Check if message contains a notification payload.
-//        if (message.getNotification() != null) {
-//            Log.i(Config.TAG, "Message Notification Body: " + message.getNotification().getBody());
-//        }
     }
 
-    private void setReminder() {
+    private void setReminder(String time) {
+        final int hoursBefore = 1;
+        long notificationTime = Long.parseLong(time);
+        long reminderTime = notificationTime - (hoursBefore * 60 * 60 * 1000);
+
         Intent notificationIntent = new Intent(this, ReminderReceiver.class);
         PendingIntent broadcast = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.SECOND, 5);
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, reminderTime, broadcast);
     }
 }
