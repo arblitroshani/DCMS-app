@@ -16,7 +16,7 @@
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:contentDescription="@string/nav_header_desc"
-        android:src="@drawable/default_profile"
+        android:src="@drawable/member_default"
         android:paddingTop="@dimen/nav_header_vertical_spacing"/>
 
     <TextView

@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity
                         tvName.setText("");
                         tvEmail.setText("");
                         GlideApp.with(getApplicationContext())
-                                .load(R.drawable.default_profile)
+                                .load(R.drawable.member_default)
                                 .apply(RequestOptions.circleCropTransform())
                                 .into(ivProfile);
                         setupMenuLoggedIn(false);

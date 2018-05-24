@@ -2506,7 +2506,7 @@ public final class R {
      * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td></td></tr>
+     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>
@@ -4751,81 +4751,81 @@ public final class R {
     public static final int common_google_signin_btn_text_light_focused=0x7f080090;
     public static final int common_google_signin_btn_text_light_normal=0x7f080091;
     public static final int common_google_signin_btn_text_light_normal_background=0x7f080092;
-    public static final int default_profile=0x7f080093;
-    public static final int design_bottom_navigation_item_background=0x7f080094;
-    public static final int design_fab_background=0x7f080095;
-    public static final int design_ic_visibility=0x7f080096;
-    public static final int design_ic_visibility_off=0x7f080097;
-    public static final int design_password_eye=0x7f080098;
-    public static final int design_snackbar_background=0x7f080099;
-    public static final int dot=0x7f08009a;
-    public static final int event_color_circle=0x7f08009b;
-    public static final int exit_blink_ocr=0x7f08009c;
-    public static final int fab_arrow=0x7f08009d;
-    public static final int flashlight_blink_ocr=0x7f08009e;
-    public static final int flashlight_inverse_blink_ocr=0x7f08009f;
-    public static final int frontid_white=0x7f0800a0;
-    public static final int fui_done_check_mark=0x7f0800a1;
-    public static final int fui_ic_facebook_white_22dp=0x7f0800a2;
-    public static final int fui_ic_googleg_color_24dp=0x7f0800a3;
-    public static final int fui_ic_mail_white_24dp=0x7f0800a4;
-    public static final int fui_ic_phone_white_24dp=0x7f0800a5;
-    public static final int fui_ic_twitter_bird_white_24dp=0x7f0800a6;
-    public static final int fui_idp_button_background_email=0x7f0800a7;
-    public static final int fui_idp_button_background_facebook=0x7f0800a8;
-    public static final int fui_idp_button_background_google=0x7f0800a9;
-    public static final int fui_idp_button_background_phone=0x7f0800aa;
-    public static final int fui_idp_button_background_twitter=0x7f0800ab;
-    public static final int googleg_disabled_color_18=0x7f0800ac;
-    public static final int googleg_standard_color_18=0x7f0800ad;
-    public static final int gradient_card_text=0x7f0800ae;
-    public static final int gradient_header=0x7f0800af;
-    public static final int header=0x7f0800b0;
-    public static final int header3=0x7f0800b1;
-    public static final int help_blink_ocr=0x7f0800b2;
-    public static final int ic_access_time_white_48dp=0x7f0800b3;
-    public static final int ic_account_circle_white_48dp=0x7f0800b4;
-    public static final int ic_dashboard_white_48dp=0x7f0800b5;
-    public static final int ic_done_white_64px=0x7f0800b6;
-    public static final int ic_flash_off_24dp=0x7f0800b7;
-    public static final int ic_flash_on_24dp=0x7f0800b8;
-    public static final int ic_info_black_24dp=0x7f0800b9;
-    public static final int ic_info_outline_white_48dp=0x7f0800ba;
-    public static final int ic_launcher_background=0x7f0800bb;
-    public static final int ic_launcher_foreground=0x7f0800bc;
-    public static final int ic_menu_camera=0x7f0800bd;
-    public static final int ic_menu_gallery=0x7f0800be;
-    public static final int ic_menu_manage=0x7f0800bf;
-    public static final int ic_menu_send=0x7f0800c0;
-    public static final int ic_menu_share=0x7f0800c1;
-    public static final int ic_menu_slideshow=0x7f0800c2;
-    public static final int ic_mode_edit_white_48dp=0x7f0800c3;
-    public static final int ic_notifications_black_24dp=0x7f0800c4;
-    public static final int ic_receipt_white_48dp=0x7f0800c5;
-    public static final int ic_shortcut_add=0x7f0800c6;
-    public static final int ic_shortcut_today=0x7f0800c7;
-    public static final int ic_sync_black_24dp=0x7f0800c8;
-    public static final int ic_today_white_48dp=0x7f0800c9;
-    public static final int icon_clear_black_18dp=0x7f0800ca;
-    public static final int icon_exit_blink_ocr=0x7f0800cb;
-    public static final int icon_exit_selected_blink_ocr=0x7f0800cc;
-    public static final int icon_flashlight_blink_ocr=0x7f0800cd;
-    public static final int icon_flashlight_selected_blink_ocr=0x7f0800ce;
-    public static final int icon_help_blink_ocr=0x7f0800cf;
-    public static final int icon_help_selected_blink_ocr=0x7f0800d0;
-    public static final int icon_ok_big_blink_ocr=0x7f0800d1;
-    public static final int icon_ok_big_selected_blink_ocr=0x7f0800d2;
-    public static final int icon_skip_blink_ocr=0x7f0800d3;
-    public static final int icon_skip_selected_blink_ocr=0x7f0800d4;
-    public static final int img_location=0x7f0800d5;
-    public static final int lightoff=0x7f0800d6;
-    public static final int lighton=0x7f0800d7;
-    public static final int logo=0x7f0800d8;
-    public static final int material_design_1=0x7f0800d9;
-    public static final int material_design_11=0x7f0800da;
-    public static final int material_design_2=0x7f0800db;
-    public static final int material_design_3=0x7f0800dc;
-    public static final int material_design_4=0x7f0800dd;
+    public static final int design_bottom_navigation_item_background=0x7f080093;
+    public static final int design_fab_background=0x7f080094;
+    public static final int design_ic_visibility=0x7f080095;
+    public static final int design_ic_visibility_off=0x7f080096;
+    public static final int design_password_eye=0x7f080097;
+    public static final int design_snackbar_background=0x7f080098;
+    public static final int dot=0x7f080099;
+    public static final int event_color_circle=0x7f08009a;
+    public static final int exit_blink_ocr=0x7f08009b;
+    public static final int fab_arrow=0x7f08009c;
+    public static final int flashlight_blink_ocr=0x7f08009d;
+    public static final int flashlight_inverse_blink_ocr=0x7f08009e;
+    public static final int frontid_white=0x7f08009f;
+    public static final int fui_done_check_mark=0x7f0800a0;
+    public static final int fui_ic_facebook_white_22dp=0x7f0800a1;
+    public static final int fui_ic_googleg_color_24dp=0x7f0800a2;
+    public static final int fui_ic_mail_white_24dp=0x7f0800a3;
+    public static final int fui_ic_phone_white_24dp=0x7f0800a4;
+    public static final int fui_ic_twitter_bird_white_24dp=0x7f0800a5;
+    public static final int fui_idp_button_background_email=0x7f0800a6;
+    public static final int fui_idp_button_background_facebook=0x7f0800a7;
+    public static final int fui_idp_button_background_google=0x7f0800a8;
+    public static final int fui_idp_button_background_phone=0x7f0800a9;
+    public static final int fui_idp_button_background_twitter=0x7f0800aa;
+    public static final int googleg_disabled_color_18=0x7f0800ab;
+    public static final int googleg_standard_color_18=0x7f0800ac;
+    public static final int gradient_card_text=0x7f0800ad;
+    public static final int gradient_header=0x7f0800ae;
+    public static final int header=0x7f0800af;
+    public static final int header3=0x7f0800b0;
+    public static final int help_blink_ocr=0x7f0800b1;
+    public static final int ic_access_time_white_48dp=0x7f0800b2;
+    public static final int ic_account_circle_white_48dp=0x7f0800b3;
+    public static final int ic_dashboard_white_48dp=0x7f0800b4;
+    public static final int ic_done_white_64px=0x7f0800b5;
+    public static final int ic_flash_off_24dp=0x7f0800b6;
+    public static final int ic_flash_on_24dp=0x7f0800b7;
+    public static final int ic_info_black_24dp=0x7f0800b8;
+    public static final int ic_info_outline_white_48dp=0x7f0800b9;
+    public static final int ic_launcher_background=0x7f0800ba;
+    public static final int ic_launcher_foreground=0x7f0800bb;
+    public static final int ic_menu_camera=0x7f0800bc;
+    public static final int ic_menu_gallery=0x7f0800bd;
+    public static final int ic_menu_manage=0x7f0800be;
+    public static final int ic_menu_send=0x7f0800bf;
+    public static final int ic_menu_share=0x7f0800c0;
+    public static final int ic_menu_slideshow=0x7f0800c1;
+    public static final int ic_mode_edit_white_48dp=0x7f0800c2;
+    public static final int ic_notifications_black_24dp=0x7f0800c3;
+    public static final int ic_receipt_white_48dp=0x7f0800c4;
+    public static final int ic_shortcut_add=0x7f0800c5;
+    public static final int ic_shortcut_today=0x7f0800c6;
+    public static final int ic_sync_black_24dp=0x7f0800c7;
+    public static final int ic_today_white_48dp=0x7f0800c8;
+    public static final int icon_clear_black_18dp=0x7f0800c9;
+    public static final int icon_exit_blink_ocr=0x7f0800ca;
+    public static final int icon_exit_selected_blink_ocr=0x7f0800cb;
+    public static final int icon_flashlight_blink_ocr=0x7f0800cc;
+    public static final int icon_flashlight_selected_blink_ocr=0x7f0800cd;
+    public static final int icon_help_blink_ocr=0x7f0800ce;
+    public static final int icon_help_selected_blink_ocr=0x7f0800cf;
+    public static final int icon_ok_big_blink_ocr=0x7f0800d0;
+    public static final int icon_ok_big_selected_blink_ocr=0x7f0800d1;
+    public static final int icon_skip_blink_ocr=0x7f0800d2;
+    public static final int icon_skip_selected_blink_ocr=0x7f0800d3;
+    public static final int img_location=0x7f0800d4;
+    public static final int lightoff=0x7f0800d5;
+    public static final int lighton=0x7f0800d6;
+    public static final int logo1=0x7f0800d7;
+    public static final int material_design_1=0x7f0800d8;
+    public static final int material_design_11=0x7f0800d9;
+    public static final int material_design_2=0x7f0800da;
+    public static final int material_design_3=0x7f0800db;
+    public static final int material_design_4=0x7f0800dc;
+    public static final int member_default=0x7f0800dd;
     public static final int microblink_button=0x7f0800de;
     public static final int nav_header=0x7f0800df;
     public static final int navigation_empty_icon=0x7f0800e0;
@@ -11629,7 +11629,7 @@ public final class R {
      * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td></td></tr>
+     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>
