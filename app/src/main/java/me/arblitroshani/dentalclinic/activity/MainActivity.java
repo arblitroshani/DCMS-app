@@ -1,10 +1,7 @@
 package me.arblitroshani.dentalclinic.activity;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.AppBarLayout;
@@ -46,7 +43,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.dentalclinic.GlideApp;
 import me.arblitroshani.dentalclinic.R;
-import me.arblitroshani.dentalclinic.extra.Config;
 import me.arblitroshani.dentalclinic.extra.Utility;
 import me.arblitroshani.dentalclinic.fragment.HomeFragment;
 import me.arblitroshani.dentalclinic.fragment.SessionsFragment;

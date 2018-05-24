@@ -11,25 +11,37 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.SwitchPreference;
+import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 
-import me.arblitroshani.dentalclinic.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
+import me.arblitroshani.dentalclinic.R;
+import me.arblitroshani.dentalclinic.extra.Config;
+import me.arblitroshani.dentalclinic.extra.Utility;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class SettingsActivity extends AppCompatPreferenceActivity {
 
-    /**
-     * A preference value change listener that updates the preference's summary
-     * to reflect its new value.
-     */
     private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = (preference, value) -> {
         String stringValue = value.toString();
 
@@ -71,6 +83,13 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             // For all other preferences, set the summary to the value's
             // simple string representation.
             preference.setSummary(stringValue);
+
+            if (preference.getKey().equals("sms_reminder")) {
+                Log.i(Config.TAG, "sms reminder toggled");
+            } else {
+                Log.i(Config.TAG, preference.toString());
+                Log.i(Config.TAG, "key:" + preference.getKey());
+            }
         }
         return true;
     };
@@ -204,17 +223,36 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static class DataSyncPreferenceFragment extends PreferenceFragment {
+
+        private SwitchPreference smsReminder;
+        private FirebaseUser currentUser;
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref_data_sync);
             setHasOptionsMenu(true);
 
+            currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
             // Bind the summaries of EditText/List/Dialog/Ringtone preferences
             // to their values. When their values change, their summaries are
             // updated to reflect the new value, per the Android Design
             // guidelines.
             bindPreferenceSummaryToValue(findPreference("reminder_before"));
+
+            smsReminder = (SwitchPreference) getPreferenceManager().findPreference("sms_notification");
+            smsReminder.setOnPreferenceChangeListener((preference, o) -> {
+                boolean switched = ((SwitchPreference) preference).isChecked();
+                boolean update = !switched;
+
+                FirebaseFirestore.getInstance()
+                        .collection("smsNotifications")
+                        .document(currentUser.getUid())
+                        .update("sendSmsNotification", update);
+
+                return true;
+            });
         }
 
         @Override

@@ -1,6 +1,16 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
+        android:key="notifications"
+        android:title="Notifications">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="sms_notification"
+            android:title="Get SMS notification" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="reminders"
         android:title="Reminders">
 
