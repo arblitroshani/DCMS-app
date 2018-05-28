@@ -11,6 +11,7 @@ public class Service implements Parcelable {
     private String subtitle;
     private String description;
     private String photoUrl;
+    private int numPendingAppointments;
     private List<String> photoUrls;
 
     public Service() {}
@@ -37,6 +38,14 @@ public class Service implements Parcelable {
 
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
+    }
+
+    public int getNumPendingAppointments() {
+        return numPendingAppointments;
+    }
+
+    public void setNumPendingAppointments(int numPendingAppointments) {
+        this.numPendingAppointments = numPendingAppointments;
     }
 
     public String getSubtitle() {

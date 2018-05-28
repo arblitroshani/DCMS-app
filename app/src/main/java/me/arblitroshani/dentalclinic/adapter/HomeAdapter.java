@@ -1,10 +1,7 @@
 package me.arblitroshani.dentalclinic.adapter;
 
 import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
@@ -17,7 +14,6 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -26,7 +22,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.dentalclinic.R;
-import me.arblitroshani.dentalclinic.activity.AppointmentsActivity;
 import me.arblitroshani.dentalclinic.activity.MainActivity;
 import me.arblitroshani.dentalclinic.model.HomeSection;
 

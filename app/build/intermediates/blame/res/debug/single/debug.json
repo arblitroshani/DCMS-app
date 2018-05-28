@@ -948,10 +948,6 @@
         "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\drawable\\rectangle_back.xml"
     },
     {
-        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tooth.png.flat",
-        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\drawable\\tooth.png"
-    },
-    {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\color-v21_abc_btn_colored_borderless_text_material.xml.flat",
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\5c07533b7e1d1c9a6602e791415ba904\\res\\color-v21\\abc_btn_colored_borderless_text_material.xml"
     },
@@ -1518,6 +1514,10 @@
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_baseline_add_white_48.png.flat",
         "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\drawable-hdpi\\baseline_add_white_48.png"
+    },
+    {
+        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_member_default.gif.flat",
+        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\drawable-v24\\member_default.gif"
     },
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg_low.xml.flat",
@@ -2592,6 +2592,10 @@
         "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\drawable-mdpi\\ic_shortcut_today.png"
     },
     {
+        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tooth.webp.flat",
+        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\drawable\\tooth.webp"
+    },
+    {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark_normal.xml.flat",
         "source": "C:\\Users\\Arbli Troshani\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-12.0.1.aar\\74682203f75d13e9fdeee7a036d3bc98\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
     },
@@ -3298,10 +3302,6 @@
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\menu_main.xml.flat",
         "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\menu\\main.xml"
-    },
-    {
-        "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_member_default.jpg.flat",
-        "source": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\src\\main\\res\\drawable-v24\\member_default.jpg"
     },
     {
         "merged": "C:\\Users\\Arbli Troshani\\Desktop\\AndroidTest\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",

@@ -12,6 +12,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.microblink.activity.ScanActivity;
 import com.microblink.activity.ScanCard;
 import com.microblink.recognizers.BaseRecognitionResult;
@@ -49,6 +51,9 @@ public class IdCardScanActivity extends AppCompatActivity {
     private AnimatorSet setRightOut;
     private AnimatorSet setLeftIn;
 
+    private FirebaseAuth auth;
+    private FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,6 +90,9 @@ public class IdCardScanActivity extends AppCompatActivity {
         intent.putExtra(ScanCard.EXTRAS_RECOGNITION_SETTINGS, settings);
         intent.putExtra(ScanActivity.EXTRAS_BEEP_RESOURCE, R.raw.beep);
 
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+
         fab.setOnClickListener(view -> startActivityForResult(intent, MY_REQUEST_CODE));
     }
 
@@ -117,16 +125,17 @@ public class IdCardScanActivity extends AppCompatActivity {
                                 getBirthday(result.getRawDateOfBirth()),
                                 result.getSex(),
                                 result.getDocumentNumber(),
-                                result.getOpt1().substring(0, 10),
+                                user.getUid(),
                                 result.getNationality(),
                                 User.TYPE_USER
                         );
 
-                        // TODO: check if name same as in firebase, validate
+                        String nationalId = result.getOpt1().substring(0, 10);
 
                         // pass it in intent
                         Intent intent = new Intent(this, CreateUserProfileActivity.class);
                         intent.putExtra("incomplete_user", incompleteUser);
+                        intent.putExtra("incomplete_user_national_id", nationalId);
                         startActivity(intent);
                         finish();
                     } else {

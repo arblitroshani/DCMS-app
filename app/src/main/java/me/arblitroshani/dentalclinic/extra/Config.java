@@ -6,4 +6,6 @@ public class Config {
     public static final String CLOUD_MESSAGING_SERVER_KEY = "AAAA-NAzHnY:APA91bFmAHsXogUi-HY8xauhVdGPLdx3RGKUkpP4EpPsBIhAwEDWyJTf5-vUibdeiHn0ucUK7KZYwFH8exhUTB0qYR0udXSAfkNBYE__Hil7H_sMUGKmFzTGoixx8StuCh0lFlCZm3dY";
 
     public static final String TAG = "tag-not";
+
+    public static final String PREFS_USER = "prefs_user";
 }

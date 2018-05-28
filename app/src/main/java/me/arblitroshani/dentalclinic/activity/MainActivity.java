@@ -1,6 +1,7 @@
 package me.arblitroshani.dentalclinic.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,6 +17,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.util.Util;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
@@ -30,9 +33,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.FirebaseUserMetadata;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -43,6 +45,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.dentalclinic.GlideApp;
 import me.arblitroshani.dentalclinic.R;
+import me.arblitroshani.dentalclinic.extra.Config;
 import me.arblitroshani.dentalclinic.extra.Utility;
 import me.arblitroshani.dentalclinic.fragment.HomeFragment;
 import me.arblitroshani.dentalclinic.fragment.SessionsFragment;
@@ -77,8 +80,6 @@ public class MainActivity extends AppCompatActivity
 
     private FirebaseAuth auth;
     private FirebaseUser currentUser;
-    private FirebaseStorage storage;
-    private StorageReference storageRefServices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,18 +96,10 @@ public class MainActivity extends AppCompatActivity
 
         navigationView.setNavigationItemSelectedListener(this);
 
-        // load image from storage in toolbar
-        storage = FirebaseStorage.getInstance();
-        storageRefServices = storage.getReference().child("branding");
-
         View headerView = navigationView.getHeaderView(0);
         ivProfile = headerView.findViewById(R.id.imageView);
         tvName = headerView.findViewById(R.id.tvName);
         tvEmail = headerView.findViewById(R.id.tvEmail);
-
-        GlideApp.with(this)
-                .load(storageRefServices.child("tooth.png"))
-                .into(ivLogo);
 
         setupMenuLoggedIn(false);
 
@@ -154,6 +147,16 @@ public class MainActivity extends AppCompatActivity
                 } else {
                     // This is an existing user
                     showSnackbar("Welcome back");
+                    FirebaseFirestore.getInstance()
+                            .collection("users")
+                            .whereEqualTo("uid", auth.getCurrentUser().getUid())
+                            .get()
+                            .addOnCompleteListener(task -> {
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    // store in shared prefs
+                                    Utility.setNationalIdSharedPreference(MainActivity.this, document.getId());
+                                }
+                            });
                     //replaceFragment(R.id.nav_home);
                 }
                 auth = FirebaseAuth.getInstance();
@@ -206,6 +209,7 @@ public class MainActivity extends AppCompatActivity
                         replaceFragment(R.id.nav_home);
                         invalidateOptionsMenu();
                         deleteInstanceId();
+                        Utility.setNationalIdSharedPreference(this, null);
                     });
         }
     }

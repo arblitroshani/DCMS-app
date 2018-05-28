@@ -7,6 +7,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -20,6 +22,8 @@ import com.unstoppable.submitbuttonview.SubmitButton;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.dentalclinic.R;
+import me.arblitroshani.dentalclinic.extra.Config;
+import me.arblitroshani.dentalclinic.extra.Utility;
 import me.arblitroshani.dentalclinic.model.User;
 
 public class CreateUserProfileActivity extends AppCompatActivity {
@@ -57,14 +61,15 @@ public class CreateUserProfileActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         incompleteUser = i.getParcelableExtra("incomplete_user");
+        String nationalId = i.getStringExtra("incomplete_user_national_id");
 
         tvName.setText(incompleteUser.getFullName());
         tvBday.setText(incompleteUser.getBirthday());
-        tvNationalId.setText(incompleteUser.getNationalId());
+        tvNationalId.setText(nationalId);
 
         prepopulateFirebaseUserFields();
 
-        bSubmit.setOnClickListener(view -> {
+        bSubmit.setOnClickListener((View view) -> {
             etEmail.setError(null);
             etPhone.setError(null);
             if (TextUtils.isEmpty(etEmail.getText())) {
@@ -79,12 +84,13 @@ public class CreateUserProfileActivity extends AppCompatActivity {
                 incompleteUser.setEmail(etEmail.getText().toString());
                 incompleteUser.setPhone(etPhone.getText().toString());
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
-                db.collection("users").document(user.getUid()).set(incompleteUser).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        bSubmit.doResult(true);
-                        new Handler().postDelayed(() -> finish(), 600);
-                    }
+                db.collection("users")
+                        .document(nationalId)
+                        .set(incompleteUser)
+                        .addOnCompleteListener(task -> {
+                    bSubmit.doResult(true);
+                    Utility.setNationalIdSharedPreference(this, nationalId);
+                    new Handler().postDelayed(() -> finish(), 600);
                 });
             }
         });

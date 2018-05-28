@@ -132,6 +132,7 @@ public class AppointmentRequestActivity extends AppCompatActivity implements Vie
                 } else {
                     db.collection("appointments")
                             .add(new FirebaseAppointmentCalendarEvent(
+                                    this,
                                     etDescription.getText().toString(),
                                     Constants.Appointments.STATUS_PENDING,
                                     spinner.getSelectedItem().toString(),

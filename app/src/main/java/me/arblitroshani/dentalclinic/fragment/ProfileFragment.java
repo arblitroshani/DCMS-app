@@ -3,6 +3,7 @@ package me.arblitroshani.dentalclinic.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +22,9 @@ import butterknife.ButterKnife;
 import me.arblitroshani.dentalclinic.GlideApp;
 import me.arblitroshani.dentalclinic.R;
 import me.arblitroshani.dentalclinic.activity.MainActivity;
+import me.arblitroshani.dentalclinic.extra.Config;
 import me.arblitroshani.dentalclinic.extra.PhotoFullPopupWindow;
+import me.arblitroshani.dentalclinic.extra.Utility;
 import me.arblitroshani.dentalclinic.model.User;
 
 public class ProfileFragment extends Fragment {
@@ -78,16 +81,21 @@ public class ProfileFragment extends Fragment {
                 new PhotoFullPopupWindow(getContext(), R.layout.popup_photo_full, view1, photoPath, null));
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        DocumentReference docRef = db.collection("users").document(currentUser.getUid());
-        docRef.get().addOnSuccessListener(documentSnapshot -> {
-            User user = documentSnapshot.toObject(User.class);
-            container.stopShimmerAnimation();
-            nameContainer.stopShimmerAnimation();
-            tvName.setText(getFullNameCamelCase(user.getName(), user.getSurname()));
-            tvEmail.setText(user.getEmail());
-            tvBday.setText(user.getBirthday());
-            tvPhone.setText(user.getPhone());
-        });
+
+        String nationalId = Utility.getNationalIdSharedPreference(this.getActivity());
+
+        if (nationalId != null) {
+            DocumentReference docRef = db.collection("users").document(nationalId);
+            docRef.get().addOnSuccessListener(documentSnapshot -> {
+                User user = documentSnapshot.toObject(User.class);
+                container.stopShimmerAnimation();
+                nameContainer.stopShimmerAnimation();
+                tvName.setText(getFullNameCamelCase(user.getName(), user.getSurname()));
+                tvEmail.setText(user.getEmail());
+                tvBday.setText(user.getBirthday());
+                tvPhone.setText(user.getPhone());
+            });
+        }
     }
 
     private String getFullNameCamelCase(String name, String surname) {

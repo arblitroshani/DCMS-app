@@ -225,15 +225,12 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     public static class DataSyncPreferenceFragment extends PreferenceFragment {
 
         private SwitchPreference smsReminder;
-        private FirebaseUser currentUser;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref_data_sync);
             setHasOptionsMenu(true);
-
-            currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
             // Bind the summaries of EditText/List/Dialog/Ringtone preferences
             // to their values. When their values change, their summaries are
@@ -248,7 +245,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
 
                 FirebaseFirestore.getInstance()
                         .collection("smsNotifications")
-                        .document(currentUser.getUid())
+                        .document(Utility.getNationalIdSharedPreference(this.getActivity()))
                         .update("sendSmsNotification", update);
 
                 return true;

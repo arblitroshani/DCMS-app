@@ -35,6 +35,7 @@ import butterknife.ButterKnife;
 import me.arblitroshani.dentalclinic.R;
 import me.arblitroshani.dentalclinic.adapter.AppointmentEventRenderer;
 import me.arblitroshani.dentalclinic.extra.Constants;
+import me.arblitroshani.dentalclinic.extra.Utility;
 import me.arblitroshani.dentalclinic.model.FirebaseAppointmentCalendarEvent;
 
 public class AppointmentsActivity extends AppCompatActivity implements CalendarPickerController {
@@ -74,8 +75,9 @@ public class AppointmentsActivity extends AppCompatActivity implements CalendarP
     }
 
     public void initCalendar() {
+        String nationalId = Utility.getNationalIdSharedPreference(this);
         db.collection("appointments")
-                .whereEqualTo("uid", FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .whereEqualTo("nationalId", nationalId)
                 .addSnapshotListener((snapshot, e) -> {
                     if (e != null) return;
                     if (snapshot != null) {

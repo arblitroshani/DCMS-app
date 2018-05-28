@@ -6,6 +6,8 @@ import android.preference.PreferenceManager;
 
 import me.arblitroshani.dentalclinic.R;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class Utility {
 
     public static void setFirebaseInstanceId(Context context, String InstanceId) {
@@ -21,5 +23,16 @@ public class Utility {
         String key = context.getString(R.string.pref_firebase_instance_id_key);
         String default_value = context.getString(R.string.pref_firebase_instance_id_default_key);
         return sharedPreferences.getString(key, default_value);
+    }
+
+    public static void setNationalIdSharedPreference(Context context, String nationalId) {
+        SharedPreferences.Editor editor = context.getSharedPreferences(Config.PREFS_USER, MODE_PRIVATE).edit();
+        editor.putString("nationalId", nationalId);
+        editor.commit();
+    }
+
+    public static String getNationalIdSharedPreference(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(Config.PREFS_USER, MODE_PRIVATE);
+        return prefs.getString("nationalId", null);
     }
 }

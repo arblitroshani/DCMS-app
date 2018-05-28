@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-91:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-91:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-91:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-91:12
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-93:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-93:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-93:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-93:12
 MERGED from [com.android.support:preference-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\preference-v7-26.1.0.aar\7003bc55c7c3dd2549be3b7a6e349ba8\AndroidManifest.xml:17:1-28:12
 MERGED from [com.firebaseui:firebase-ui-storage:3.3.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-ui-storage-3.3.0.aar\c73f9e4a898107905dd7594c80b6d2de\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-firestore:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-firestore-12.0.1.aar\df00a11734bc28b3782e5958374ade7f\AndroidManifest.xml:2:1-8:12
@@ -68,20 +68,20 @@ MERGED from [com.google.android.gms:play-services-base-license:12.0.1] C:\Users\
 MERGED from [com.google.android.gms:play-services-auth-api-phone-license:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-license-12.0.1.aar\6639342f8860fb0fcd386732621cac09\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-auth-base-license:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-license-12.0.1.aar\ae090e398c3eecbef935b4c985dde9a1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-storage-common-license:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-license-12.0.1.aar\d04f35c4428845cdd67037df0cd9ab81\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-91:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-91:12
-INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-91:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-93:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-93:12
+INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-93:12
 	package
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:3:5-44
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-91:12
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-93:12
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-91:12
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:1-93:12
 		INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:2:11-69
@@ -98,7 +98,7 @@ MERGED from [com.firebaseui:firebase-ui-auth:3.3.0] C:\Users\Arbli Troshani\.gra
 	android:name
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:7:5-89:19
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:7:5-91:19
 MERGED from [com.android.support:preference-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\preference-v7-26.1.0.aar\7003bc55c7c3dd2549be3b7a6e349ba8\AndroidManifest.xml:22:5-26:19
 MERGED from [com.android.support:preference-v7:26.1.0] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\preference-v7-26.1.0.aar\7003bc55c7c3dd2549be3b7a6e349ba8\AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.firebase:firebase-messaging:12.0.1] C:\Users\Arbli Troshani\.gradle\caches\transforms-1\files-1.1\firebase-messaging-12.0.1.aar\83487c91c21314d396735e43a447cedb\AndroidManifest.xml:22:5-35:19
@@ -181,126 +181,126 @@ MERGED from [com.google.firebase:firebase-storage-common-license:12.0.1] C:\User
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:13:9-40
-activity#me.arblitroshani.dentalclinic.activity.MainActivity
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:14:9-21:20
-	android:label
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:16:13-51
+activity#me.arblitroshani.dentalclinic.activity.SplashScreenActivity
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:14:9-24:20
 	android:theme
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:17:13-56
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:16:13-53
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:15:13-50
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:15:13-58
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:17:13-20:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:19:27-74
 meta-data#android.app.shortcuts
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:18:13-20:53
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:21:13-23:53
 	android:resource
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:20:17-50
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:23:17-50
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:19:17-53
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:22:17-53
+activity#me.arblitroshani.dentalclinic.activity.MainActivity
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:25:9-29:20
+	android:label
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:27:13-51
+	android:theme
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:28:13-56
+	android:name
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:26:13-50
 activity#me.arblitroshani.dentalclinic.activity.ServiceDetailsActivity
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:22:9-29:20
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:30:9-37:20
 	android:label
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:24:13-67
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:32:13-67
 	android:theme
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:25:13-56
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:33:13-56
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:23:13-60
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:31:13-60
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:26:13-28:58
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:34:13-36:58
 	android:value
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:28:17-55
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:36:17-55
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:27:17-63
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:35:17-63
 activity#me.arblitroshani.dentalclinic.activity.AppointmentsActivity
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:30:9-38:20
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:38:9-46:20
 	android:parentActivityName
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:33:13-64
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:41:13-64
 	android:label
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:32:13-64
-	android:theme
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:34:13-56
-	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:31:13-58
-activity#me.arblitroshani.dentalclinic.activity.AppointmentRequestActivity
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:39:9-47:20
-	android:parentActivityName
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:42:13-72
-	android:label
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:41:13-44
-	android:theme
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:43:13-56
-	android:name
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:40:13-64
-activity#me.arblitroshani.dentalclinic.activity.IdCardScanActivity
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:48:9-51:59
+	android:theme
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:42:13-56
+	android:name
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:39:13-87
+activity#me.arblitroshani.dentalclinic.activity.AppointmentRequestActivity
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:47:9-55:20
+	android:parentActivityName
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:50:13-72
 	android:label
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:50:13-64
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:49:13-44
 	android:theme
 		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:51:13-56
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:49:13-56
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:48:13-93
+activity#me.arblitroshani.dentalclinic.activity.IdCardScanActivity
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:56:9-59:59
+	android:label
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:58:13-64
+	android:theme
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:59:13-56
+	android:name
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:57:13-56
 activity#me.arblitroshani.dentalclinic.activity.CreateUserProfileActivity
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:52:9-55:59
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:60:9-63:59
 	android:label
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:54:13-72
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:62:13-72
 	android:theme
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:55:13-56
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:63:13-56
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:53:13-63
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:61:13-63
 activity#me.arblitroshani.dentalclinic.activity.SettingsActivity
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:56:9-63:20
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:64:9-71:20
 	android:parentActivityName
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:59:13-64
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:67:13-64
 	android:label
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:58:13-60
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:66:13-60
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:57:13-54
-activity#me.arblitroshani.dentalclinic.activity.SplashScreenActivity
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:64:9-69:20
-	android:theme
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:64:65-105
-	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:64:19-64
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:65:13-68:29
-action#android.intent.action.MAIN
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:66:17-69
-	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:66:25-66
-category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:67:17-77
-	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:67:27-74
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:65:13-54
 service#me.arblitroshani.dentalclinic.service.MyFirebaseMessagingService
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:71:9-75:19
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:73:9-77:19
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:71:18-68
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:73:18-68
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:72:13-74:29
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:74:13-76:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:73:17-78
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:75:17-78
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:73:25-75
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:75:25-75
 service#me.arblitroshani.dentalclinic.service.MyFirebaseInstanceIDService
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:76:9-80:19
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:78:9-82:19
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:76:18-69
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:78:18-69
 intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:77:13-79:29
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:79:13-81:29
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:78:17-80
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:80:17-80
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:78:25-77
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:80:25-77
 receiver#me.arblitroshani.dentalclinic.service.ReminderReceiver
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:82:9-88:20
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:84:9-90:20
 	android:exported
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:84:13-36
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:86:13-36
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:83:13-53
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:85:13-53
 intent-filter#action:name:android.intent.action.NOTIFY
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:85:13-87:29
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:87:13-89:29
 action#android.intent.action.NOTIFY
-ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:86:17-71
+ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:88:17-71
 	android:name
-		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:86:25-68
+		ADDED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml:88:25-68
 uses-sdk
 INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Arbli Troshani\Desktop\AndroidTest\app\src\main\AndroidManifest.xml

@@ -7,18 +7,18 @@ public class Treatment {
     private String service;
     private String description;
     private String doctorId;
-    private String uid;
+    private String nationalId;
     private Date dateStarted;
     private boolean isOngoing;
     private int numSessions;
 
     public Treatment() {}
 
-    public Treatment(String service, String description, String doctorId, String uid, Date dateStarted, boolean isOngoing, int numSessions) {
+    public Treatment(String service, String description, String doctorId, String nationalId, Date dateStarted, boolean isOngoing, int numSessions) {
         this.service = service;
         this.description = description;
         this.doctorId = doctorId;
-        this.uid = uid;
+        this.nationalId = nationalId;
         this.dateStarted = dateStarted;
         this.isOngoing = isOngoing;
         this.numSessions = numSessions;
@@ -48,12 +48,12 @@ public class Treatment {
         this.doctorId = doctorId;
     }
 
-    public String getUid() {
-        return uid;
+    public String getNationalId() {
+        return nationalId;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setNationalId(String nationalId) {
+        this.nationalId = nationalId;
     }
 
     public Date getDateStarted() {

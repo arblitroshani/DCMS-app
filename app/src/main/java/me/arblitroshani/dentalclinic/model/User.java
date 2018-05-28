@@ -8,9 +8,6 @@ import com.google.firebase.firestore.Exclude;
 
 public class User implements Parcelable {
 
-    public static final String SEX_MALE   = "m";
-    public static final String SEX_FEMALE = "f";
-
     public static final String TYPE_USER = "user";
     public static final String TYPE_DOCTOR = "doctor";
     public static final String TYPE_ADMIN = "admin";
@@ -22,13 +19,13 @@ public class User implements Parcelable {
     private String birthday;
     private String sex;
     private String documentNumber;
-    private String nationalId;
+    private String uid;
     private String nationality;
     private String type;
 
     public User() {}
 
-    public User(String name, String surname, String email, String phone, String birthday, String sex, String documentNumber, String nationalId, String nationality, String type) {
+    public User(String name, String surname, String email, String phone, String birthday, String sex, String documentNumber, String uid, String nationality, String type) {
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -36,7 +33,7 @@ public class User implements Parcelable {
         this.birthday = birthday;
         this.sex = sex;
         this.documentNumber = documentNumber;
-        this.nationalId = nationalId;
+        this.uid = uid;
         this.nationality = nationality;
         this.type = type;
     }
@@ -102,12 +99,12 @@ public class User implements Parcelable {
         this.documentNumber = documentNumber;
     }
 
-    public String getNationalId() {
-        return nationalId;
+    public String getUid() {
+        return uid;
     }
 
-    public void setNationalId(String nationalId) {
-        this.nationalId = nationalId;
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getNationality() {
@@ -146,7 +143,7 @@ public class User implements Parcelable {
         birthday = in.readString();
         sex = in.readString();
         documentNumber = in.readString();
-        nationalId = in.readString();
+        uid = in.readString();
         nationality = in.readString();
         type = in.readString();
     }
@@ -165,7 +162,7 @@ public class User implements Parcelable {
         out.writeString(birthday);
         out.writeString(sex);
         out.writeString(documentNumber);
-        out.writeString(nationalId);
+        out.writeString(uid);
         out.writeString(nationality);
         out.writeString(type);
     }

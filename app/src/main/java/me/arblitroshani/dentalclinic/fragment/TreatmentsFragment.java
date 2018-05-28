@@ -27,6 +27,7 @@ import butterknife.ButterKnife;
 import me.arblitroshani.dentalclinic.R;
 import me.arblitroshani.dentalclinic.adapter.ServicesAdapter;
 import me.arblitroshani.dentalclinic.adapter.TreatmentsAdapter;
+import me.arblitroshani.dentalclinic.extra.Utility;
 import me.arblitroshani.dentalclinic.model.Service;
 import me.arblitroshani.dentalclinic.model.Treatment;
 
@@ -70,7 +71,7 @@ public class TreatmentsFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         db.collection("treatments")
-                .whereEqualTo("uid", FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .whereEqualTo("nationalId", Utility.getNationalIdSharedPreference(this.getActivity()))
                 .addSnapshotListener((snapshot, e) -> {
                     if (e != null) return;
                     if (snapshot != null) {
