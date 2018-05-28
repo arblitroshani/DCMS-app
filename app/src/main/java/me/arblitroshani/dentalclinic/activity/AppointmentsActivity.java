@@ -64,7 +64,8 @@ public class AppointmentsActivity extends AppCompatActivity implements CalendarP
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         db = FirebaseFirestore.getInstance();
-        minDate.add(Calendar.MONTH, -1);
+        minDate.add(Calendar.WEEK_OF_YEAR, -2);
+        maxDate.add(Calendar.MONTH, 1);
 
         initCalendar();
 
