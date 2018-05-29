@@ -15,6 +15,7 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.dentalclinic.R;
+import me.arblitroshani.dentalclinic.activity.MainActivity;
 import me.arblitroshani.dentalclinic.extra.Constants;
 import me.arblitroshani.dentalclinic.model.Session;
 
@@ -55,13 +56,10 @@ public class SessionsAdapter extends RecyclerView.Adapter<SessionsAdapter.ViewHo
                 .inflate(R.layout.item_card_session, parent, false);
         final ViewHolder holder = new ViewHolder(v);
 
-        // add click listener
-//        holder.cvMain.setOnClickListener(view -> {
-//            Intent i = new Intent(context, ServiceDetailsActivity.class);
-//            i.putExtra("service_to_display", currentService);
-//            i.putExtra("service_id", serviceIds.get(position));
-//            context.startActivity(i);
-//        });
+        final MainActivity mainActivity = (MainActivity) context;
+
+        holder.cvMain.setOnClickListener(view ->
+            mainActivity.replaceFragment("Session", myDataset.get(holder.getAdapterPosition())));
 
         return holder;
     }

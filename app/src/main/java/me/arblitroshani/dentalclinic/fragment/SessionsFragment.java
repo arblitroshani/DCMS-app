@@ -22,7 +22,7 @@ import me.arblitroshani.dentalclinic.model.Session;
 
 public class SessionsFragment extends Fragment {
 
-    private static final String TREATMENT_ID_KEY = "teatmentId";
+    private static final String TREATMENT_ID_KEY = "treatmentId";
 
     private List<Session> myDataset;
 

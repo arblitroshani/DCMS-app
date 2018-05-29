@@ -48,7 +48,9 @@ import me.arblitroshani.dentalclinic.R;
 import me.arblitroshani.dentalclinic.extra.Config;
 import me.arblitroshani.dentalclinic.extra.Utility;
 import me.arblitroshani.dentalclinic.fragment.HomeFragment;
+import me.arblitroshani.dentalclinic.fragment.SessionFragment;
 import me.arblitroshani.dentalclinic.fragment.SessionsFragment;
+import me.arblitroshani.dentalclinic.model.Session;
 import me.arblitroshani.dentalclinic.model.User;
 import me.arblitroshani.dentalclinic.service.MyFirebaseInstanceIDService;
 
@@ -312,7 +314,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void replaceFragment(String className, String optionalTreatmentId) {
+    public void replaceFragment(String className, Object optionalId) {
         uncheckAllMenuItems();
         Fragment fragment;
         try {
@@ -322,10 +324,15 @@ public class MainActivity extends AppCompatActivity
             if (fragment != null) {
                 fm.popBackStackImmediate(className, 0);
             } else {
-                if (optionalTreatmentId.equals(DEFAULT_TREATMENT_ID) || !className.equals("Sessions")) {
-                    fragment = (Fragment) Class.forName("me.arblitroshani.dentalclinic.fragment." + className + "Fragment").newInstance();
+                if (optionalId instanceof Session) {
+                    fragment = SessionFragment.newInstance(((Session)optionalId));
                 } else {
-                    fragment = SessionsFragment.newInstance(optionalTreatmentId);
+                    String optionalIdString = (String) optionalId;
+                    if (optionalIdString.equals(DEFAULT_TREATMENT_ID)) {
+                        fragment = (Fragment) Class.forName("me.arblitroshani.dentalclinic.fragment." + className + "Fragment").newInstance();
+                    } else {
+                        fragment = SessionsFragment.newInstance(optionalIdString);
+                    }
                 }
 
                 FragmentTransaction transaction = fm.beginTransaction()

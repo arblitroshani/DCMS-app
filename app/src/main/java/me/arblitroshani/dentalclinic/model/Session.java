@@ -1,26 +1,29 @@
 package me.arblitroshani.dentalclinic.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Session {
+public class Session implements Serializable {
 
     private String name;
     private Date date;
     private String doctorId;
     private String description;
     private String diagnosis;
+    private String photoUrl;
 
     private int price;
 
     public Session() {}
 
-    public Session(String name, Date date, String doctorId, String description, String diagnosis, int price) {
+    public Session(String name, Date date, String doctorId, String description, String diagnosis, int price, String photoUrl) {
         this.name = name;
         this.date = date;
         this.doctorId = doctorId;
         this.description = description;
         this.diagnosis = diagnosis;
         this.price = price;
+        this.photoUrl = photoUrl;
     }
 
     public String getName() {
@@ -69,5 +72,13 @@ public class Session {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
     }
 }
