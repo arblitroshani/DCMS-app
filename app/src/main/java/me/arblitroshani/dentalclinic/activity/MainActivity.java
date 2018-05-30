@@ -1,7 +1,6 @@
 package me.arblitroshani.dentalclinic.activity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -25,7 +24,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.request.RequestOptions;
-import com.bumptech.glide.util.Util;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
@@ -45,7 +43,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.dentalclinic.GlideApp;
 import me.arblitroshani.dentalclinic.R;
-import me.arblitroshani.dentalclinic.extra.Config;
 import me.arblitroshani.dentalclinic.extra.Utility;
 import me.arblitroshani.dentalclinic.fragment.HomeFragment;
 import me.arblitroshani.dentalclinic.fragment.SessionFragment;
@@ -157,9 +154,10 @@ public class MainActivity extends AppCompatActivity
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     // store in shared prefs
                                     Utility.setNationalIdSharedPreference(MainActivity.this, document.getId());
+                                    Utility.setLoggedInUser(MainActivity.this, document.toObject(User.class));
+                                    replaceFragment(R.id.nav_home);
                                 }
                             });
-                    //replaceFragment(R.id.nav_home);
                 }
                 auth = FirebaseAuth.getInstance();
                 refreshNavigationDrawer();
@@ -208,10 +206,12 @@ public class MainActivity extends AppCompatActivity
                                 .apply(RequestOptions.circleCropTransform())
                                 .into(ivProfile);
                         setupMenuLoggedIn(false);
-                        replaceFragment(R.id.nav_home);
+                        //replaceFragment(R.id.nav_home);
                         invalidateOptionsMenu();
                         deleteInstanceId();
                         Utility.setNationalIdSharedPreference(this, null);
+                        Utility.setLoggedInUser(this, null);
+                        replaceFragment(R.id.nav_home);
                     });
         }
     }
@@ -320,6 +320,12 @@ public class MainActivity extends AppCompatActivity
             fragment = fm.findFragmentByTag(className);
 
             if (fragment != null) {
+                Log.i("tag-not", "fragment is not null.");
+                if (className.equals("Home")) {
+                    Log.i("tag-not", "class is home");
+                    HomeFragment hf = (HomeFragment) fragment;
+                    hf.setAdapter();
+                }
                 fm.popBackStackImmediate(className, 0);
             } else {
                 if (optionalId instanceof Session) {
@@ -364,7 +370,7 @@ public class MainActivity extends AppCompatActivity
         replaceFragment(className, DEFAULT_TREATMENT_ID);
     }
 
-    public void replaceFragment(int id) {
+    public void replaceFragment(int id) { // TODO: consider using above method
         onNavigationItemSelected(navigationView.getMenu().findItem(id));
     }
 

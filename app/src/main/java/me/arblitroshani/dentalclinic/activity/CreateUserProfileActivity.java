@@ -90,6 +90,7 @@ public class CreateUserProfileActivity extends AppCompatActivity {
                         .addOnCompleteListener(task -> {
                     bSubmit.doResult(true);
                     Utility.setNationalIdSharedPreference(this, nationalId);
+                    Utility.setLoggedInUser(this, incompleteUser);
                     new Handler().postDelayed(() -> finish(), 600);
                 });
             }

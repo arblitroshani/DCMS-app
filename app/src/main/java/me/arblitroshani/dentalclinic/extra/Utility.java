@@ -4,7 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.google.gson.Gson;
+
 import me.arblitroshani.dentalclinic.R;
+import me.arblitroshani.dentalclinic.model.User;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -34,5 +37,17 @@ public class Utility {
     public static String getNationalIdSharedPreference(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(Config.PREFS_USER, MODE_PRIVATE);
         return prefs.getString("nationalId", null);
+    }
+
+    public static void setLoggedInUser(Context context, User user) {
+        SharedPreferences.Editor editor = context.getSharedPreferences(Config.PREFS_USER, MODE_PRIVATE).edit();
+        editor.putString("loggedInUser", new Gson().toJson(user));
+        editor.commit();
+    }
+
+    public static User getLoggedInUser(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(Config.PREFS_USER, MODE_PRIVATE);
+        String json = prefs.getString("loggedInUser", null);
+        return json == null ? null : new Gson().fromJson(json, User.class);
     }
 }

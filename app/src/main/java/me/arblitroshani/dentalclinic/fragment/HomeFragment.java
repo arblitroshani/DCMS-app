@@ -5,9 +5,14 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -16,7 +21,9 @@ import butterknife.ButterKnife;
 import me.arblitroshani.dentalclinic.R;
 import me.arblitroshani.dentalclinic.adapter.HomeAdapter;
 import me.arblitroshani.dentalclinic.extra.Constants;
+import me.arblitroshani.dentalclinic.extra.Utility;
 import me.arblitroshani.dentalclinic.model.HomeSection;
+import me.arblitroshani.dentalclinic.model.User;
 
 public class HomeFragment extends Fragment {
 
@@ -50,16 +57,22 @@ public class HomeFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new HomeAdapter(getData());
-        mRecyclerView.setAdapter(mAdapter);
+        setAdapter();
     }
 
     private List<HomeSection> getData() {
-        // if user is not doctor, show user
-        if (1 == 1) {
-            return Constants.HomeSections.getUserSections();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        User currentUser = Utility.getLoggedInUser(this.getContext());
+
+        if (user != null && currentUser != null && currentUser.getType().equals(User.TYPE_DOCTOR)) {
+            return Constants.HomeSections.getDoctorSections();
         }
         return Constants.HomeSections.getUserSections();
+    }
+
+    public void setAdapter() {
+        mAdapter = new HomeAdapter(getData());
+        mRecyclerView.setAdapter(mAdapter);
     }
 
 }
