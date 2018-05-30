@@ -92,7 +92,7 @@ public class ServiceDetailsActivity extends AppCompatActivity {
         ipi.attachToRecyclerView(rvPhotos);
 
         Intent i = getIntent();
-        final Service currentService = i.getParcelableExtra("service_to_display");
+        final Service currentService = (Service) i.getSerializableExtra("service_to_display");
         final String serviceId = i.getStringExtra("service_id");
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();

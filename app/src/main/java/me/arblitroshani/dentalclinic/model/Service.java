@@ -1,11 +1,9 @@
 package me.arblitroshani.dentalclinic.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
+import java.io.Serializable;
 import java.util.List;
 
-public class Service implements Parcelable {
+public class Service implements Serializable {
 
     private String title;
     private String subtitle;
@@ -32,22 +30,6 @@ public class Service implements Parcelable {
         this.title = title;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
-    }
-
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
-    }
-
-    public int getNumPendingAppointments() {
-        return numPendingAppointments;
-    }
-
-    public void setNumPendingAppointments(int numPendingAppointments) {
-        this.numPendingAppointments = numPendingAppointments;
-    }
-
     public String getSubtitle() {
         return subtitle;
     }
@@ -64,6 +46,22 @@ public class Service implements Parcelable {
         this.description = description;
     }
 
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
+
+    public int getNumPendingAppointments() {
+        return numPendingAppointments;
+    }
+
+    public void setNumPendingAppointments(int numPendingAppointments) {
+        this.numPendingAppointments = numPendingAppointments;
+    }
+
     public List<String> getPhotoUrls() {
         return photoUrls;
     }
@@ -74,36 +72,38 @@ public class Service implements Parcelable {
 
     /*    Parcelable methods    */
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel out, int flags) {
-        out.writeString(title);
-        out.writeString(subtitle);
-        out.writeString(description);
-        out.writeString(photoUrl);
-        out.writeStringList(photoUrls);
-    }
-
-    public Service(Parcel in) {
-        title = in.readString();
-        subtitle = in.readString();
-        description = in.readString();
-        photoUrl = in.readString();
-        photoUrls = in.createStringArrayList();
-    }
-
-    public static final Parcelable.Creator<Service> CREATOR = new Parcelable.Creator<Service>() {
-        @Override
-        public Service createFromParcel(Parcel in) {
-            return new Service(in);
-        }
-        @Override
-        public Service[] newArray(int size) {
-            return new Service[size];
-        }
-    };
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public void writeToParcel(Parcel out, int flags) {
+//        out.writeString(title);
+//        out.writeString(subtitle);
+//        out.writeString(description);
+//        out.writeString(photoUrl);
+//        out.writeInt(numPendingAppointments);
+//        out.writeStringList(photoUrls);
+//    }
+//
+//    public Service(Parcel in) {
+//        title = in.readString();
+//        subtitle = in.readString();
+//        description = in.readString();
+//        photoUrl = in.readString();
+//        numPendingAppointments = in.readInt();
+//        photoUrls = in.createStringArrayList();
+//    }
+//
+//    public static final Parcelable.Creator<Service> CREATOR = new Parcelable.Creator<Service>() {
+//        @Override
+//        public Service createFromParcel(Parcel in) {
+//            return new Service(in);
+//        }
+//        @Override
+//        public Service[] newArray(int size) {
+//            return new Service[size];
+//        }
+//    };
 }

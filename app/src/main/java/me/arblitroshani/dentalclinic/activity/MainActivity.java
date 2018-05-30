@@ -297,8 +297,6 @@ public class MainActivity extends AppCompatActivity
             startActivity("SettingsActivity");
             drawer.closeDrawer(GravityCompat.START);
             return true;
-        } else if (id == R.id.nav_help) {
-            fragmentClassName = "Home";
         } else if (id == R.id.nav_sign_in) {
             login();
             return true;
