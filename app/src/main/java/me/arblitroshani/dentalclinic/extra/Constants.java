@@ -52,7 +52,7 @@ public final class Constants {
                     "Services",
                     "this is a subtitle",
                     "Services",
-                    R.color.saffron,
+                    R.color.giants_orange_light,
                     R.drawable.outline_dashboard_white_48,
                     false)
             );
@@ -60,7 +60,7 @@ public final class Constants {
                     "Clinic info",
                     "this is a subtitle",
                     "Home",
-                    R.color.giants_orange_light,
+                    R.color.saffron,
                     R.drawable.outline_info_white_48,
                     false)
             );
@@ -110,7 +110,7 @@ public final class Constants {
                     "Appointments",
                     "this is a subtitle",
                     "Home",
-                    R.color.dark_slate_gray,
+                    R.color.midcolor,
                     R.drawable.ic_today_white_48dp,
                     true)
             );
@@ -118,7 +118,7 @@ public final class Constants {
                     "Availability",
                     "this is a subtitle",
                     "Home",
-                    R.color.gunmetal,
+                    R.color.dark_slate_gray,
                     R.drawable.ic_receipt_white_48dp,
                     true)
             );
@@ -134,7 +134,7 @@ public final class Constants {
                     "Payment",
                     "this is a subtitle",
                     "Home",
-                    R.color.gunmetal,
+                    R.color.orange_dark,
                     R.drawable.ic_receipt_white_48dp,
                     true)
             );

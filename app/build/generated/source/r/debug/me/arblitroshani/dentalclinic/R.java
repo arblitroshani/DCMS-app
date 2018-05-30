@@ -2506,7 +2506,7 @@ public final class R {
      * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>
@@ -4305,62 +4305,63 @@ public final class R {
     public static final int mbButtonBorder=0x7f060096;
     public static final int mbButtonForeground=0x7f060097;
     public static final int med_quality_ocr_color=0x7f060098;
-    public static final int min_quality_ocr_color=0x7f060099;
-    public static final int mrz_point_color=0x7f06009a;
-    public static final int notification_action_color_filter=0x7f06009b;
-    public static final int notification_icon_bg_color=0x7f06009c;
-    public static final int notification_material_background_media_default_color=0x7f06009d;
-    public static final int ocr_line_background=0x7f06009e;
-    public static final int ocr_line_help_background=0x7f06009f;
-    public static final int orange_dark=0x7f0600a0;
-    public static final int overlay_background_blink_ocr=0x7f0600a1;
-    public static final int overlay_camera_translucent=0x7f0600a2;
-    public static final int primary_dark_material_dark=0x7f0600a3;
-    public static final int primary_dark_material_light=0x7f0600a4;
-    public static final int primary_material_dark=0x7f0600a5;
-    public static final int primary_material_light=0x7f0600a6;
-    public static final int primary_text_default_material_dark=0x7f0600a7;
-    public static final int primary_text_default_material_light=0x7f0600a8;
-    public static final int primary_text_disabled_material_dark=0x7f0600a9;
-    public static final int primary_text_disabled_material_light=0x7f0600aa;
-    public static final int recognized_frame=0x7f0600ab;
-    public static final int red_pantone=0x7f0600ac;
-    public static final int result_background_blink_ocr=0x7f0600ad;
-    public static final int ripple_material_dark=0x7f0600ae;
-    public static final int ripple_material_light=0x7f0600af;
-    public static final int saffron=0x7f0600b0;
-    public static final int secondary_text_default_material_dark=0x7f0600b1;
-    public static final int secondary_text_default_material_light=0x7f0600b2;
-    public static final int secondary_text_disabled_material_dark=0x7f0600b3;
-    public static final int secondary_text_disabled_material_light=0x7f0600b4;
-    public static final int statusBackground=0x7f0600b5;
-    public static final int statusForeground=0x7f0600b6;
-    public static final int switch_thumb_disabled_material_dark=0x7f0600b7;
-    public static final int switch_thumb_disabled_material_light=0x7f0600b8;
-    public static final int switch_thumb_material_dark=0x7f0600b9;
-    public static final int switch_thumb_material_light=0x7f0600ba;
-    public static final int switch_thumb_normal_material_dark=0x7f0600bb;
-    public static final int switch_thumb_normal_material_light=0x7f0600bc;
-    public static final int teal_blue=0x7f0600bd;
-    public static final int text_black_blink_ocr=0x7f0600be;
-    public static final int text_color_dark_gray=0x7f0600bf;
-    public static final int text_gray_blink_ocr=0x7f0600c0;
-    public static final int text_white_blink_ocr=0x7f0600c1;
-    public static final int text_white_primary=0x7f0600c2;
-    public static final int textback=0x7f0600c3;
-    public static final int theme_accent=0x7f0600c4;
-    public static final int theme_light_primary=0x7f0600c5;
-    public static final int theme_primary=0x7f0600c6;
-    public static final int theme_primary_dark=0x7f0600c7;
-    public static final int theme_text_icons=0x7f0600c8;
-    public static final int tooltip_background_dark=0x7f0600c9;
-    public static final int tooltip_background_light=0x7f0600ca;
-    public static final int transparent=0x7f0600cb;
-    public static final int turqoise=0x7f0600cc;
-    public static final int viewfinder_inner_splash=0x7f0600cd;
-    public static final int viewfinder_inner_transparent=0x7f0600ce;
-    public static final int white=0x7f0600cf;
-    public static final int yellow=0x7f0600d0;
+    public static final int midcolor=0x7f060099;
+    public static final int min_quality_ocr_color=0x7f06009a;
+    public static final int mrz_point_color=0x7f06009b;
+    public static final int notification_action_color_filter=0x7f06009c;
+    public static final int notification_icon_bg_color=0x7f06009d;
+    public static final int notification_material_background_media_default_color=0x7f06009e;
+    public static final int ocr_line_background=0x7f06009f;
+    public static final int ocr_line_help_background=0x7f0600a0;
+    public static final int orange_dark=0x7f0600a1;
+    public static final int overlay_background_blink_ocr=0x7f0600a2;
+    public static final int overlay_camera_translucent=0x7f0600a3;
+    public static final int primary_dark_material_dark=0x7f0600a4;
+    public static final int primary_dark_material_light=0x7f0600a5;
+    public static final int primary_material_dark=0x7f0600a6;
+    public static final int primary_material_light=0x7f0600a7;
+    public static final int primary_text_default_material_dark=0x7f0600a8;
+    public static final int primary_text_default_material_light=0x7f0600a9;
+    public static final int primary_text_disabled_material_dark=0x7f0600aa;
+    public static final int primary_text_disabled_material_light=0x7f0600ab;
+    public static final int recognized_frame=0x7f0600ac;
+    public static final int red_pantone=0x7f0600ad;
+    public static final int result_background_blink_ocr=0x7f0600ae;
+    public static final int ripple_material_dark=0x7f0600af;
+    public static final int ripple_material_light=0x7f0600b0;
+    public static final int saffron=0x7f0600b1;
+    public static final int secondary_text_default_material_dark=0x7f0600b2;
+    public static final int secondary_text_default_material_light=0x7f0600b3;
+    public static final int secondary_text_disabled_material_dark=0x7f0600b4;
+    public static final int secondary_text_disabled_material_light=0x7f0600b5;
+    public static final int statusBackground=0x7f0600b6;
+    public static final int statusForeground=0x7f0600b7;
+    public static final int switch_thumb_disabled_material_dark=0x7f0600b8;
+    public static final int switch_thumb_disabled_material_light=0x7f0600b9;
+    public static final int switch_thumb_material_dark=0x7f0600ba;
+    public static final int switch_thumb_material_light=0x7f0600bb;
+    public static final int switch_thumb_normal_material_dark=0x7f0600bc;
+    public static final int switch_thumb_normal_material_light=0x7f0600bd;
+    public static final int teal_blue=0x7f0600be;
+    public static final int text_black_blink_ocr=0x7f0600bf;
+    public static final int text_color_dark_gray=0x7f0600c0;
+    public static final int text_gray_blink_ocr=0x7f0600c1;
+    public static final int text_white_blink_ocr=0x7f0600c2;
+    public static final int text_white_primary=0x7f0600c3;
+    public static final int textback=0x7f0600c4;
+    public static final int theme_accent=0x7f0600c5;
+    public static final int theme_light_primary=0x7f0600c6;
+    public static final int theme_primary=0x7f0600c7;
+    public static final int theme_primary_dark=0x7f0600c8;
+    public static final int theme_text_icons=0x7f0600c9;
+    public static final int tooltip_background_dark=0x7f0600ca;
+    public static final int tooltip_background_light=0x7f0600cb;
+    public static final int transparent=0x7f0600cc;
+    public static final int turqoise=0x7f0600cd;
+    public static final int viewfinder_inner_splash=0x7f0600ce;
+    public static final int viewfinder_inner_transparent=0x7f0600cf;
+    public static final int white=0x7f0600d0;
+    public static final int yellow=0x7f0600d1;
   }
   public static final class dimen {
     public static final int abc_action_bar_content_inset_material=0x7f070000;
@@ -11630,7 +11631,7 @@ public final class R {
      * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>
