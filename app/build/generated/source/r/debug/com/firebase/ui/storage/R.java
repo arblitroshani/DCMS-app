@@ -153,18 +153,18 @@ public final class R {
         public static final int right = 0x7f090112;
         public static final int right_icon = 0x7f090114;
         public static final int right_side = 0x7f090115;
-        public static final int standard = 0x7f090156;
-        public static final int start = 0x7f090157;
-        public static final int status_bar_latest_event_content = 0x7f090159;
-        public static final int tag_transition_group = 0x7f09015f;
-        public static final int text = 0x7f090160;
-        public static final int text2 = 0x7f090161;
-        public static final int time = 0x7f09016a;
-        public static final int title = 0x7f09016b;
-        public static final int toolbar = 0x7f09016e;
-        public static final int top = 0x7f090170;
-        public static final int wide = 0x7f0901c6;
-        public static final int wrap_content = 0x7f0901c9;
+        public static final int standard = 0x7f090154;
+        public static final int start = 0x7f090155;
+        public static final int status_bar_latest_event_content = 0x7f090157;
+        public static final int tag_transition_group = 0x7f09015d;
+        public static final int text = 0x7f09015e;
+        public static final int text2 = 0x7f09015f;
+        public static final int time = 0x7f090168;
+        public static final int title = 0x7f090169;
+        public static final int toolbar = 0x7f09016c;
+        public static final int top = 0x7f09016e;
+        public static final int wide = 0x7f0901c4;
+        public static final int wrap_content = 0x7f0901c7;
     }
     public static final class integer {
         public static final int cancel_button_image_alpha = 0x7f0a0006;
