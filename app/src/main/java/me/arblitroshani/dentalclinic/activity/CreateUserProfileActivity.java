@@ -3,26 +3,23 @@ package me.arblitroshani.dentalclinic.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.unstoppable.submitbuttonview.SubmitButton;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.dentalclinic.R;
-import me.arblitroshani.dentalclinic.extra.Config;
 import me.arblitroshani.dentalclinic.extra.Utility;
 import me.arblitroshani.dentalclinic.model.User;
 
@@ -46,6 +43,9 @@ public class CreateUserProfileActivity extends AppCompatActivity {
     SubmitButton bSubmit;
 
     private FirebaseUser user;
+    private FirebaseFirestore db;
+    private DocumentReference userRef;
+
     private User incompleteUser;
 
     private static final String emailError = "Please enter email!";
@@ -62,6 +62,27 @@ public class CreateUserProfileActivity extends AppCompatActivity {
         Intent i = getIntent();
         incompleteUser = i.getParcelableExtra("incomplete_user");
         String nationalId = i.getStringExtra("incomplete_user_national_id");
+
+        db = FirebaseFirestore.getInstance();
+        userRef = db.collection("users").document(nationalId);
+
+        // check if exists - field with nationalId
+        userRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document.exists()) {
+                    // set uid
+                    userRef.update("uid", incompleteUser.getUid());
+
+                    // set shared prefs
+                    Utility.setNationalIdSharedPreference(this, nationalId);
+                    Utility.setLoggedInUser(this, incompleteUser);
+
+                    finish();
+                } else {
+                }
+            }
+        });
 
         tvName.setText(incompleteUser.getFullName());
         tvBday.setText(incompleteUser.getBirthday());
@@ -83,11 +104,7 @@ public class CreateUserProfileActivity extends AppCompatActivity {
             } else {
                 incompleteUser.setEmail(etEmail.getText().toString());
                 incompleteUser.setPhone(etPhone.getText().toString());
-                FirebaseFirestore db = FirebaseFirestore.getInstance();
-                db.collection("users")
-                        .document(nationalId)
-                        .set(incompleteUser)
-                        .addOnCompleteListener(task -> {
+                userRef.set(incompleteUser).addOnCompleteListener(task -> {
                     bSubmit.doResult(true);
                     Utility.setNationalIdSharedPreference(this, nationalId);
                     Utility.setLoggedInUser(this, incompleteUser);
