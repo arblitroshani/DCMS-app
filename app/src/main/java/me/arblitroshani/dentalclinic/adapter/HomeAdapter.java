@@ -70,7 +70,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
             if (section.isRequiresLogin() && !isUserSignedIn()) {
                 new AlertDialog.Builder(context)
                         .setTitle("Warning!")
-                        .setMessage("You can only open this section if you are logging in.")
+                        .setMessage("You can only open this section if you are logged in.")
                         .setPositiveButton("OK", null)
                         .setNeutralButton("LOGIN", (dialogInterface, i) -> mainActivity.login())
                         .show();

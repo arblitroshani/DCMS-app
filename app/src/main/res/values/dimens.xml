@@ -31,7 +31,6 @@
     <dimen name="app_bar_height">192dp</dimen>
     <dimen name="text_margin">16dp</dimen>
 
-    <!-- MY DIMENSIONS -->
     <dimen name="card_main_title">35sp</dimen>
     <dimen name="card_main_title_margin_start">75dp</dimen>
     <dimen name="card_main_title_margin_bottom">15dp</dimen>
@@ -39,3 +38,5 @@
     <dimen name="card_main_subtitle_margin_start">22dp</dimen>
 
 </resources>
+
+
