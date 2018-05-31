@@ -119,7 +119,7 @@ public final class Constants {
                     "this is a subtitle",
                     "Home",
                     R.color.dark_slate_gray,
-                    R.drawable.ic_receipt_white_48dp,
+                    R.drawable.outline_event_available_white_48,
                     true)
             );
             doctorSections.add(new HomeSection(
@@ -127,7 +127,7 @@ public final class Constants {
                     "this is a subtitle",
                     "Home",
                     R.color.gunmetal,
-                    R.drawable.ic_receipt_white_48dp,
+                    R.drawable.outline_supervised_user_circle_white_48,
                     true)
             );
             doctorSections.add(new HomeSection(
@@ -135,7 +135,7 @@ public final class Constants {
                     "this is a subtitle",
                     "Home",
                     R.color.orange_dark,
-                    R.drawable.ic_receipt_white_48dp,
+                    R.drawable.outline_payment_white_48,
                     true)
             );
 
