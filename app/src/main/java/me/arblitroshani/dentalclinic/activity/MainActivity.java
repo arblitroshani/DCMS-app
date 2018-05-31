@@ -291,7 +291,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_services) {
             fragmentClassName = "Services";
         } else if (id == R.id.nav_clinic) {
-            fragmentClassName = "Home";
+            fragmentClassName = "Clinic";
         } else if (id == R.id.nav_settings) {
             startActivity("SettingsActivity");
             drawer.closeDrawer(GravityCompat.START);

@@ -59,7 +59,7 @@ public final class Constants {
             commonSections.add(new HomeSection(
                     "Clinic info",
                     "this is a subtitle",
-                    "Home",
+                    "Clinic",
                     R.color.saffron,
                     R.drawable.outline_info_white_48,
                     false)
