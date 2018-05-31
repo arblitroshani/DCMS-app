@@ -8,4 +8,6 @@ public class Config {
     public static final String TAG = "tag-not";
 
     public static final String PREFS_USER = "prefs_user";
+
+    public static final String DEFAULT_PROFILE_PICTURE = "https://firebasestorage.googleapis.com/v0/b/se-project-d327a.appspot.com/o/member_default.gif?alt=media&token=3773d83d-d525-4194-a766-1eb21ca45a72";
 }

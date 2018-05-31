@@ -72,17 +72,11 @@ public class ProfileFragment extends Fragment {
 
         if (nationalId != null) {
             User user = Utility.getLoggedInUser(this.getContext());
-            tvName.setText(getFullNameCamelCase(user.getName(), user.getSurname()));
+            tvName.setText(user.getFullName());
             tvEmail.setText(user.getEmail());
             tvBday.setText(user.getBirthday());
             tvPhone.setText(user.getPhone());
         }
-    }
-
-    private String getFullNameCamelCase(String name, String surname) {
-        name = name.charAt(0) + name.substring(1).toLowerCase();
-        surname = surname.charAt(0) + surname.substring(1).toLowerCase();
-        return name + " " + surname;
     }
 
 }

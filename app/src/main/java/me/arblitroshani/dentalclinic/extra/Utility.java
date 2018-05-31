@@ -50,4 +50,8 @@ public class Utility {
         String json = prefs.getString("loggedInUser", null);
         return json == null ? null : new Gson().fromJson(json, User.class);
     }
+
+    public static String toCamelCase(String input) {
+        return input.toUpperCase().charAt(0) + input.substring(1).toLowerCase();
+    }
 }

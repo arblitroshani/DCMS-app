@@ -30,6 +30,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.arblitroshani.dentalclinic.R;
 import me.arblitroshani.dentalclinic.extra.Config;
+import me.arblitroshani.dentalclinic.extra.Utility;
 import me.arblitroshani.dentalclinic.model.User;
 
 public class IdCardScanActivity extends AppCompatActivity {
@@ -118,8 +119,8 @@ public class IdCardScanActivity extends AppCompatActivity {
                     if(result.isMRZParsed()) {
                         // read data
                         User incompleteUser = new User(
-                                result.getSecondaryId(),
-                                result.getPrimaryId(),
+                                Utility.toCamelCase(result.getSecondaryId()),
+                                Utility.toCamelCase(result.getPrimaryId()),
                                 "no_email",
                                 "no_phone",
                                 getBirthday(result.getRawDateOfBirth()),

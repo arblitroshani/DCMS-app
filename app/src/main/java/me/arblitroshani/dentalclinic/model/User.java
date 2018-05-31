@@ -4,7 +4,11 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.UserInfo;
 import com.google.firebase.firestore.Exclude;
+
+import me.arblitroshani.dentalclinic.extra.Config;
 
 public class User implements Parcelable {
 
@@ -36,11 +40,6 @@ public class User implements Parcelable {
         this.uid = uid;
         this.nationality = nationality;
         this.type = type;
-    }
-
-    @Exclude
-    public String getFullName() {
-        return name + " " + surname;
     }
 
     public String getName() {
@@ -123,16 +122,22 @@ public class User implements Parcelable {
         this.type = type;
     }
 
+    @Exclude
+    public String getFullName() {
+        return name + " " + surname;
+    }
+
     public static String getHighResGmailPhotoUrl(Uri url) {
-        final String originalPieceOfUrl = "s96-c/photo.jpg";
-        final String newPieceOfUrlToAdd = "s400-c/photo.jpg";
-
-        if (url != null) {
-            String photoPath = url.toString();
-            return photoPath.replace(originalPieceOfUrl, newPieceOfUrlToAdd);
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        for (UserInfo user : auth.getCurrentUser().getProviderData()) {
+            if (user.getProviderId().equals("google.com") && url != null) {
+                final String originalPieceOfUrl = "s96-c/photo.jpg";
+                final String newPieceOfUrlToAdd = "s400-c/photo.jpg";
+                String photoPath = url.toString();
+                return photoPath.replace(originalPieceOfUrl, newPieceOfUrlToAdd);
+            }
         }
-
-        return url.toString();
+        return Config.DEFAULT_PROFILE_PICTURE;
     }
 
     public User(Parcel in) {
