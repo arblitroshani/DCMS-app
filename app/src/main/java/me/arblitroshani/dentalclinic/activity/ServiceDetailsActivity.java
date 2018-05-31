@@ -73,9 +73,6 @@ public class ServiceDetailsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show());
-
         storage = FirebaseStorage.getInstance();
         storageRefServices = storage.getReference().child("services");
 
@@ -94,6 +91,14 @@ public class ServiceDetailsActivity extends AppCompatActivity {
         Intent i = getIntent();
         final Service currentService = (Service) i.getSerializableExtra("service_to_display");
         final String serviceId = i.getStringExtra("service_id");
+
+        fab.setOnClickListener(view -> {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, currentService.getDescription());
+            sendIntent.setType("text/plain");
+            startActivity(sendIntent);
+        });
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("services").document(serviceId).collection("doctors")
