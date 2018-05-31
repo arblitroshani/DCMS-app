@@ -158,10 +158,9 @@ public class MainActivity extends AppCompatActivity
                                     Utility.setLoggedInUser(MainActivity.this, document.toObject(User.class));
                                     replaceFragment(R.id.nav_home);
                                 }
+                                refreshNavigationDrawer();
                             });
                 }
-                auth = FirebaseAuth.getInstance();
-                refreshNavigationDrawer();
                 updateRegistrationToken();
                 drawer.closeDrawer(GravityCompat.START);
                 replaceFragment(R.id.nav_home);
@@ -321,9 +320,7 @@ public class MainActivity extends AppCompatActivity
             fragment = fm.findFragmentByTag(className);
 
             if (fragment != null) {
-                Log.i("tag-not", "fragment is not null.");
                 if (className.equals("Home")) {
-                    Log.i("tag-not", "class is home");
                     HomeFragment hf = (HomeFragment) fragment;
                     hf.setAdapter();
                 }
@@ -407,10 +404,17 @@ public class MainActivity extends AppCompatActivity
 
         currentUser = auth.getCurrentUser();
         User user = Utility.getLoggedInUser(this);
-        tvName.setText(user.getFullName());
-        tvEmail.setText(user.getEmail());
+
+        if (user != null) {
+            tvName.setText(user.getFullName());
+            tvEmail.setText(user.getEmail());
+        } else {
+            tvName.setText(currentUser.getDisplayName());
+            tvEmail.setText(currentUser.getEmail());
+        }
 
         String photoUrl = User.getHighResGmailPhotoUrl(currentUser.getPhotoUrl());
+        Log.i("tag-not", "photoUrl: " + photoUrl);
         GlideApp.with(this)
                 .load(photoUrl)
                 .apply(RequestOptions.circleCropTransform())
