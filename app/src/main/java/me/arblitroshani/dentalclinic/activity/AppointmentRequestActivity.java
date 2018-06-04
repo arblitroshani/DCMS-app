@@ -6,6 +6,7 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -14,11 +15,17 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.unstoppable.submitbuttonview.SubmitButton;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 import butterknife.BindView;
@@ -42,10 +49,8 @@ public class AppointmentRequestActivity extends AppCompatActivity implements Vie
 
     private FirebaseFirestore db;
 
-    private String[] services = {
-            Constants.Appointments.SERVICE_ORTHODONTICS,
-            Constants.Appointments.SERVICE_PERIODONTICS
-    };
+    private List<String> serviceTitles;
+    private List<String> serviceIds;
 
     private Calendar myCalendar = Calendar.getInstance();
 
@@ -61,11 +66,23 @@ public class AppointmentRequestActivity extends AppCompatActivity implements Vie
 
         db = FirebaseFirestore.getInstance();
 
-        ArrayAdapter<String>adapter = new ArrayAdapter<>(AppointmentRequestActivity.this,
-                android.R.layout.simple_spinner_item, services);
+        serviceTitles = new ArrayList<>();
+        serviceIds = new ArrayList<>();
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        // read services from db
+        db.collection("servicesHelper").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    serviceIds.add(document.getId());
+                    serviceTitles.add(document.getString("title"));
+                }
+                ArrayAdapter<String>adapter = new ArrayAdapter<>(AppointmentRequestActivity.this,
+                        android.R.layout.simple_spinner_item, serviceTitles);
+
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(adapter);
+            }
+        });
 
         etDatePicker.setOnClickListener(this);
         etTimePicker.setOnClickListener(this);
@@ -130,12 +147,15 @@ public class AppointmentRequestActivity extends AppCompatActivity implements Vie
                     etTimePicker.setError("Please set the time!");
                     bSubmit.reset();
                 } else {
+                    int spinnerIndex = spinner.getSelectedItemPosition();
+
                     db.collection("appointments")
                             .add(new FirebaseAppointmentCalendarEvent(
                                     this,
                                     etDescription.getText().toString(),
                                     Constants.Appointments.STATUS_PENDING,
-                                    spinner.getSelectedItem().toString(),
+                                    serviceTitles.get(spinnerIndex),
+                                    serviceIds.get(spinnerIndex),
                                     true,
                                     myCalendar.getTimeInMillis(),
                                     30

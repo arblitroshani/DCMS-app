@@ -179,7 +179,4 @@ public class IdCardScanActivity extends AppCompatActivity {
         MRTDRecognizerSettings sett = new MRTDRecognizerSettings();
         return new RecognizerSettings[] { sett };
     }
-
-
-
 }

@@ -41,7 +41,7 @@ public class MyNotification {
         channelId = packageContext.getString(R.string.default_notification_channel_id);
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         notificationBuilder = new NotificationCompat.Builder(packageContext, channelId)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.ic_launcher_1)
                 .setContentTitle(contentTitle)
                 .setContentText(contentText)
                 .setAutoCancel(true)

@@ -18,8 +18,10 @@ public class FirebaseAppointmentCalendarEvent {
     private String title;
     private String description;
     private String status;
-    private String service;
     private boolean isForSelf;
+
+    private String service;
+    private String serviceId;
 
     private long startTimeMillis;
     private int durationMinutes;
@@ -27,17 +29,19 @@ public class FirebaseAppointmentCalendarEvent {
     public FirebaseAppointmentCalendarEvent() {}
 
     public FirebaseAppointmentCalendarEvent(Context context,  String description, String status,
-                                            String service, boolean isForSelf, long startTimeMillis,
+                                            String service, String serviceId, boolean isForSelf, long startTimeMillis,
                                             int durationMinutes) {
         this.title = service + " Appointment";
         this.description = description;
         this.status = status;
         this.service = service;
+        this.serviceId = serviceId;
         this.isForSelf = isForSelf;
         this.startTimeMillis = startTimeMillis;
         this.durationMinutes = durationMinutes;
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        this.patientName = currentUser.getDisplayName();
+        //FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        User currentUser1 = Utility.getLoggedInUser(context);
+        this.patientName = currentUser1.getFullName();
         this.nationalId = Utility.getNationalIdSharedPreference(context);
     }
 
@@ -105,6 +109,14 @@ public class FirebaseAppointmentCalendarEvent {
 
     public void setService(String service) {
         this.service = service;
+    }
+
+    public String getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
     }
 
     public boolean isForSelf() {

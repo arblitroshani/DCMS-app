@@ -79,7 +79,6 @@ public class CreateUserProfileActivity extends AppCompatActivity {
                     Utility.setLoggedInUser(this, incompleteUser);
 
                     finish();
-                } else {
                 }
             }
         });

@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity
     private void updateRegistrationToken() {
         MyFirebaseInstanceIDService myFirebaseInstanceIdService = new MyFirebaseInstanceIDService();
         Intent intent = new Intent(getApplicationContext(), myFirebaseInstanceIdService.getClass());
-        startService(intent); //invoke onCreate
+        startService(intent);
 
         Map<String, String> m = new HashMap<>();
         m.put("value", Utility.getFirebaseInstanceId(getApplicationContext()));
@@ -139,12 +139,11 @@ public class MainActivity extends AppCompatActivity
             if (resultCode == RESULT_OK) {
                 FirebaseUserMetadata metadata = auth.getCurrentUser().getMetadata();
                 if (metadata.getCreationTimestamp() == metadata.getLastSignInTimestamp()) {
-                    // The user is new
+                    // New user
                     Intent i = new Intent(MainActivity.this, IdCardScanActivity.class);
                     startActivity(i);
-                    //showSnackbar("Success");
                 } else {
-                    // This is an existing user
+                    // Existing user
                     showSnackbar("Welcome back");
                     FirebaseFirestore.getInstance()
                             .collection("users")
@@ -152,7 +151,6 @@ public class MainActivity extends AppCompatActivity
                             .get()
                             .addOnCompleteListener(task -> {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
-                                    // store in shared prefs
                                     Utility.setNationalIdSharedPreference(MainActivity.this, document.getId());
                                     Utility.setLoggedInUser(MainActivity.this, document.toObject(User.class));
                                     replaceFragment(R.id.nav_home);

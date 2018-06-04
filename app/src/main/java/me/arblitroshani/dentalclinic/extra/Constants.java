@@ -117,7 +117,7 @@ public final class Constants {
             doctorSections.add(new HomeSection(
                     "Availability",
                     "this is a subtitle",
-                    "Home",
+                    "Availability",
                     R.color.dark_slate_gray,
                     R.drawable.outline_event_available_white_48,
                     true)
