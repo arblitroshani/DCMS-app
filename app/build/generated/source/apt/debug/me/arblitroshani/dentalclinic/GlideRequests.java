@@ -5,8 +5,10 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.annotation.CheckResult;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RawRes;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.resource.gif.GifDrawable;
@@ -114,7 +116,7 @@ public class GlideRequests extends RequestManager {
   @Override
   @NonNull
   @CheckResult
-  public GlideRequest<Drawable> load(@Nullable Integer arg0) {
+  public GlideRequest<Drawable> load(@RawRes @DrawableRes @Nullable Integer arg0) {
     return (GlideRequest<Drawable>) super.load(arg0);
   }
 

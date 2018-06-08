@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.request.RequestOptions;
+import com.crashlytics.android.Crashlytics;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity
         auth = FirebaseAuth.getInstance();
         if (isUserSignedIn()) {
             refreshNavigationDrawer();
-            updateRegistrationToken();
+            updateRegistrationToken(); 
         }
 
         itemIds = new HashMap<>();
@@ -125,10 +126,14 @@ public class MainActivity extends AppCompatActivity
         Map<String, String> m = new HashMap<>();
         m.put("value", Utility.getFirebaseInstanceId(getApplicationContext()));
 
-        FirebaseFirestore.getInstance()
-                .collection("registrationTokens")
-                .document(currentUser.getUid())
-                .set(m);
+        try {
+            FirebaseFirestore.getInstance()
+                    .collection("registrationTokens")
+                    .document(currentUser.getUid())
+                    .set(m);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -137,30 +142,35 @@ public class MainActivity extends AppCompatActivity
             invalidateOptionsMenu();
             IdpResponse response = IdpResponse.fromResultIntent(data);
             if (resultCode == RESULT_OK) {
-                FirebaseUserMetadata metadata = auth.getCurrentUser().getMetadata();
-                if (metadata.getCreationTimestamp() == metadata.getLastSignInTimestamp()) {
-                    // New user
-                    Intent i = new Intent(MainActivity.this, IdCardScanActivity.class);
-                    startActivity(i);
-                } else {
-                    // Existing user
-                    showSnackbar("Welcome back");
-                    FirebaseFirestore.getInstance()
-                            .collection("users")
-                            .whereEqualTo("uid", auth.getCurrentUser().getUid())
-                            .get()
-                            .addOnCompleteListener(task -> {
-                                for (QueryDocumentSnapshot document : task.getResult()) {
-                                    Utility.setNationalIdSharedPreference(MainActivity.this, document.getId());
-                                    Utility.setLoggedInUser(MainActivity.this, document.toObject(User.class));
-                                    replaceFragment(R.id.nav_home);
-                                }
-                                refreshNavigationDrawer();
-                            });
+                auth = FirebaseAuth.getInstance();
+                if (auth.getCurrentUser() != null) {
+                    auth.getCurrentUser().reload();
+                    FirebaseUserMetadata metadata = auth.getCurrentUser().getMetadata();
+                    if (metadata.getCreationTimestamp() == metadata.getLastSignInTimestamp()) {
+                        // New user
+                        Intent i = new Intent(MainActivity.this, IdCardScanActivity.class);
+                        startActivity(i);
+                        refreshNavigationDrawer();
+                    } else {
+                        // Existing user
+                        showSnackbar("Welcome back");
+                        FirebaseFirestore.getInstance()
+                                .collection("users")
+                                .whereEqualTo("uid", auth.getCurrentUser().getUid())
+                                .get()
+                                .addOnCompleteListener(task -> {
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        Utility.setNationalIdSharedPreference(MainActivity.this, document.getId());
+                                        Utility.setLoggedInUser(MainActivity.this, document.toObject(User.class));
+                                        replaceFragment(R.id.nav_home);
+                                    }
+                                    refreshNavigationDrawer();
+                                });
+                    }
+                    updateRegistrationToken();
+                    drawer.closeDrawer(GravityCompat.START);
+                    replaceFragment(R.id.nav_home);
                 }
-                updateRegistrationToken();
-                drawer.closeDrawer(GravityCompat.START);
-                replaceFragment(R.id.nav_home);
             } else {
                 if (response == null) {  // User pressed back button
                     showSnackbar("Sign in cancelled");
@@ -273,6 +283,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.action_sign_out) {
             logout();
             return true;
+        } else if (id == R.id.action_force_crash) {
+            Crashlytics.getInstance().crash();
         } else if (id == R.id.home) {
             drawer.openDrawer(GravityCompat.START);
             return true;

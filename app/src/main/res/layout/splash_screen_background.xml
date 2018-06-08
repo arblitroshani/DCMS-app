@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <item android:drawable="@color/main_background"/>
+
+    <!-- Set the Background Image-->
+    <item android:gravity="center" android:width="130dp" android:height="130dp">
+        <bitmap
+            android:src="@drawable/logo1"
+            app:srcCompat="@drawable/logo1"/>
+    </item>
+</layer-list>
