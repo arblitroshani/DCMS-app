@@ -21,6 +21,12 @@ public class AppointmentEventRenderer extends EventRenderer<AppointmentCalendarE
 
     private static Resources resources;
 
+    private boolean isDoctor;
+
+    public AppointmentEventRenderer(boolean isDoctor) {
+        this.isDoctor = isDoctor;
+    }
+
     @Override
     public void render(View view, AppointmentCalendarEvent event) {
 
@@ -34,7 +40,12 @@ public class AppointmentEventRenderer extends EventRenderer<AppointmentCalendarE
         container.setVisibility(View.VISIBLE);
 
         tvTitle.setTextColor(resources.getColor(android.R.color.black));
-        tvTitle.setText(event.getTitle());
+
+        if (isDoctor) {
+            tvTitle.setText(event.getPatientName());
+        } else {
+            tvTitle.setText(event.getTitle());
+        }
 
         if (event.getStatus().equals(Constants.Appointments.STATUS_PENDING)) {
             container.setBackgroundColor(resources.getColor(R.color.colorAccent));
@@ -52,6 +63,8 @@ public class AppointmentEventRenderer extends EventRenderer<AppointmentCalendarE
 
     @Override
     public int getEventLayout() {
+        if (isDoctor)
+            return R.layout.item_doctor_appointment_event;
         return R.layout.item_appointment_event;
     }
 

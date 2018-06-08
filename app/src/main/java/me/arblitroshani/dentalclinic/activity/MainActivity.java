@@ -241,7 +241,10 @@ public class MainActivity extends AppCompatActivity
         } else {
             FragmentManager fm = getSupportFragmentManager();
             if (fm.findFragmentByTag("Sessions") instanceof SessionsFragment) {
-                replaceFragment("Treatments");
+                if (Utility.getLoggedInUser(this.getBaseContext()).getType().equals(User.TYPE_DOCTOR))
+                    replaceFragment("Patients");
+                else
+                    replaceFragment("Treatments");
             } else if (fm.findFragmentByTag("Home") instanceof HomeFragment) {
                 finish();
             } else {

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.unstoppable.submitbuttonview.SubmitButton;
@@ -62,9 +63,12 @@ public class AvailabilityFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        Toast.makeText(this.getContext(), "FOR DEMO: only editable on Tuesday", Toast.LENGTH_LONG).show();
+
         db = FirebaseFirestore.getInstance();
 
         String nationalId = Utility.getNationalIdSharedPreference(this.getContext());
+        String doctorName = Utility.getLoggedInUser(this.getContext()).getFullName();
 
         db.collection("availability")
                 .document(nationalId)
@@ -86,6 +90,7 @@ public class AvailabilityFragment extends Fragment {
                         Availability defaultAvailability = new Availability(
                                 Calendar.getInstance().getTime(),
                                 "",
+                                doctorName,
                                 new ArrayList<>(Arrays.asList(
                                         true, true, true,
                                         true, true, true
@@ -98,12 +103,13 @@ public class AvailabilityFragment extends Fragment {
 
                 });
 
-        if (Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
+        if (Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
             sbSubmit.setOnClickListener(view1 -> {
                 db.collection("availability").document(nationalId)
                         .set(new Availability(
                                 Calendar.getInstance().getTime(),
                                 etNotes.getText().toString(),
+                                doctorName,
                                 new ArrayList<>(Arrays.asList(
                                     chb0.isChecked(),
                                     chb1.isChecked(),

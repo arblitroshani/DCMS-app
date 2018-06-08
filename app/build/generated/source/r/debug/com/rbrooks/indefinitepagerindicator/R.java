@@ -703,9 +703,9 @@ public final class R {
         public static final int titleDividerNoCustom = 0x7f090172;
         public static final int title_template = 0x7f090173;
         public static final int topPanel = 0x7f090177;
-        public static final int uniform = 0x7f0901ae;
-        public static final int up = 0x7f0901af;
-        public static final int wrap_content = 0x7f0901d1;
+        public static final int uniform = 0x7f0901b0;
+        public static final int up = 0x7f0901b1;
+        public static final int wrap_content = 0x7f0901d4;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur = 0x7f0a0000;
@@ -741,25 +741,25 @@ public final class R {
         public static final int abc_search_dropdown_item_icons_2line = 0x7f0b0017;
         public static final int abc_search_view = 0x7f0b0018;
         public static final int abc_select_dialog_material = 0x7f0b0019;
-        public static final int notification_action = 0x7f0b0063;
-        public static final int notification_action_tombstone = 0x7f0b0064;
-        public static final int notification_media_action = 0x7f0b0065;
-        public static final int notification_media_cancel_action = 0x7f0b0066;
-        public static final int notification_template_big_media = 0x7f0b0067;
-        public static final int notification_template_big_media_custom = 0x7f0b0068;
-        public static final int notification_template_big_media_narrow = 0x7f0b0069;
-        public static final int notification_template_big_media_narrow_custom = 0x7f0b006a;
-        public static final int notification_template_custom_big = 0x7f0b006b;
-        public static final int notification_template_icon_group = 0x7f0b006c;
-        public static final int notification_template_lines_media = 0x7f0b006d;
-        public static final int notification_template_media = 0x7f0b006e;
-        public static final int notification_template_media_custom = 0x7f0b006f;
-        public static final int notification_template_part_chronometer = 0x7f0b0070;
-        public static final int notification_template_part_time = 0x7f0b0071;
-        public static final int select_dialog_item_material = 0x7f0b0083;
-        public static final int select_dialog_multichoice_material = 0x7f0b0084;
-        public static final int select_dialog_singlechoice_material = 0x7f0b0085;
-        public static final int support_simple_spinner_dropdown_item = 0x7f0b0086;
+        public static final int notification_action = 0x7f0b0065;
+        public static final int notification_action_tombstone = 0x7f0b0066;
+        public static final int notification_media_action = 0x7f0b0067;
+        public static final int notification_media_cancel_action = 0x7f0b0068;
+        public static final int notification_template_big_media = 0x7f0b0069;
+        public static final int notification_template_big_media_custom = 0x7f0b006a;
+        public static final int notification_template_big_media_narrow = 0x7f0b006b;
+        public static final int notification_template_big_media_narrow_custom = 0x7f0b006c;
+        public static final int notification_template_custom_big = 0x7f0b006d;
+        public static final int notification_template_icon_group = 0x7f0b006e;
+        public static final int notification_template_lines_media = 0x7f0b006f;
+        public static final int notification_template_media = 0x7f0b0070;
+        public static final int notification_template_media_custom = 0x7f0b0071;
+        public static final int notification_template_part_chronometer = 0x7f0b0072;
+        public static final int notification_template_part_time = 0x7f0b0073;
+        public static final int select_dialog_item_material = 0x7f0b0085;
+        public static final int select_dialog_multichoice_material = 0x7f0b0086;
+        public static final int select_dialog_singlechoice_material = 0x7f0b0087;
+        public static final int support_simple_spinner_dropdown_item = 0x7f0b0088;
     }
     public static final class string {
         public static final int abc_action_bar_home_description = 0x7f100017;

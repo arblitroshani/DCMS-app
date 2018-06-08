@@ -15,8 +15,10 @@
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
@@ -24,8 +26,7 @@
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name_title"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".activity.ServiceDetailsActivity"
             android:label="@string/title_activity_service_details"
@@ -35,7 +36,7 @@
                 android:value=".activity.MainActivity" />
         </activity>
         <activity
-            android:name="me.arblitroshani.dentalclinic.activity.AppointmentsActivity"
+            android:name=".activity.AppointmentsActivity"
             android:label="@string/title_activity_appointments"
             android:parentActivityName=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -44,7 +45,7 @@
                 android:value="me.arblitroshani.dentalclinic.activity.MainActivity" />
         </activity>
         <activity
-            android:name="me.arblitroshani.dentalclinic.activity.AppointmentRequestActivity"
+            android:name=".activity.AppointmentRequestActivity"
             android:label="New appointment"
             android:parentActivityName=".activity.AppointmentsActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -87,6 +88,7 @@
                 <action android:name="android.intent.action.NOTIFY" />
             </intent-filter>
         </receiver>
+
     </application>
 
 </manifest>

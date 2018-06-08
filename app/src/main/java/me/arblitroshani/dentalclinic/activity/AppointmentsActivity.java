@@ -3,12 +3,14 @@ package me.arblitroshani.dentalclinic.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
@@ -18,6 +20,10 @@ import com.github.tibolte.agendacalendarview.AgendaCalendarView;
 import com.github.tibolte.agendacalendarview.CalendarPickerController;
 import com.github.tibolte.agendacalendarview.models.CalendarEvent;
 import com.github.tibolte.agendacalendarview.models.DayItem;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -36,6 +42,7 @@ import me.arblitroshani.dentalclinic.adapter.AppointmentEventRenderer;
 import me.arblitroshani.dentalclinic.extra.Constants;
 import me.arblitroshani.dentalclinic.extra.Utility;
 import me.arblitroshani.dentalclinic.model.FirebaseAppointmentCalendarEvent;
+import me.arblitroshani.dentalclinic.model.User;
 
 public class AppointmentsActivity extends AppCompatActivity implements CalendarPickerController {
 
@@ -53,6 +60,8 @@ public class AppointmentsActivity extends AppCompatActivity implements CalendarP
     private Calendar minDate = Calendar.getInstance();
     private Calendar maxDate = Calendar.getInstance();
 
+    private boolean isDoctor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +75,11 @@ public class AppointmentsActivity extends AppCompatActivity implements CalendarP
         minDate.add(Calendar.WEEK_OF_YEAR, -2);
         maxDate.add(Calendar.MONTH, 1);
 
+        isDoctor = Utility.getLoggedInUser(this).getType().equals(User.TYPE_DOCTOR);
+        if (isDoctor){
+            fab.setVisibility(View.GONE);
+        }
+
         initCalendar();
 
         fab.setOnClickListener(view -> {
@@ -76,19 +90,49 @@ public class AppointmentsActivity extends AppCompatActivity implements CalendarP
 
     public void initCalendar() {
         String nationalId = Utility.getNationalIdSharedPreference(this);
-        db.collection("appointments")
-                .whereEqualTo("nationalId", nationalId)
-                .addSnapshotListener((snapshot, e) -> {
-                    if (e != null) return;
-                    if (snapshot != null) {
-                        List<CalendarEvent> appointments = new ArrayList<>();
-                        for (QueryDocumentSnapshot doc : snapshot) {
-                            appointments.add(doc.toObject(FirebaseAppointmentCalendarEvent.class).getCalendarFormat());
+        if (isDoctor) {
+            Log.i("tag-not", "is doctor. nationalId = "+ nationalId);
+            db.collection("doctors").document(nationalId)
+                    .get()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Log.i("tag-not", "task is successful");
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                String serviceId = document.getString("serviceId");
+                                Log.i("tag-not", "serviceId: " + serviceId);
+                                db.collection("appointments")
+                                        .whereEqualTo("serviceId", serviceId)
+                                        .addSnapshotListener((snapshot, e) -> {
+                                            if (e != null) return;
+                                            if (snapshot != null) {
+                                                List<CalendarEvent> appointments = new ArrayList<>();
+                                                for (QueryDocumentSnapshot doc : snapshot) {
+                                                    appointments.add(doc.toObject(FirebaseAppointmentCalendarEvent.class).getCalendarFormat());
+                                                }
+                                                mAgendaCalendarView.init(appointments, minDate, maxDate, Locale.getDefault(), this);
+                                                mAgendaCalendarView.addEventRenderer(new AppointmentEventRenderer(true));
+                                            }
+                                        });
+                            }
                         }
-                        mAgendaCalendarView.init(appointments, minDate, maxDate, Locale.getDefault(), this);
-                        mAgendaCalendarView.addEventRenderer(new AppointmentEventRenderer());
-                    }
-                });
+                    });
+        } else {
+            db.collection("appointments")
+                    .whereEqualTo("nationalId", nationalId)
+                    .addSnapshotListener((snapshot, e) -> {
+                        if (e != null) return;
+                        if (snapshot != null) {
+                            List<CalendarEvent> appointments = new ArrayList<>();
+                            for (QueryDocumentSnapshot doc : snapshot) {
+                                appointments.add(doc.toObject(FirebaseAppointmentCalendarEvent.class).getCalendarFormat());
+                            }
+                            mAgendaCalendarView.init(appointments, minDate, maxDate, Locale.getDefault(), this);
+                            mAgendaCalendarView.addEventRenderer(new AppointmentEventRenderer(false));
+                        }
+                    });
+        }
+
     }
 
     @Override

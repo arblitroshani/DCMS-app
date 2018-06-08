@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <me.arblitroshani.dentalclinic.extra.MyNestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.PatientsFragment">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_main"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/main_card_margin_horizontal"
+                android:layout_marginStart="@dimen/main_card_margin_horizontal"
+                android:layout_marginTop="@dimen/main_card_margin_vertical"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
+                card_view:cardElevation="@dimen/card_recycler_elevation">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_card_name"
+                        style="@style/TextAppearance.AppCompat.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        card_view:layout_constraintBottom_toTopOf="@+id/tv_card_date"
+                        card_view:layout_constraintStart_toStartOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.RecyclerView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/rvTreatments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingBottom="8dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintTop_toBottomOf="@+id/card_main"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_card_treatment" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/baseline_add_24"
+                android:tint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvTreatments"
+                app:rippleColor="@color/colorAccent" />
+        </android.support.constraint.ConstraintLayout>
+
+    </me.arblitroshani.dentalclinic.extra.MyNestedScrollView>
+
+
+
+
+
+
+

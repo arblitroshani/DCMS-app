@@ -7,13 +7,15 @@ public class Availability {
 
     private Date date;
     private String note;
+    private String doctorName;
     private List<Boolean> availability;
 
     public Availability() {}
 
-    public Availability(Date date, String note, List<Boolean> availability) {
+    public Availability(Date date, String note, String doctorName, List<Boolean> availability) {
         this.date = date;
         this.note = note;
+        this.doctorName = doctorName;
         this.availability = availability;
     }
 
@@ -31,6 +33,14 @@ public class Availability {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public String getDoctorName() {
+        return doctorName;
+    }
+
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
     }
 
     public List<Boolean> getAvailability() {

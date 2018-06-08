@@ -40,8 +40,7 @@ public class FirebaseAppointmentCalendarEvent {
         this.startTimeMillis = startTimeMillis;
         this.durationMinutes = durationMinutes;
         //FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        User currentUser1 = Utility.getLoggedInUser(context);
-        this.patientName = currentUser1.getFullName();
+        this.patientName = Utility.getLoggedInUser(context).getFullName();
         this.nationalId = Utility.getNationalIdSharedPreference(context);
     }
 
@@ -53,6 +52,7 @@ public class FirebaseAppointmentCalendarEvent {
         endTime.setTimeInMillis(this.startTimeMillis + this.durationMinutes * 60 * 1000);
 
         return new AppointmentCalendarEvent(
+                this.patientName,
                 this.getTitle(),
                 this.getDescription(),
                 startTime,

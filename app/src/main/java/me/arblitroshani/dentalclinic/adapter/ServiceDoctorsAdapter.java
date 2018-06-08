@@ -60,10 +60,13 @@ public class ServiceDoctorsAdapter extends RecyclerView.Adapter<ServiceDoctorsAd
     public void onBindViewHolder(ViewHolder holder, int position) {
         final DoctorBasic doctor = myDataset.get(position);
         holder.tvName.setText(doctor.getName());
-        GlideApp.with(context)
-                .load(storageRefDoctors.child(doctor.getPhotoUrl()))
-                .circleCrop()
-                .into(holder.ivPhoto);
+        String photoUrl = doctor.getPhotoUrl();
+        if (photoUrl != null) {
+            GlideApp.with(context)
+                    .load(storageRefDoctors.child(doctor.getPhotoUrl()))
+                    .circleCrop()
+                    .into(holder.ivPhoto);
+        }
     }
 
     @Override

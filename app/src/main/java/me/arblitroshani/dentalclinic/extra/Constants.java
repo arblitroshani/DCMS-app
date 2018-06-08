@@ -109,7 +109,7 @@ public final class Constants {
             doctorSections.add(new HomeSection(
                     "Appointments",
                     "this is a subtitle",
-                    "Home",
+                    "Activity:Appointments",
                     R.color.midcolor,
                     R.drawable.ic_today_white_48dp,
                     true)
@@ -125,7 +125,7 @@ public final class Constants {
             doctorSections.add(new HomeSection(
                     "Patients",
                     "this is a subtitle",
-                    "Home",
+                    "Patients",
                     R.color.gunmetal,
                     R.drawable.outline_supervised_user_circle_white_48,
                     true)

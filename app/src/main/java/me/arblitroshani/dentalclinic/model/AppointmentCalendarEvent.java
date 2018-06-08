@@ -7,14 +7,16 @@ import me.arblitroshani.dentalclinic.R;
 
 public class AppointmentCalendarEvent extends BaseCalendarEvent {
 
+    private String patientName;
     private String status;
     private String service;
     private boolean isForSelf;
 
-    public AppointmentCalendarEvent(String title, String description, Calendar startTime,
+    public AppointmentCalendarEvent(String patientName, String title, String description, Calendar startTime,
                                     Calendar endTime, String status, String service,
                                     boolean isForSelf) {
         super(title, description, "", R.color.gray_light, startTime, endTime, true);
+        this.patientName = patientName;
         this.status = status;
         this.service = service;
         this.isForSelf = isForSelf;
@@ -24,6 +26,7 @@ public class AppointmentCalendarEvent extends BaseCalendarEvent {
         super(calendarEvent.getTitle(), calendarEvent.getDescription(), calendarEvent.getLocation(),
                 calendarEvent.getColor(), calendarEvent.getStartTime(), calendarEvent.getEndTime(),
                 calendarEvent.isAllDay());
+        this.patientName = calendarEvent.getPatientName();
         this.status = calendarEvent.getStatus();
         this.service = calendarEvent.getService();
         this.isForSelf = calendarEvent.isForSelf();
@@ -56,5 +59,13 @@ public class AppointmentCalendarEvent extends BaseCalendarEvent {
 
     public void setForSelf(boolean forSelf) {
         isForSelf = forSelf;
+    }
+
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
     }
 }

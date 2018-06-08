@@ -1,6 +1,7 @@
 package me.arblitroshani.dentalclinic.fragment;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,8 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.util.Util;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,6 +40,12 @@ public class ProfileFragment extends Fragment {
     TextView tvBday;
     @BindView(R.id.tvPhone)
     TextView tvPhone;
+    @BindView(R.id.viewSep)
+    View viewSep;
+    @BindView(R.id.tvService)
+    TextView tvService;
+    @BindView(R.id.tvServiceText)
+    TextView tvServiceText;
 
     public ProfileFragment() {}
 
@@ -56,6 +68,27 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
         ((MainActivity) getActivity()).collapseAppBar();
+
+        if (Utility.getLoggedInUser(this.getContext()).getType().equals(User.TYPE_DOCTOR)) {
+            // get service title of doctor with this id
+            String nationalId = Utility.getNationalIdSharedPreference(this.getContext());
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            db.collection("doctors").document(nationalId)
+                    .get()
+                    .addOnCompleteListener(task -> {
+                        String serviceId = task.getResult().getString("serviceId");
+                        // get service name from servicesHelper
+                        db.collection("servicesHelper").document(serviceId)
+                                .get()
+                                .addOnCompleteListener(task1 -> {
+                                   tvService.setText(task1.getResult().getString("title"));
+                                });
+                    });
+        } else {
+            viewSep.setVisibility(View.GONE);
+            tvService.setVisibility(View.GONE);
+            tvServiceText.setVisibility(View.GONE);
+        }
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 

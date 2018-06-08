@@ -34,6 +34,8 @@ public class TreatmentsAdapter extends RecyclerView.Adapter<TreatmentsAdapter.Vi
     private List<Treatment> myDataset;
     private List<String> treatmentIds;
 
+    private boolean isFromDoctor = false;
+
     private Context context;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -56,8 +58,8 @@ public class TreatmentsAdapter extends RecyclerView.Adapter<TreatmentsAdapter.Vi
     }
 
     public TreatmentsAdapter(List<Treatment> myDataset, List<String> treatmentIds) {
-        this.myDataset = myDataset;
         this.treatmentIds = treatmentIds;
+        this.myDataset = myDataset;
     }
 
     @Override
