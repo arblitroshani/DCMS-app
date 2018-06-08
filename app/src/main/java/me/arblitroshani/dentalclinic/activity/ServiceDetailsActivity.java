@@ -78,13 +78,9 @@ public class ServiceDetailsActivity extends AppCompatActivity {
 
         rvDoctors.setHasFixedSize(true);
         layoutManagerDoctors = new LinearLayoutManager(this);
-        rvDoctors.setLayoutManager(layoutManagerDoctors);
 
         rvPhotos.setHasFixedSize(true);
         layoutManagerPhotos = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        rvPhotos.setLayoutManager(layoutManagerPhotos);
-        rvPhotos.setNestedScrollingEnabled(false);
-        SnapHelper snapHelper = new PagerSnapHelper();
 
         Intent i = getIntent();
         final Service currentService = (Service) i.getSerializableExtra("service_to_display");
@@ -106,7 +102,12 @@ public class ServiceDetailsActivity extends AppCompatActivity {
                     myDataset = snapshot.toObjects(DoctorBasic.class);
 
                     adapterDoctors = new ServiceDoctorsAdapter(myDataset);
+                    rvDoctors.setLayoutManager(layoutManagerDoctors);
                     rvDoctors.setAdapter(adapterDoctors);
+
+                    rvPhotos.setLayoutManager(layoutManagerPhotos);
+                    rvPhotos.setNestedScrollingEnabled(false);
+                    SnapHelper snapHelper = new PagerSnapHelper();
 
                     adapterPhotos = new ServicePhotosAdapter(currentService.getPhotoUrls(), serviceId);
                     rvPhotos.setAdapter(adapterPhotos);

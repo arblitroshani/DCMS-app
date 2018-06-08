@@ -103,10 +103,15 @@ public class MainActivity extends AppCompatActivity
 
         setupMenuLoggedIn(false);
 
+
         auth = FirebaseAuth.getInstance();
         if (isUserSignedIn()) {
-            refreshNavigationDrawer();
-            updateRegistrationToken(); 
+            if (Utility.getLoggedInUser(this) == null) {
+                logout();
+            } else {
+                refreshNavigationDrawer();
+                updateRegistrationToken();
+            }
         }
 
         itemIds = new HashMap<>();
