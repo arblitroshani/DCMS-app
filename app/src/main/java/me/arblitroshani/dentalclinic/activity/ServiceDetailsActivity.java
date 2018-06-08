@@ -100,15 +100,14 @@ public class ServiceDetailsActivity extends AppCompatActivity {
                     if (e != null) return; // listen failed
 
                     myDataset = snapshot.toObjects(DoctorBasic.class);
+                    SnapHelper snapHelper = new PagerSnapHelper();
 
-                    adapterDoctors = new ServiceDoctorsAdapter(myDataset);
                     rvDoctors.setLayoutManager(layoutManagerDoctors);
+                    adapterDoctors = new ServiceDoctorsAdapter(myDataset);
                     rvDoctors.setAdapter(adapterDoctors);
 
                     rvPhotos.setLayoutManager(layoutManagerPhotos);
                     rvPhotos.setNestedScrollingEnabled(false);
-                    SnapHelper snapHelper = new PagerSnapHelper();
-
                     adapterPhotos = new ServicePhotosAdapter(currentService.getPhotoUrls(), serviceId);
                     rvPhotos.setAdapter(adapterPhotos);
                     snapHelper.attachToRecyclerView(rvPhotos);
