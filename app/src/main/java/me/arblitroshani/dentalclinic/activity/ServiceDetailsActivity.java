@@ -86,8 +86,6 @@ public class ServiceDetailsActivity extends AppCompatActivity {
         rvPhotos.setNestedScrollingEnabled(false);
         SnapHelper snapHelper = new PagerSnapHelper();
 
-        ipi.attachToRecyclerView(rvPhotos);
-
         Intent i = getIntent();
         final Service currentService = (Service) i.getSerializableExtra("service_to_display");
         final String serviceId = i.getStringExtra("service_id");
@@ -113,6 +111,7 @@ public class ServiceDetailsActivity extends AppCompatActivity {
                     adapterPhotos = new ServicePhotosAdapter(currentService.getPhotoUrls(), serviceId);
                     rvPhotos.setAdapter(adapterPhotos);
                     snapHelper.attachToRecyclerView(rvPhotos);
+                    ipi.attachToRecyclerView(rvPhotos);
                 });
 
         // bind values
