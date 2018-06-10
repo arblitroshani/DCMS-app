@@ -232,10 +232,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             addPreferencesFromResource(R.xml.pref_data_sync);
             setHasOptionsMenu(true);
 
-            // Bind the summaries of EditText/List/Dialog/Ringtone preferences
-            // to their values. When their values change, their summaries are
-            // updated to reflect the new value, per the Android Design
-            // guidelines.
             bindPreferenceSummaryToValue(findPreference("reminder_before"));
 
             smsReminder = (SwitchPreference) getPreferenceManager().findPreference("sms_notification");
@@ -243,10 +239,14 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                 boolean switched = ((SwitchPreference) preference).isChecked();
                 boolean update = !switched;
 
-                FirebaseFirestore.getInstance()
-                        .collection("smsNotifications")
-                        .document(Utility.getNationalIdSharedPreference(this.getActivity()))
-                        .update("sendSmsNotification", update);
+                String natId = Utility.getNationalIdSharedPreference(this.getActivity());
+
+                if (natId != null) {
+                    FirebaseFirestore.getInstance()
+                            .collection("smsNotifications")
+                            .document(natId)
+                            .update("sendSmsNotification", update);
+                }
 
                 return true;
             });

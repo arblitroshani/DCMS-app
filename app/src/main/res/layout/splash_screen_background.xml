@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
-    <item android:drawable="@color/main_background"/>
+    <item android:drawable="@color/main_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <!-- Set the Background Image-->
     <item android:gravity="center" android:width="130dp" android:height="130dp">

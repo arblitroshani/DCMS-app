@@ -12,9 +12,4 @@
         android:orderInCategory="100"
         android:title="Sign Out"
         app:showAsAction="never" />
-    <item
-        android:id="@+id/action_force_crash"
-        android:orderInCategory="100"
-        android:title="Force a crash"
-        app:showAsAction="never" />
 </menu>

@@ -288,8 +288,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.action_sign_out) {
             logout();
             return true;
-        } else if (id == R.id.action_force_crash) {
-            Crashlytics.getInstance().crash();
         } else if (id == R.id.home) {
             drawer.openDrawer(GravityCompat.START);
             return true;
